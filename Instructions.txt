@@ -1,0 +1,10 @@
+LD_PRELOAD=/lib/$(gcc -print-multiarch)/libc_malloc_debug.so.0 MALLOC_TRACE="./m.trace" ./{program name}
+mtrace {program_name} "./m.trace"
+
+How to read mtrace logs:
+	Before the colon is the library or exe name performing a memory op
+	[0x****] is the address of the instruction that performed the call, I think
+	- means memory is used and freed
+	+ means memory is alloc'd, but not yet freed. Values following this are size of alloc
+	- with no matching + is ok
+	+ with no matching - at that address is a leak
