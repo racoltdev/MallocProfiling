@@ -57,23 +57,49 @@ def main():
 			address, op, size = parse_log_line(line, num)
 			tracked_obj = objects.get(address)
 			if tracked_obj is None:
-				objects[address] = MemObject(address, op, size, num)
-				if op == '-' or op == "!":
-					objects[address].dealloc_time = num
+				if op == "<":
+					# pointer realloc'd before being assigned. ignore this
+					pass
+				else:
+					objects[address] = MemObject(address, op, size, num)
+					if op == '-' or op == "!":
+						objects[address].dealloc_time = num
 			else:
+				# Free or null ptr assignment
 				if op == "-":
 					# reusing already freed memory
 					if tracked_obj.dealloc_time:
 						remap_obj(address, op, size, num)
 					else:
 						tracked_obj.dealloc_time = num
+				# Alloc
 				elif op == "+":
 					if tracked_obj.dealloc_time:
 						# reusing already freed memory
 						remap_obj(address, op, size, num)
 					else:
-						# error. do not track this
+						# error: double assigning memory. do not track this
 						pass
+				# Alloc fail
+				elif op == "!":
+					# realloc failed. ignore
+					pass
+				# ptr realloc'd
+				elif op == "<":
+					if tracked_obj.dealloc_time:
+						# double freeing. ignore
+						pass
+					else:
+						tracked_obj.dealloc_time = num
+				# new address from realloc
+				elif op == ">":
+					if tracked_obj.dealloc_time:
+						# reusing already freed memory
+						remap_obj(address, op, size, num)
+					else:
+						# error: double assigning memory. do not track this
+						pass
+
 
 
 if __name__ == "__main__":
