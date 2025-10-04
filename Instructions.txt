@@ -4,7 +4,11 @@ mtrace {program_name} "./m.trace"
 How to read mtrace logs:
 	Before the colon is the library or exe name performing a memory op
 	[0x****] is the address of the instruction that performed the call, I think
-	- means memory is used and freed
+	- means memory is freed or null pointer assigned.
+		If size is listed, then mem was freed but never alloc'd
 	+ means memory is alloc'd, but not yet freed. Values following this are size of alloc
-	- with no matching + is ok
+	! means realloc failed
+	< means pointer was realloced (implicit free)
+	> means the address and size the realloc'd pointer has become
+	- with no matching + is ok, depending
 	+ with no matching - at that address is a leak
