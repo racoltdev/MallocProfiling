@@ -12,9 +12,8 @@ valid_ops = ['-', '+', '!', '>', '<']
 
 class MemObject:
 	dealloc_time = None
-	def __init__(self, address, op, size, alloc_time):
+	def __init__(self, address, size, alloc_time):
 		self.address = address
-		self.op = op
 		self.size = size
 		self.alloc_time = alloc_time
 
@@ -42,10 +41,10 @@ def parse_log_line(line, num):
 	return address, op, size
 
 
-def remap_obj(address, op, size, num):
-	objects[random.random] = objects[address]
-	objects[address] = MemObject(address, op, size, num)
-	objects[address].dealloc_time = num
+def remap_obj(address, size, num):
+	new_hash = random.random
+	objects[new_hash] = objects[address]
+	objects[address] = MemObject(address, size, num)
 
 
 def track_obj(address, op, size, num):
@@ -53,9 +52,10 @@ def track_obj(address, op, size, num):
 	if tracked_obj is None:
 		if op == "<":
 			# pointer realloc'd before being assigned. ignore this
+			print("pointer realloc'd before being assigned")
 			pass
 		else:
-			objects[address] = MemObject(address, op, size, num)
+			objects[address] = MemObject(address, size, num)
 			if op == '-' or op == "!":
 				objects[address].dealloc_time = num
 	else:
@@ -63,25 +63,28 @@ def track_obj(address, op, size, num):
 		if op == "-":
 			# reusing already freed memory
 			if tracked_obj.dealloc_time:
-				remap_obj(address, op, size, num)
+				remap_obj(address, size, num)
 			else:
 				tracked_obj.dealloc_time = num
 		# Alloc
 		elif op == "+":
 			if tracked_obj.dealloc_time:
 				# reusing already freed memory
-				remap_obj(address, op, size, num)
+				remap_obj(address, size, num)
 			else:
 				# error: double assigning memory. do not track this
+				print("double assigning memory")
 				pass
 		# Alloc fail
 		elif op == "!":
 			# realloc failed. ignore
+			print("realloc failed")
 			pass
 		# ptr realloc'd
 		elif op == "<":
 			if tracked_obj.dealloc_time:
 				# double freeing. ignore
+				print("double freeing")
 				pass
 			else:
 				tracked_obj.dealloc_time = num
@@ -89,16 +92,17 @@ def track_obj(address, op, size, num):
 		elif op == ">":
 			if tracked_obj.dealloc_time:
 				# reusing already freed memory
-				remap_obj(address, op, size, num)
+				remap_obj(address, size, num)
 			else:
 				# error: double assigning memory. do not track this
+				print("double assigning memory")
 				pass
 
 
 def plot_obj(obj, y, axis):
 	if (obj.dealloc_time - obj.alloc_time) < 1:
-		print(f"Temp lifetime object @ {hex(obj.address)}")
 		axis.plot(obj.alloc_time, y, 'bo')
+		print(f"Temp object @ {hex(obj.address)}, {obj.alloc_time}")
 	else:
 		axis.plot([obj.alloc_time, obj.dealloc_time], [y, y])
 
@@ -127,7 +131,7 @@ def main():
 			final_event += 1
 			obj.dealloc_time = final_event
 		plot_obj(obj, num, ax)
-	ax.set_title(f"Object lifetimes of {sys.argv[1]}")
+	ax.set(xlabel="Allocation event number", ylabel="Tracked object ID", title=f"Object lifetimes of {sys.argv[1]}")
 	plt.show()
 
 if __name__ == "__main__":
