@@ -2,6 +2,11 @@ import matplotlib.pyplot as plt
 import sys
 import random
 
+# Reference glibc-2.42/malloc/mtrace-impl.c
+# This parses mtrace log files to track object alloc and free events
+# The source for mtrace is the only reference I could find on these log files
+# See `man mtrace 1` for a tool to parse mtrace log files and find all memory leaks
+
 objects = {}
 valid_ops = ['-', '+', '!', '>', '<']
 
@@ -28,7 +33,8 @@ def parse_log_line(line, num):
 	except:
 		# Sometimes you'll see a line like
 		# `@ ./raColTest:[0xecac] - + 0x5591547cd7f0 0x55`
-		# The second sign seems to be an offset direction marker. Hard to tell. I think only the first one is useful to me
+		# The first sign seems to be an offset direction marker. Hard to tell. I think only the second one is useful to me
+		op = line[3]
 		address = int(line[4], 16)
 		size = None
 		if len(line) == 5:
@@ -41,11 +47,67 @@ def remap_obj(address, op, size, num):
 	objects[address] = MemObject(address, op, size, num)
 	objects[address].dealloc_time = num
 
+
+def track_obj(address, op, size, num):
+	tracked_obj = objects.get(address)
+	if tracked_obj is None:
+		if op == "<":
+			# pointer realloc'd before being assigned. ignore this
+			pass
+		else:
+			objects[address] = MemObject(address, op, size, num)
+			if op == '-' or op == "!":
+				objects[address].dealloc_time = num
+	else:
+		# Free or null ptr assignment
+		if op == "-":
+			# reusing already freed memory
+			if tracked_obj.dealloc_time:
+				remap_obj(address, op, size, num)
+			else:
+				tracked_obj.dealloc_time = num
+		# Alloc
+		elif op == "+":
+			if tracked_obj.dealloc_time:
+				# reusing already freed memory
+				remap_obj(address, op, size, num)
+			else:
+				# error: double assigning memory. do not track this
+				pass
+		# Alloc fail
+		elif op == "!":
+			# realloc failed. ignore
+			pass
+		# ptr realloc'd
+		elif op == "<":
+			if tracked_obj.dealloc_time:
+				# double freeing. ignore
+				pass
+			else:
+				tracked_obj.dealloc_time = num
+		# new address from realloc
+		elif op == ">":
+			if tracked_obj.dealloc_time:
+				# reusing already freed memory
+				remap_obj(address, op, size, num)
+			else:
+				# error: double assigning memory. do not track this
+				pass
+
+
+def plot_obj(obj, y, axis):
+	if (obj.dealloc_time - obj.alloc_time) < 1:
+		print(f"Temp lifetime object @ {hex(obj.address)}")
+		axis.plot(obj.alloc_time, y, 'bo')
+	else:
+		axis.plot([obj.alloc_time, obj.dealloc_time], [y, y])
+
 def main():
 	if len(sys.argv) != 2:
 		print("Incorrect number of arguments. Please pass the path to a trace file")
 		exit()
 
+	final_event = 0
 	with open(sys.argv[1], 'r') as log_file:
 		random.seed()
 		header = log_file.readline()
@@ -55,52 +117,18 @@ def main():
 
 		for num, line in enumerate(log_file, 1):
 			address, op, size = parse_log_line(line, num)
-			tracked_obj = objects.get(address)
-			if tracked_obj is None:
-				if op == "<":
-					# pointer realloc'd before being assigned. ignore this
-					pass
-				else:
-					objects[address] = MemObject(address, op, size, num)
-					if op == '-' or op == "!":
-						objects[address].dealloc_time = num
-			else:
-				# Free or null ptr assignment
-				if op == "-":
-					# reusing already freed memory
-					if tracked_obj.dealloc_time:
-						remap_obj(address, op, size, num)
-					else:
-						tracked_obj.dealloc_time = num
-				# Alloc
-				elif op == "+":
-					if tracked_obj.dealloc_time:
-						# reusing already freed memory
-						remap_obj(address, op, size, num)
-					else:
-						# error: double assigning memory. do not track this
-						pass
-				# Alloc fail
-				elif op == "!":
-					# realloc failed. ignore
-					pass
-				# ptr realloc'd
-				elif op == "<":
-					if tracked_obj.dealloc_time:
-						# double freeing. ignore
-						pass
-					else:
-						tracked_obj.dealloc_time = num
-				# new address from realloc
-				elif op == ">":
-					if tracked_obj.dealloc_time:
-						# reusing already freed memory
-						remap_obj(address, op, size, num)
-					else:
-						# error: double assigning memory. do not track this
-						pass
+			track_obj(address, op, size, num)
+			final_event = num
 
-
+	fig, ax = plt.subplots()
+	for num, obj in enumerate(objects.values()):
+		if obj.dealloc_time is None:
+			print(f"Object @ {hex(obj.address)} was never freed!")
+			final_event += 1
+			obj.dealloc_time = final_event
+		plot_obj(obj, num, ax)
+	ax.set_title(f"Object lifetimes of {sys.argv[1]}")
+	plt.show()
 
 if __name__ == "__main__":
 	main()
