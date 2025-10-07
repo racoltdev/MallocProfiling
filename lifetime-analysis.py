@@ -127,8 +127,9 @@ def main():
 			final_event = num
 
 	fig, ax = plt.subplots()
-	# TODO sort objects first to make graph easier to read
-	for num, obj in enumerate(objects.values()):
+
+	sorted_list = sorted(objects.values(), key=lambda x: x.alloc_time)
+	for num, obj in enumerate(sorted_list):
 		if obj.dealloc_time is None:
 			print(f"Object @ {hex(obj.address)} was never freed!")
 			final_event += 1
