@@ -12,6 +12,8 @@ valid_ops = ['-', '+', '!', '>', '<']
 
 class MemObject:
 	dealloc_time = None
+	unique_objects_in_lifetime = 0
+	similar_objects_in_lieftime = 0
 	def __init__(self, address, size, alloc_time):
 		self.address = address
 		self.size = size
@@ -101,12 +103,41 @@ def track_obj(address, op, size, num):
 				pass
 
 
-def plot_obj(obj, y, axis):
-	if (obj.dealloc_time - obj.alloc_time) < 1:
-		axis.plot(obj.alloc_time, y, 'bo')
-		print(f"Temp object @ {hex(obj.address)}, :{obj.alloc_time}")
-	else:
-		axis.plot([obj.alloc_time, obj.dealloc_time], [y, y])
+def plot_obj_cascading(objs, final_event, axis):
+	for num, obj in enumerate(objs):
+		if obj.dealloc_time is None:
+			print(f"Object @ {hex(obj.address)} was never freed!")
+			final_event += 1
+			obj.dealloc_time = final_event
+		if (obj.dealloc_time - obj.alloc_time) < 1:
+			axis.plot(obj.alloc_time, num, 'bo')
+			print(f"Temp object @ {hex(obj.address)}, :{obj.alloc_time}")
+		else:
+			axis.plot([obj.alloc_time, obj.dealloc_time], [num, num])
+	axis.set(xlabel="Allocation event number", ylabel="Tracked object ID", title=f"Object lifetimes of {sys.argv[1]}")
+
+
+def plot_unsorted_groups(objs, ax):
+	ax[0].set(ylabel="Similar objects in lifetime")
+	ax[1].set(ylabel="Other objects in lifetime")
+	ax[2].set(xlabel="Tracked object ID", ylabel="Lifetime")
+	for num, obj in enumerate(objs):
+		ax[2].plot([num, num], [0, obj.dealloc_time - obj.alloc_time])
+		for x in range(len(objs)):
+			if x == num:
+				continue
+			else:
+				if objs[x].alloc_time < obj.dealloc_time and objs[x].alloc_time > obj.alloc_time:
+					obj.unique_objects_in_lifetime += 1
+					if objs[x].size == obj.size:
+						obj.similar_objects_in_lieftime += 1
+		ax[1].plot([num, num], [0, obj.unique_objects_in_lifetime])
+		ax[0].plot([num, num], [0, obj.similar_objects_in_lieftime])
+
+
+def plot_obj_groups(objs, axis):
+	pass
+
 
 def main():
 	if len(sys.argv) != 2:
@@ -126,17 +157,15 @@ def main():
 			track_obj(address, op, size, num)
 			final_event = num
 
+	sort_by_init = sorted(objects.values(), key=lambda x: x.alloc_time)
 	fig, ax = plt.subplots()
-
-	sorted_list = sorted(objects.values(), key=lambda x: x.alloc_time)
-	for num, obj in enumerate(sorted_list):
-		if obj.dealloc_time is None:
-			print(f"Object @ {hex(obj.address)} was never freed!")
-			final_event += 1
-			obj.dealloc_time = final_event
-		plot_obj(obj, num, ax)
-	ax.set(xlabel="Allocation event number", ylabel="Tracked object ID", title=f"Object lifetimes of {sys.argv[1]}")
+	plot_obj_cascading(sort_by_init, final_event, ax)
 	plt.show()
+
+	fig, ax = plt.subplots(3, 1)
+	plot_unsorted_groups(sort_by_init, ax)
+	plt.show()
+
 
 if __name__ == "__main__":
 	main()
