@@ -42,7 +42,9 @@ def parse_log_line(line, num):
 
 
 def remap_obj(address, size, num):
-	new_hash = random.random
+	new_hash = random.random()
+	while objects.get(new_hash) is not None:
+		new_hash = random.random()
 	objects[new_hash] = objects[address]
 	objects[address] = MemObject(address, size, num)
 
@@ -125,6 +127,7 @@ def main():
 			final_event = num
 
 	fig, ax = plt.subplots()
+	# TODO sort objects first to make graph easier to read
 	for num, obj in enumerate(objects.values()):
 		if obj.dealloc_time is None:
 			print(f"Object @ {hex(obj.address)} was never freed!")
