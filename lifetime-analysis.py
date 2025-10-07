@@ -117,12 +117,11 @@ def plot_obj_cascading(objs, final_event, axis):
 	axis.set(xlabel="Allocation event number", ylabel="Tracked object ID", title=f"Object lifetimes of {sys.argv[1]}")
 
 
-def plot_unsorted_groups(objs, ax):
-	ax[0].set(ylabel="Similar objects in lifetime")
-	ax[1].set(ylabel="Other objects in lifetime")
-	ax[2].set(xlabel="Tracked object ID", ylabel="Lifetime")
+def plot_unsorted_groups(objs, final_event, ax):
+	ax[0].set(ylabel="Other objects in lifetime")
+	ax[1].set(xlabel="Tracked object ID", ylabel="Lifetime")
 	for num, obj in enumerate(objs):
-		ax[2].plot([num, num], [0, obj.dealloc_time - obj.alloc_time])
+		ax[1].plot([num, num], [0, obj.dealloc_time - obj.alloc_time])
 		for x in range(len(objs)):
 			if x == num:
 				continue
@@ -131,12 +130,14 @@ def plot_unsorted_groups(objs, ax):
 					obj.unique_objects_in_lifetime += 1
 					if objs[x].size == obj.size:
 						obj.similar_objects_in_lieftime += 1
-		ax[1].plot([num, num], [0, obj.unique_objects_in_lifetime])
-		ax[0].plot([num, num], [0, obj.similar_objects_in_lieftime])
-
-
-def plot_obj_groups(objs, axis):
-	pass
+		if (obj.dealloc_time - obj.alloc_time) * 0.1 > final_event - obj.dealloc_time:
+			ax[0].plot([num, num], [0, obj.unique_objects_in_lifetime], color='green')
+		else:
+			ax[0].plot([num, num], [0, obj.unique_objects_in_lifetime], color='olive')
+		ax[0].plot([num, num], [0, obj.similar_objects_in_lieftime], color='blue')
+		if obj.unique_objects_in_lifetime - obj.similar_objects_in_lieftime == 0:
+			# obj is temp or short
+			ax[0].plot(num, 0, '.r')
 
 
 def main():
@@ -162,8 +163,8 @@ def main():
 	plot_obj_cascading(sort_by_init, final_event, ax)
 	plt.show()
 
-	fig, ax = plt.subplots(3, 1)
-	plot_unsorted_groups(sort_by_init, ax)
+	fig, ax = plt.subplots(2, 1)
+	plot_unsorted_groups(sort_by_init, final_event, ax)
 	plt.show()
 
 
