@@ -140,11 +140,12 @@ def plot_unsorted_groups(objs, final_event, ax):
 			ax[0].plot(num, 0, '.r')
 
 
-def main():
+def arg_check():
 	if len(sys.argv) != 2:
 		print("Incorrect number of arguments. Please pass the path to a trace file")
 		exit()
 
+def parse_file():
 	final_event = 0
 	with open(sys.argv[1], 'r') as log_file:
 		random.seed()
@@ -158,15 +159,20 @@ def main():
 			track_obj(address, op, size, num)
 			final_event = num
 
+	return final_event
+
+def plot_memory(final_event):
 	sort_by_init = sorted(objects.values(), key=lambda x: x.alloc_time)
 	fig, ax = plt.subplots()
 	plot_obj_cascading(sort_by_init, final_event, ax)
 	plt.show()
 
 	fig, ax = plt.subplots(2, 1)
+	sort_by_init = sorted(sort_by_init, key=lambda x: x.dealloc_time - x.alloc_time)
 	plot_unsorted_groups(sort_by_init, final_event, ax)
 	plt.show()
 
-
 if __name__ == "__main__":
-	main()
+	arg_check()
+	final_event = parse_file()
+	plot_memory(final_event)
