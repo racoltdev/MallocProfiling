@@ -1,4 +1,6 @@
 .cachedVenv
 venv
 .venv
-racoltest
+racoltest/
+gcc/
+__pycache__/
