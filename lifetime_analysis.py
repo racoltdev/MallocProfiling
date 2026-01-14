@@ -24,7 +24,7 @@ def parse_log_line(line, num):
 	line = line.split()
 	op = line[2]
 	if len(op) != 1 or op not in valid_ops:
-		print(f"Warning! Could not parse line {num}:")
+		print(f"Error: Could not parse line {num}:")
 		print(f"\t{line}")
 	try:
 		address = int(line[3], 16)
@@ -55,19 +55,20 @@ def track_obj(address, op, size, num):
 	tracked_obj = objects.get(address)
 	if tracked_obj is None:
 		if op == "<":
-			# pointer realloc'd before being assigned. ignore this
-			print("warn: pointer realloc'd before being assigned @ {hex(address)}, :{num}")
-			pass
+			# realloc((void*)null, (int)x) isn't an error, but mtrace should not write "<" in this case. "+" is preferable.
+			print(f"""Error: pointer realloc'd before being assigned @ {hex(address)}, :{num}\n
+\tThere is an error in your log file, tracer, or allocator!""")
+		elif op == '-':
+			print(f"Warn: object free'd before being assigned @ {hex(address)}, :{num}")
+		elif op == "!":
+			print(f"Info: realloc failed on null pointer, {num}")
 		else:
 			objects[address] = MemObject(address, size, num)
-			if op == '-' or op == "!":
-				objects[address].dealloc_time = num
 	else:
 		# Free or null ptr assignment
 		if op == "-":
-			# reusing already freed memory
 			if tracked_obj.dealloc_time:
-				remap_obj(address, size, num)
+				print(f"Warn: double freeing @ {hex(address)}, :{num}")
 			else:
 				tracked_obj.dealloc_time = num
 		# Alloc
@@ -76,20 +77,17 @@ def track_obj(address, op, size, num):
 				# reusing already freed memory
 				remap_obj(address, size, num)
 			else:
-				# error: double assigning memory. do not track this
+				# error: double assigning memory. Do not track this
 				print(f"Warn: double assigning memory @ {hex(address)}, :{num}")
-				pass
 		# Alloc fail
 		elif op == "!":
-			# realloc failed. ignore
-			print("realloc failed")
-			pass
+			# realloc failed. Don't track
+			print(f"Info: realloc failed @ {hex(address)} to size {hex(size)}, :{num}")
 		# ptr realloc'd
 		elif op == "<":
 			if tracked_obj.dealloc_time:
-				# double freeing. ignore
-				print("Warn:double freeing @ {hex(address)}, :{num}")
-				pass
+				# double freeing. Don't track
+				print("Warn: double freeing @ {hex(address)}, :{num}")
 			else:
 				tracked_obj.dealloc_time = num
 		# new address from realloc
@@ -98,9 +96,8 @@ def track_obj(address, op, size, num):
 				# reusing already freed memory
 				remap_obj(address, size, num)
 			else:
-				# error: double assigning memory. do not track this
+				# double assigning memory. do not track this
 				print("Warn: double assigning memory @ {hex(address)}, :{num}")
-				pass
 
 
 def plot_obj_cascading(objs, final_event, axis):
@@ -142,7 +139,7 @@ def plot_unsorted_groups(objs, final_event, ax):
 
 def arg_check():
 	if len(sys.argv) != 2:
-		print("Incorrect number of arguments. Please pass the path to a trace file")
+		print("Error: Incorrect number of arguments. Please pass the path to a trace file")
 		exit()
 
 def parse_file():
@@ -151,7 +148,7 @@ def parse_file():
 		random.seed()
 		header = log_file.readline()
 		if header != "= Start\n":
-			print("Argument error! Supplied file is not an mtrace logfile")
+			print("Error: Argument error! Supplied file is not an mtrace logfile")
 			exit()
 
 		for num, line in enumerate(log_file, 1):
