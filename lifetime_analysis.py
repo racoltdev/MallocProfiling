@@ -10,6 +10,7 @@ import random
 objects = {}
 valid_ops = ['-', '+', '!', '>', '<']
 
+# TODO Fix class vs instance vars
 class MemObject:
 	dealloc_time = None
 	unique_objects_in_lifetime = 0
@@ -32,6 +33,7 @@ def parse_log_line(line, num):
 		if len(line) == 5:
 			size = int(line[4], 16)
 	except:
+		# TODO this was an error in the log file. This handling shouldn't exist
 		# Sometimes you'll see a line like
 		# `@ ./raColTest:[0xecac] - + 0x5591547cd7f0 0x55`
 		# The first sign seems to be an offset direction marker. Hard to tell. I think only the second one is useful to me
@@ -61,7 +63,7 @@ def track_obj(address, op, size, num):
 		elif op == '-':
 			print(f"Warn: object free'd before being assigned @ {hex(address)}, :{num}")
 		elif op == "!":
-			print(f"Info: realloc failed on null pointer, {num}")
+			print(f"Info: realloc failed on null pointer, :{num}")
 		else:
 			objects[address] = MemObject(address, size, num)
 	else:

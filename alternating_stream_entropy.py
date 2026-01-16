@@ -1,6 +1,7 @@
 import math
 import lifetime_analysis
 
+# TODO fix class vs instance vars
 class MemoryBlock:
 	start_address = None
 	end_address = None
@@ -32,7 +33,7 @@ def extend_list(memory_snapshot, index, offset):
 		memory_snapshot.extend([None] * delta)
 
 def construct_memory(MemoryObjects, event):
-	memory_snapshot = []
+	memory_snapshot = {}
 	sort_by_init = sorted(MemoryObjects.values(), key=lambda x: x.alloc_time)
 	lowest_address = -1
 	highest_address = -1
@@ -50,11 +51,12 @@ def construct_memory(MemoryObjects, event):
 		if mem_object.alloc_time <= event and end_in_range:
 			start_address = mem_object.address
 			end_address = start_address + mem_object.size - 1
-			extend_list(memory_snapshot, end_address, lowest_address)
-			memory_snapshot[start_address - lowest_address] = MemoryBlock(start_address, end_address, alloc=True)
-		# mtrace doesn't give information about coallescing, so I'll just assume perfect coalescing for now
-		# Can modify this to assume worst case coalescing by creating individual free blocks for each item deallocated prior to event
 
+			memory_snapshot[start_address - lowest_address] = MemoryBlock(start_address, end_address, alloc=True)
+
+	# mtrace doesn't give information about coallescing, so I'll just assume perfect coalescing for now.
+	# Can modify this to assume worst case coalescing by creating individual free blocks for each item
+	# deallocated prior to event.
 	for i in range(len(memory_snapshot)):
 		i_word = memory_snapshot[i]
 		if not i_word:
@@ -77,6 +79,3 @@ if __name__ == "__main__":
 	final_event = lifetime_analysis.parse_file()
 	MemoryObjects = lifetime_analysis.objects
 	memory_snapshot = construct_memory(MemoryObjects, event=4)
-	for word in memory_snapshot:
-		#print(word)
-		continue
