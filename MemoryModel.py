@@ -9,9 +9,9 @@ import numpy
 #
 # With some intelligence, this could even model the actual paging system used when the trace was collected.
 class MemorySnapshot:
-	_system_ptr_size = numpy.uintp().itemsize
+	_SYSTEM_PTR_SIZE = numpy.uintp().itemsize
 
-	def __init__(self, max_depth=1, page_size=(8 * _system_ptr_size), verify=True):
+	def __init__(self, max_depth=1, page_size=(8 * _SYSTEM_PTR_SIZE), verify=True):
 		if max_depth < 1:
 			raise ValueError(f"max_depth of {type(self).__name__} cannot be less than 1")
 		if page_size < 2:
@@ -38,9 +38,13 @@ class MemorySnapshot:
 
 		for depth in range(max_depth):
 			page_addr = self.align_to_page(address, depth)
-			new_page = parent_page.get(page_addr, {})
-			if new_page == {}:
-				parent_page[page_addr] = new_page
+			new_page = parent_page.get(page_addr)
+			if new_page is None:
+				if depth == max_depth - 1:
+					new_page = numpy.uintp(0)
+				else:
+					new_page = {}
+			parent_page[page_addr] = new_page
 			parent_page = new_page
 		return parent_page
 
@@ -48,13 +52,34 @@ class MemorySnapshot:
 		start_page_address = self.align_to_page(start_address, self.max_depth - 1)
 		return [self.get_page(x) for x in range(start_page_address, end_address + 1, self.page_size)]
 
+	# This breaks convention!!!!! range is inclusive, inclusive
 	def malloc(self, start_address, end_address):
 		if (self.VERIFY):
 			valid = True
 			pages_to_verify = self.get_pages_in_range(start_address, end_address)
 
+			# can probable make this better with bit shifting, but this works
 			start_page = pages_to_verify[0]
-			page_begin_offset = start_address - self.align_to_page(start_address, self.max_depth - 1)
+			start_page_address = self.align_to_page(start_address, self.max_depth - 1)
+			page_begin_offset = start_address - start_page_address
+			# bit mask that is 0 until the page_begin_offset bit
+			start_bit_mask = numpy.uintp(2 ** (self.page_size - page_begin_offset) - 1)
+
+			page_end_offset = end_address - self.align_to_page(end_address, self.max_depth - 1)
+			# bit mask that is 1 until the page_end_offset bit
+			end_bit_mask = ~ numpy.uintp(2 ** (self.page_size - 1 - page_end_offset) - 1)
+
+			if len(pages_to_verify) > 1:
+				pass
+			else:
+				bit_mask = start_bit_mask & end_bit_mask
+				if start_page & ~bit_mask != start_page:
+					err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
+					print(err.format(int(start_address), int(end_address)))
+
+				start_page |= bit_mask
+				parent_page = self.get_page(start_address, max_depth=self.max_depth - 1)
+				parent_page[start_page_address] = start_page
 
 
 
