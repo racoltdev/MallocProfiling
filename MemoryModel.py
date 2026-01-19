@@ -1,7 +1,7 @@
 import numpy
 
 # can verify memory with a chunk based bit map. Each range of memory addresses has a unique
-# bit map, and each bit represents one byte. Each chunk 63 bits. Can make multilayered if needed.
+# bit map, and each bit represents one byte. Each chunk 64 bits. Can make multilayered if needed.
 # query with an address, address converted to chunk address like memalign, chunk addr looked up
 # in a sparse structure like a dict, bit wise compare mapped addresses vs addresses about to be mapped.
 #
@@ -28,52 +28,34 @@ class MemorySnapshot:
 
 	def align_to_page(self, address, depth):
 		page_addr = address - (address % self.total_page_bytes(depth))
-		print(self.total_page_bytes(depth))
 		return page_addr
 
 	def get_page(self, address, max_depth=None):
 		if max_depth is None:
 			max_depth = self.max_depth
 
-		page = self.pages
+		parent_page = self.pages
+
 		for depth in range(max_depth):
 			page_addr = self.align_to_page(address, depth)
-			new_page = page.get(page_addr, {})
+			new_page = parent_page.get(page_addr, {})
 			if new_page == {}:
-				page[page_addr] = new_page
-			page = new_page
-		return page
+				parent_page[page_addr] = new_page
+			parent_page = new_page
+		return parent_page
+
+	def get_pages_in_range(self, start_address, end_address):
+		start_page_address = self.align_to_page(start_address, self.max_depth - 1)
+		return [self.get_page(x) for x in range(start_page_address, end_address + 1, self.page_size)]
 
 	def malloc(self, start_address, end_address):
 		if (self.VERIFY):
-			start_page = self.pages
-			end_page = self.pages
-			start_page_addr, end_page_addr = 0, 0
-			nearest_shared_parent = self.pages
-			pages_to_verify = [self.pages]
-			depth = 0
+			valid = True
+			pages_to_verify = self.get_pages_in_range(start_address, end_address)
 
-			while True:
-				pass
-				#for page in pages_to_verify:
-				#	
-
-				#total_page_bytes = self.total_page_bytes(depth)
-				#pages_to_verify = [x for x in range(start_page_addr, end_page_addr + 1, total_page_bytes)]
+			start_page = pages_to_verify[0]
+			page_begin_offset = start_address - self.align_to_page(start_address, self.max_depth - 1)
 
 
-			for depth in range(0, self.max_depth):
-				start_page_addr = self.align_to_page(start_address, depth)
-				print(start_page_addr)
-				start_page = start_page.get(start_page_addr, {})
-
-				end_page_addr = self.align_to_page(end_address, depth)
-				print(end_page_addr)
-				end_page = end_page.get(end_page_addr, {})
-
-				total_page_bytes = self.total_page_bytes(depth)
-				pages_to_verify = [x for x in range(start_page_addr, end_page_addr + 1, total_page_bytes)]
-
-				print(pages_to_verify)
 
 	# If python doesn't check a list is sorted before sorting, this can be optimized
