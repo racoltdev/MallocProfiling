@@ -52,10 +52,19 @@ class MemorySnapshot:
 		start_page_address = self.align_to_page(start_address, self.max_depth - 1)
 		return [self.get_page(x) for x in range(start_page_address, end_address + 1, self.page_size)]
 
+	def _update_page(self, page, bit_mask, start_address, page_address=None):
+		if page_address is None:
+			page_address = self.align_to_page(start_address, self.max_depth - 1)
+
+		page |= bit_mask
+		parent_page = self.get_page(start_address, max_depth=self.max_depth - 1)
+		parent_page[page_address] = page
+
 	# This breaks convention!!!!! range is inclusive, inclusive
 	def malloc(self, start_address, end_address):
+		valid = True
+
 		if (self.VERIFY):
-			valid = True
 			pages_to_verify = self.get_pages_in_range(start_address, end_address)
 
 			# can probable make this better with bit shifting, but this works
@@ -65,22 +74,51 @@ class MemorySnapshot:
 			# bit mask that is 0 until the page_begin_offset bit
 			start_bit_mask = numpy.uintp(2 ** (self.page_size - page_begin_offset) - 1)
 
-			page_end_offset = end_address - self.align_to_page(end_address, self.max_depth - 1)
+			end_page_address = self.align_to_page(end_address, self.max_depth - 1)
+			page_end_offset = end_address - end_page_address
 			# bit mask that is 1 until the page_end_offset bit
 			end_bit_mask = ~ numpy.uintp(2 ** (self.page_size - 1 - page_end_offset) - 1)
 
 			if len(pages_to_verify) > 1:
-				pass
+				if start_page & ~start_bit_mask != start_page:
+					err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
+					print(err.format(int(start_address), start_page_address + self.page_size))
+					valid = False
+
+				self._update_page(start_page, start_bit_mask, start_address, start_page_address)
+
+				end_page = pages_to_verify[-1]
+				if end_page & ~end_bit_mask != end_page:
+					err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
+					print(err.format(int(end_address), end_page_address + self.page_size))
+					valid = False
+
+				self._update_page(end_page, end_bit_mask, end_address, end_page_address)
+
+				for i, p in enumerate(pages_to_verify[1:-1]):
+					uintp_max = numpy.iinfo(numpy.uintp()).max
+					bitmask = numpy.uintp(uintp_max)
+					addr_offset = (i + 1) * self.page_size
+					range_start = start_page_address + addr_offset
+					if p & ~bitmask != p:
+						err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
+						err_range_end = range_start + self.page_size - 1
+						print(err.format(range_start, err_range_end))
+						valid = False
+
+					self._update_page(p, bitmask, range_start, range_start)
+
 			else:
 				bit_mask = start_bit_mask & end_bit_mask
 				if start_page & ~bit_mask != start_page:
 					err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
 					print(err.format(int(start_address), int(end_address)))
+					valid = False
 
 				start_page |= bit_mask
 				parent_page = self.get_page(start_address, max_depth=self.max_depth - 1)
 				parent_page[start_page_address] = start_page
 
-
+		return valid
 
 	# If python doesn't check a list is sorted before sorting, this can be optimized
