@@ -1,16 +1,13 @@
 import numpy
 
-# can verify memory with a chunk based bit map. Each range of memory addresses has a unique
-# bit map, and each bit represents one byte. Each chunk 64 bits. Can make multilayered if needed.
-# query with an address, address converted to chunk address like memalign, chunk addr looked up
-# in a sparse structure like a dict, bit wise compare mapped addresses vs addresses about to be mapped.
-#
-# This also produces a pre-sorted data structure. Any serious implementation should do this.
-#
-# With some intelligence, this could even model the actual paging system used when the trace was collected.
+# A sparse and efficient structure for modeling memory usage at a given point in time and verifying
+# there is no overlap between allocated blocks.
+# Supports multilevel paging to partially model realistic memory structures. Could be modified in the future
+# to emulate more features of real memory.
 class MemorySnapshot:
 	_SYSTEM_PTR_SIZE = numpy.uintp().itemsize
 
+	# TODO page_size other than 64 doesn't work
 	def __init__(self, max_depth=1, page_size=(8 * _SYSTEM_PTR_SIZE), verify=True):
 		if max_depth < 1:
 			raise ValueError(f"max_depth of {type(self).__name__} cannot be less than 1")
@@ -60,13 +57,13 @@ class MemorySnapshot:
 		parent_page = self.get_page(start_address, max_depth=self.max_depth - 1)
 		parent_page[page_address] = page
 
-	# This breaks convention!!!!! range is inclusive, inclusive
-	# TODO replace end_address with a length instead so inclusive, exclusive notation is more natural
-	def malloc(self, start_address, end_address):
+	def malloc(self, start_address, length):
 		valid = True
+		end_address = start_address + length - 1
+
 		if self.alloc_blocks.get(start_address) is not None:
 			print("[MemoryModel] Warn: Allocation table mangled by double allocation @ {0:#016x}".format(start_address))
-		self.alloc_blocks[start_address] = end_address
+		self.alloc_blocks[start_address] = length
 
 		if (self.VERIFY):
 			pages_to_verify = self.get_pages_in_range(start_address, end_address)
