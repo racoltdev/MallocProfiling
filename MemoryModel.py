@@ -21,7 +21,7 @@ class MemorySnapshot:
 		self.max_depth = max_depth
 		self.page_size = page_size
 		self.pages = {}
-		self.blocks = {}
+		self.alloc_blocks = {}
 
 	def total_page_bytes(self, depth):
 		return self.page_size ** (self.max_depth - depth)
@@ -61,13 +61,17 @@ class MemorySnapshot:
 		parent_page[page_address] = page
 
 	# This breaks convention!!!!! range is inclusive, inclusive
+	# TODO replace end_address with a length instead so inclusive, exclusive notation is more natural
 	def malloc(self, start_address, end_address):
 		valid = True
+		if self.alloc_blocks.get(start_address) is not None:
+			print("[MemoryModel] Warn: Allocation table mangled by double allocation @ {0:#016x}".format(start_address))
+		self.alloc_blocks[start_address] = end_address
 
 		if (self.VERIFY):
 			pages_to_verify = self.get_pages_in_range(start_address, end_address)
 
-			# can probable make this better with bit shifting, but this works
+			# can probably make this better with bit shifting, but this works
 			start_page = pages_to_verify[0]
 			start_page_address = self.align_to_page(start_address, self.max_depth - 1)
 			page_begin_offset = start_address - start_page_address
@@ -115,10 +119,6 @@ class MemorySnapshot:
 					print(err.format(int(start_address), int(end_address)))
 					valid = False
 
-				start_page |= bit_mask
-				parent_page = self.get_page(start_address, max_depth=self.max_depth - 1)
-				parent_page[start_page_address] = start_page
+				self._update_page(start_page, bit_mask, start_address, start_page_address)
 
 		return valid
-
-	# If python doesn't check a list is sorted before sorting, this can be optimized

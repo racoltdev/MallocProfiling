@@ -4,3 +4,4 @@ venv
 racoltest/
 gcc/
 __pycache__/
+.coverage

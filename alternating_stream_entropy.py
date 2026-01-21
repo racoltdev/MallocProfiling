@@ -1,5 +1,8 @@
 import math
+import numpy
+
 import lifetime_analysis
+from MemoryModel import MemorySnapshot
 
 # TODO fix class vs instance vars
 class MemoryBlock:
@@ -22,24 +25,15 @@ def entropy(memory_stream):
 		sum_entropy += frac * (math.log(abs(frac)))
 	return -sum_entropy
 
-def extend_list(memory_snapshot, index, offset):
-	print(index)
-	print(offset)
-	print(len(memory_snapshot))
-	index -= offset
-	if index >= len(memory_snapshot):
-		delta = index - len(memory_snapshot) - 1
-		print(delta)
-		memory_snapshot.extend([None] * delta)
-
 def construct_memory(MemoryObjects, event):
-	memory_snapshot = {}
+	memory_snapshot = MemorySnapshot()
 	sort_by_init = sorted(MemoryObjects.values(), key=lambda x: x.alloc_time)
 	lowest_address = -1
 	highest_address = -1
 	for mem_object in sort_by_init:
 		if lowest_address == -1 or mem_object.address < lowest_address:
 			lowest_address = mem_object.address
+		# TODO every allocated object should have size. Double check this
 		if mem_object.size and (highest_address == -1 or (mem_object.address + mem_object.size - 1) > highest_address):
 			highest_address = mem_object.address + mem_object.size - 1
 	print(hex(lowest_address), hex(highest_address))
@@ -51,9 +45,19 @@ def construct_memory(MemoryObjects, event):
 		if mem_object.alloc_time <= event and end_in_range:
 			start_address = mem_object.address
 			end_address = start_address + mem_object.size - 1
+			print("{0:#016x}, {1:#016x}".format(start_address, end_address))
+			# Ignore any validation errors for now. Notifying in console is good enough
+			memory_snapshot.malloc(start_address, end_address)
 
-			memory_snapshot[start_address - lowest_address] = MemoryBlock(start_address, end_address, alloc=True)
+	# no more allocations will occur. allocation list can be sorted and the memory model can be discarded
+	memory_snapshot.alloc_blocks = dict(sorted(memory_snapshot.alloc_blocks.items()))
 
+	print(memory_snapshot.alloc_blocks)
+	print(memory_snapshot.pages)
+	keys = list(memory_snapshot.alloc_blocks.keys())
+	end = memory_snapshot.alloc_blocks.get(keys[-1])
+	print([numpy.binary_repr(x, width=64) for x in memory_snapshot.get_pages_in_range(keys[0], end)])
+	exit()
 	# mtrace doesn't give information about coallescing, so I'll just assume perfect coalescing for now.
 	# Can modify this to assume worst case coalescing by creating individual free blocks for each item
 	# deallocated prior to event.
