@@ -117,6 +117,8 @@ def plot_obj_cascading(objs, final_event, axis):
 
 
 def plot_unsorted_groups(objs, final_event, ax):
+	# ax[0] tracks number of objects whose lifetime starts and ends within the lifetime of the target object
+	# this does not track the number of objects that simply existed during the targets lifetime
 	ax[0].set(ylabel="Other objects in lifetime")
 	ax[1].set(xlabel="Tracked object ID", ylabel="Lifetime")
 	for num, obj in enumerate(objs):

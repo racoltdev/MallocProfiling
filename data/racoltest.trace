@@ -1,0 +1,1469 @@
+= Start
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0xafb8e] + 0x563f4689c2a0 0x12000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468ae490 0x11
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468ae4b0 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468ae4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468ae6b0 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ ./raColTest:[0x9589] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0800 0x68
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x40
+@ ./raColTest:[0x989a] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b08c0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0920 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b0920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0940 0x80
+@ ./raColTest:[0x989a] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b09d0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0920 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b0920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a30 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0920 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b0920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0920 0x15
+@ ./raColTest:[0x989a] - 0x563f468b0940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0bc0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c20 0x15
+@ ./raColTest:[0x99e6] - 0x563f468b0a90
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c40 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ ./raColTest:[0x9ab0] - 0x563f468b06c0
+@ ./raColTest:[0x5a4c] - 0x563f468ae4b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x563f468ae4b0 0xc
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x563f468ae6b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468ae4d0
+@ ./raColTest:[0x8d2d] - 0x563f468b0a30
+@ ./raColTest:[0x8d2d] - 0x563f468b09d0
+@ ./raColTest:[0x8d2d] - 0x563f468b08c0
+@ ./raColTest:[0x8d2d] - 0x563f468b0c40
+@ ./raColTest:[0x8d20] - 0x563f468b0c20
+@ ./raColTest:[0x8d2d] - 0x563f468b0bc0
+@ ./raColTest:[0x8d2d] - 0x563f468b07a0
+@ ./raColTest:[0x8f42] - 0x563f468b0920
+@ ./raColTest:[0x663c] - 0x563f468b0ab0
+@ ./raColTest:[0x8d99] - 0x563f468b0800
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468ae6b0 0x400
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0920 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468ae4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ca0 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ ./raColTest:[0x9589] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0800 0x68
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x40
+@ ./raColTest:[0x989a] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0bc0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c20 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b0c20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0940 0x80
+@ ./raColTest:[0x989a] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c40 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c20 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b0c20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b08c0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c20 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b0c20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c20 0x15
+@ ./raColTest:[0x989a] - 0x563f468b0940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b09d0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x15
+@ ./raColTest:[0x99e6] - 0x563f468b0a90
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a30 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ ./raColTest:[0x9ab0] - 0x563f468b06c0
+@ ./raColTest:[0x5a4c] - 0x563f468b0920
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x563f468b0920 0x6
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x563f468b0ca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468ae4d0
+@ ./raColTest:[0x8d2d] - 0x563f468b08c0
+@ ./raColTest:[0x8d2d] - 0x563f468b0c40
+@ ./raColTest:[0x8d2d] - 0x563f468b0bc0
+@ ./raColTest:[0x8d2d] - 0x563f468b0a30
+@ ./raColTest:[0x8d20] - 0x563f468aeac0
+@ ./raColTest:[0x8d2d] - 0x563f468b09d0
+@ ./raColTest:[0x8d2d] - 0x563f468b07a0
+@ ./raColTest:[0x8f42] - 0x563f468b0c20
+@ ./raColTest:[0x663c] - 0x563f468b0ab0
+@ ./raColTest:[0x8d99] - 0x563f468b0800
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0800 0x68
+@ /lib/x86_64-linux-gnu/libc.so.6:[0xdc922] + 0x563f468b0ca0 0x8030
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeae0 0x68
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0940 0x88
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeb50 0x1e0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aed40 0x68
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aedb0 0x98
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x192ea2] - 0x563f468aed40
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aed40 0x68
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b83] - 0x563f468aedb0
+@ ./raColTest:[0xb559] - 0x563f468b0800
+@ /lib/x86_64-linux-gnu/libc.so.6:[0xdc922] + 0x563f468b8ce0 0x8030
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0800 0x68
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aee50 0x68
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aedb0 0x98
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x192ea2] - 0x563f468aee50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x19
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeec0 0x98
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b83] - 0x563f468aedb0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b9b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5e)[0x102bae] + 0x563f468aef60 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5eb)[0x10313b] < 0x563f468aef60
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5eb)[0x10313b] > 0x563f468aef60 0x3e
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x3e
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aefb0 0x188
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c20 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt10filesystem12current_pathB5cxx11ERSt10error_code+168)[0x18a6e8] - 0x563f468aef60
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af140 0x7b
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm+62)[0x151d82] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af1d0 0x248
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x192ea2] - 0x563f468aefb0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x57
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNKSt10filesystem7__cxx114path5_List13_Impl_deleterclEPNS2_5_ImplE+6b)[0x1915fb] - 0x563f468b0c20
+@ ./raColTest:[0xb782] - 0x563f468af1d0
+@ ./raColTest:[0xb79f] - 0x563f468af140
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b09d0 0x57
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a30 0x57
+@ ./raColTest:[0xb8e4] - 0x563f468b0a30
+@ ./raColTest:[0xb905] - 0x563f468b07a0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aee50 0x68
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aedb0 0x98
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x192ea2] - 0x563f468aee50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c20 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af420 0x98
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b1e] - 0x563f468aeec0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b71] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b83] - 0x563f468aedb0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b9b] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5e)[0x102bae] + 0x563f468af4c0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5eb)[0x10313b] < 0x563f468af4c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5eb)[0x10313b] > 0x563f468af4c0 0x3e
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x3e
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aefb0 0x188
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt10filesystem12current_pathB5cxx11ERSt10error_code+168)[0x18a6e8] - 0x563f468af4c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af140 0x7b
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm+62)[0x151d82] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af1d0 0x248
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x192ea2] - 0x563f468aefb0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x56
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNKSt10filesystem7__cxx114path5_List13_Impl_deleterclEPNS2_5_ImplE+6b)[0x1915fb] - 0x563f468aeac0
+@ ./raColTest:[0xb782] - 0x563f468af1d0
+@ ./raColTest:[0xb79f] - 0x563f468af140
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x40
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a30 0x56
+@ ./raColTest:[0xbc00] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0bc0 0x56
+@ ./raColTest:[0xb8e4] - 0x563f468b0bc0
+@ ./raColTest:[0xb905] - 0x563f468b07a0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aee50 0x68
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aedb0 0x98
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x192ea2] - 0x563f468aee50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x1d
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeec0 0x98
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b1e] - 0x563f468af420
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b71] - 0x563f468b0c20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b83] - 0x563f468aedb0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b9b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5e)[0x102bae] + 0x563f468af510 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5eb)[0x10313b] < 0x563f468af510
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5eb)[0x10313b] > 0x563f468af510 0x3e
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af4c0 0x3e
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aefb0 0x188
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c20 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt10filesystem12current_pathB5cxx11ERSt10error_code+168)[0x18a6e8] - 0x563f468af510
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af140 0x7b
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm+62)[0x151d82] - 0x563f468af4c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af1d0 0x248
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x192ea2] - 0x563f468aefb0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aee50 0x5b
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNKSt10filesystem7__cxx114path5_List13_Impl_deleterclEPNS2_5_ImplE+6b)[0x1915fb] - 0x563f468b0c20
+@ ./raColTest:[0xb782] - 0x563f468af1d0
+@ ./raColTest:[0xb79f] - 0x563f468af140
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af140 0x80
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af560 0x5b
+@ ./raColTest:[0xbc00] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af5d0 0x5b
+@ ./raColTest:[0xb8e4] - 0x563f468af5d0
+@ ./raColTest:[0xb905] - 0x563f468aee50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aee50 0x68
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aedb0 0x98
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x192ea2] - 0x563f468aee50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c20 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af420 0x98
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b1e] - 0x563f468aeec0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b71] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b83] - 0x563f468aedb0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184b9b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5e)[0x102bae] + 0x563f468af640 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5eb)[0x10313b] < 0x563f468af640
+@ /lib/x86_64-linux-gnu/libc.so.6:(getcwd+5eb)[0x10313b] > 0x563f468af640 0x3e
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x3e
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aefb0 0x188
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt10filesystem12current_pathB5cxx11ERSt10error_code+168)[0x18a6e8] - 0x563f468af640
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af690 0x7b
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7reserveEm+62)[0x151d82] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af1d0 0x248
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x192ea2] - 0x563f468aefb0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x56
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNKSt10filesystem7__cxx114path5_List13_Impl_deleterclEPNS2_5_ImplE+6b)[0x1915fb] - 0x563f468aeac0
+@ ./raColTest:[0xb782] - 0x563f468af1d0
+@ ./raColTest:[0xb79f] - 0x563f468af690
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0bc0 0x56
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c40 0x56
+@ ./raColTest:[0xb8e4] - 0x563f468b0c40
+@ ./raColTest:[0xb905] - 0x563f468b07a0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184c9f] - 0x563f468af420
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt10filesystem7__cxx1128recursive_directory_iterator9incrementERSt10error_code+dd)[0x18738d] - 0x563f468b0c20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt10filesystem7__cxx1128recursive_directory_iterator9incrementERSt10error_code+f1)[0x1873a1] - 0x563f468b0800
+@ /lib/x86_64-linux-gnu/libc.so.6:(closedir+d)[0xdc78d] - 0x563f468b8ce0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x184c9f] - 0x563f468aed40
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt10filesystem7__cxx1128recursive_directory_iterator9incrementERSt10error_code+f1)[0x1873a1] - 0x563f468aeae0
+@ /lib/x86_64-linux-gnu/libc.so.6:(closedir+d)[0xdc78d] - 0x563f468b0ca0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0x1844e1] - 0x563f468aeb50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt10filesystem7__cxx1128recursive_directory_iteratorD1Ev+59)[0x185149] - 0x563f468b0750
+@ ./raColTest:[0xb993] - 0x563f468b0940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c20 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468ae4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ca0 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeae0 0x68
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x40
+@ ./raColTest:[0x989a] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c40 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ ./raColTest:[0x9589] - 0x563f468aeac0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0940 0x80
+@ ./raColTest:[0x989a] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b08c0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ ./raColTest:[0x9589] - 0x563f468aeac0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af720 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ ./raColTest:[0x9589] - 0x563f468aeac0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x15
+@ ./raColTest:[0x989a] - 0x563f468b0940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af780 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af7e0 0x15
+@ ./raColTest:[0x99e6] - 0x563f468b0a90
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af800 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ ./raColTest:[0x9ab0] - 0x563f468b06c0
+@ ./raColTest:[0x5a4c] - 0x563f468b0c20
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x563f468b0c20 0x9
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x563f468b0ca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468ae4d0
+@ ./raColTest:[0x8d2d] - 0x563f468af720
+@ ./raColTest:[0x8d2d] - 0x563f468b08c0
+@ ./raColTest:[0x8d2d] - 0x563f468b0c40
+@ ./raColTest:[0x8d2d] - 0x563f468af800
+@ ./raColTest:[0x8d20] - 0x563f468af7e0
+@ ./raColTest:[0x8d2d] - 0x563f468af780
+@ ./raColTest:[0x8d2d] - 0x563f468b07a0
+@ ./raColTest:[0x8f42] - 0x563f468aeac0
+@ ./raColTest:[0x663c] - 0x563f468b0ab0
+@ ./raColTest:[0x8d99] - 0x563f468aeae0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af860 0xad
+@ ./raColTest:(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm+b8)[0x4742] - 0x563f468b09d0
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x563f468b09d0 0x56
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x563f468b0750 0x3e
+@ ./raColTest:[0xac90] + 0x563f468b06c0 0x19
+@ ./raColTest:[0xacb0] - 0x563f468b09d0
+@ ./raColTest:[0xacb8] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468ae4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ca0 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af920 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468af920
+@ ./raColTest:[0x9589] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b09d0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeae0 0x68
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af920 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468af920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x40
+@ ./raColTest:[0x989a] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af7e0 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468af7e0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0940 0x80
+@ ./raColTest:[0x989a] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af780 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af7e0 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468af7e0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af800 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af7e0 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468af7e0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af7e0 0x15
+@ ./raColTest:[0x989a] - 0x563f468b0940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c40 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af950 0x15
+@ ./raColTest:[0x99e6] - 0x563f468b0a90
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b08c0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ ./raColTest:[0x9ab0] - 0x563f468b0720
+@ ./raColTest:[0x7913] - 0x563f468aeac0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x563f468b0ca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468ae4d0
+@ ./raColTest:[0x8d2d] - 0x563f468af800
+@ ./raColTest:[0x8d2d] - 0x563f468af780
+@ ./raColTest:[0x8d2d] - 0x563f468b07a0
+@ ./raColTest:[0x8d2d] - 0x563f468b08c0
+@ ./raColTest:[0x8d20] - 0x563f468af950
+@ ./raColTest:[0x8d2d] - 0x563f468b0c40
+@ ./raColTest:[0x8d2d] - 0x563f468b09d0
+@ ./raColTest:[0x8f42] - 0x563f468af7e0
+@ ./raColTest:[0x8197] - 0x563f468b0ab0
+@ ./raColTest:[0x8d99] - 0x563f468aeae0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0xafb8e] + 0x5647196c02a0 0x12000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d2490 0x11
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d24b0 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x5647196d24d0 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d26b0 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d46c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d46f0 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4750 0x40
+@ testbin/primary/timeout:[0x86ea] - 0x5647196d4720
+@ testbin/primary/timeout:[0x9589] - 0x5647196d46f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d46f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d47a0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4800 0x68
+@ testbin/primary/timeout:[0x99d6] - 0x5647196d4750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4750 0x40
+@ testbin/primary/timeout:[0x86ea] - 0x5647196d4720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4870 0x40
+@ testbin/primary/timeout:[0x989a] - 0x5647196d46f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d48c0 0x50
+@ testbin/primary/timeout:[0x99d6] - 0x5647196d4750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4920 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d46f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4750 0x40
+@ testbin/primary/timeout:[0x86ea] - 0x5647196d46f0
+@ testbin/primary/timeout:[0x9589] - 0x5647196d4920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4940 0x80
+@ testbin/primary/timeout:[0x989a] - 0x5647196d4870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d49d0 0x50
+@ testbin/primary/timeout:[0x99d6] - 0x5647196d4750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4920 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d46f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4750 0x40
+@ testbin/primary/timeout:[0x86ea] - 0x5647196d46f0
+@ testbin/primary/timeout:[0x9589] - 0x5647196d4920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4a30 0x50
+@ testbin/primary/timeout:[0x99d6] - 0x5647196d4750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4920 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4a90 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d46f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4750 0x40
+@ testbin/primary/timeout:[0x86ea] - 0x5647196d46f0
+@ testbin/primary/timeout:[0x9589] - 0x5647196d4920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4ab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4920 0x15
+@ testbin/primary/timeout:[0x989a] - 0x5647196d4940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4bc0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4c20 0x15
+@ testbin/primary/timeout:[0x99e6] - 0x5647196d4a90
+@ testbin/primary/timeout:[0x99d6] - 0x5647196d4750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d46f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4750 0x40
+@ testbin/primary/timeout:[0x86ea] - 0x5647196d46f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5647196d4c40 0x50
+@ testbin/primary/timeout:[0x99d6] - 0x5647196d4750
+@ testbin/primary/timeout:[0x9ab0] - 0x5647196d46c0
+@ testbin/primary/timeout:[0x5a4c] - 0x5647196d24b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x5647196d24b0 0xc
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x5647196d26b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x5647196d24d0
+@ testbin/primary/timeout:[0x8d2d] - 0x5647196d4a30
+@ testbin/primary/timeout:[0x8d2d] - 0x5647196d49d0
+@ testbin/primary/timeout:[0x8d2d] - 0x5647196d48c0
+@ testbin/primary/timeout:[0x8d2d] - 0x5647196d4c40
+@ testbin/primary/timeout:[0x8d20] - 0x5647196d4c20
+@ testbin/primary/timeout:[0x8d2d] - 0x5647196d4bc0
+@ testbin/primary/timeout:[0x8d2d] - 0x5647196d47a0
+@ testbin/primary/timeout:[0x8f42] - 0x5647196d4920
+@ testbin/primary/timeout:[0x663c] - 0x5647196d4ab0
+@ testbin/primary/timeout:[0x8d99] - 0x5647196d4800
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x39f24] + 0x563f468aeac0 0x14
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x39f6a] + 0x563f468af7e0 0x2
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x39faf] - 0x563f468aeac0
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x39fb7] - 0x563f468af7e0
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468ae4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468b0ca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x563f468b0ca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468ae4d0
+@ ./raColTest:[0xbc4b] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468ae4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468af920 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468b0ca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468b1cb0 0x1000
+@ ./raColTest:[0xb11c] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x563f468b0ca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468ae4d0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x563f468b1cb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468af920
+@ /lib/x86_64-linux-gnu/libc.so.6:(fdopen+9e)[0x7e18e] + 0x563f468af920 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468b0ca0 0x1000
+@ ./raColTest:[0x39b9] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468afb00 0xab
+@ ./raColTest:(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm+b8)[0x4742] - 0x563f468b0a30
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x563f468b09d0 0x55
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x563f468b0750 0x3e
+@ ./raColTest:[0xac90] + 0x563f468af7e0 0x18
+@ ./raColTest:[0xacb0] - 0x563f468b09d0
+@ ./raColTest:[0xacb8] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468ae4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b1cb0 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b09d0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeae0 0x68
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x40
+@ ./raColTest:[0x989a] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ ./raColTest:[0x9589] - 0x563f468b0a90
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0940 0x80
+@ ./raColTest:[0x989a] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af780 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ ./raColTest:[0x9589] - 0x563f468b0a90
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af800 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a30 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ ./raColTest:[0x9589] - 0x563f468b0a90
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x15
+@ ./raColTest:[0x989a] - 0x563f468b0940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c40 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a50 0x15
+@ ./raColTest:[0x99e6] - 0x563f468b0a30
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b08c0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ ./raColTest:[0x9ab0] - 0x563f468b06c0
+@ ./raColTest:[0x7913] - 0x563f468aeac0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x563f468b1cb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468ae4d0
+@ ./raColTest:[0x8d2d] - 0x563f468af800
+@ ./raColTest:[0x8d2d] - 0x563f468af780
+@ ./raColTest:[0x8d2d] - 0x563f468b07a0
+@ ./raColTest:[0x8d2d] - 0x563f468b08c0
+@ ./raColTest:[0x8d20] - 0x563f468b0a50
+@ ./raColTest:[0x8d2d] - 0x563f468b0c40
+@ ./raColTest:[0x8d2d] - 0x563f468b09d0
+@ ./raColTest:[0x8f42] - 0x563f468b0a90
+@ ./raColTest:[0x8197] - 0x563f468b0ab0
+@ ./raColTest:[0x8d99] - 0x563f468aeae0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0xafb8e] + 0x55cca12492a0 0x12000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125b490 0x11
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125b4b0 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125b6b0 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d6c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d6f0 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d750 0x40
+@ testbin/primary/macros:[0x8c0a] - 0x55cca125d720
+@ testbin/primary/macros:[0x9aa9] - 0x55cca125d6f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d7a0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d800 0x68
+@ testbin/primary/macros:[0x9ef6] - 0x55cca125d750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d750 0x40
+@ testbin/primary/macros:[0x8c0a] - 0x55cca125d720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d870 0x40
+@ testbin/primary/macros:[0x9dba] - 0x55cca125d6f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d8c0 0x50
+@ testbin/primary/macros:[0x9ef6] - 0x55cca125d750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d920 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d750 0x40
+@ testbin/primary/macros:[0x8c0a] - 0x55cca125d6f0
+@ testbin/primary/macros:[0x9aa9] - 0x55cca125d920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d940 0x80
+@ testbin/primary/macros:[0x9dba] - 0x55cca125d870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d9d0 0x50
+@ testbin/primary/macros:[0x9ef6] - 0x55cca125d750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d920 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d750 0x40
+@ testbin/primary/macros:[0x8c0a] - 0x55cca125d6f0
+@ testbin/primary/macros:[0x9aa9] - 0x55cca125d920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125da30 0x50
+@ testbin/primary/macros:[0x9ef6] - 0x55cca125d750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d920 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125da90 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d750 0x40
+@ testbin/primary/macros:[0x8c0a] - 0x55cca125d6f0
+@ testbin/primary/macros:[0x9aa9] - 0x55cca125d920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125dab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d920 0x15
+@ testbin/primary/macros:[0x9dba] - 0x55cca125d940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125dbc0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125dc20 0x15
+@ testbin/primary/macros:[0x9f06] - 0x55cca125da90
+@ testbin/primary/macros:[0x9ef6] - 0x55cca125d750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125d750 0x40
+@ testbin/primary/macros:[0x8c0a] - 0x55cca125d6f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125dc40 0x50
+@ testbin/primary/macros:[0x9ef6] - 0x55cca125d750
+@ testbin/primary/macros:[0x9fd0] - 0x55cca125d6c0
+@ testbin/primary/macros:[0x5f6c] - 0x55cca125b4b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x55cca125b4b0 0xc
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x55cca125b6b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ testbin/primary/macros:[0x924d] - 0x55cca125da30
+@ testbin/primary/macros:[0x924d] - 0x55cca125d9d0
+@ testbin/primary/macros:[0x924d] - 0x55cca125d8c0
+@ testbin/primary/macros:[0x924d] - 0x55cca125dc40
+@ testbin/primary/macros:[0x9240] - 0x55cca125dc20
+@ testbin/primary/macros:[0x924d] - 0x55cca125dbc0
+@ testbin/primary/macros:[0x924d] - 0x55cca125d7a0
+@ testbin/primary/macros:[0x9462] - 0x55cca125d920
+@ testbin/primary/macros:[0x6b5c] - 0x55cca125dab0
+@ testbin/primary/macros:[0x92b9] - 0x55cca125d800
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125b6b0 0x1000
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6c0 0x21
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6f0 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125ecb0 0x1000
+@ testbin/primary/macros:[0xb63c] - 0x55cca125d6f0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125ecb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ testbin/primary/macros:[0x3818] - 0x55cca125d6c0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125c8a0 0x34
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6c0 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125ecb0 0x1000
+@ testbin/primary/macros:[0xb63c] - 0x55cca125d6c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125ecb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ testbin/primary/macros:[0xa732] + 0x55cca125dca0 0x1000
+@ testbin/primary/macros:[0xa775] < 0x55cca125dca0
+@ testbin/primary/macros:[0xa775] > 0x55cca125dca0 0x2000
+@ testbin/primary/macros:[0xa775] < 0x55cca125dca0
+@ testbin/primary/macros:[0xa775] > 0x55cca125dca0 0x4000
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca1261cb0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca1261cb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6c0 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca1261cb0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca1262cc0 0x1000
+@ testbin/primary/macros:[0xb63c] - 0x55cca125d6c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca1261cb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca1262cc0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ testbin/primary/macros:[0xa7a2] - 0x55cca125dca0
+@ testbin/primary/macros:[0x38a6] - 0x55cca125c8a0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6c0 0x25
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6f0 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125ecb0 0x1000
+@ testbin/primary/macros:[0xb63c] - 0x55cca125d6f0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125ecb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ testbin/primary/macros:[0x391c] - 0x55cca125d6c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(__cxa_allocate_exception+14)[0xb21e4] + 0x55cca125c8e0 0x90
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55cca125c8a0 0x2f
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6c0 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125ecb0 0x1000
+@ testbin/primary/macros:[0xb63c] - 0x55cca125d6c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125ecb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ testbin/primary/macros:[0xa732] + 0x55cca125dca0 0x1000
+@ testbin/primary/macros:[0xa775] < 0x55cca125dca0
+@ testbin/primary/macros:[0xa775] > 0x55cca125dca0 0x2000
+@ testbin/primary/macros:[0xa775] < 0x55cca125dca0
+@ testbin/primary/macros:[0xa775] > 0x55cca125dca0 0x4000
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca1261cb0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca1261cb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6c0 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca1261cb0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca1262cc0 0x1000
+@ testbin/primary/macros:[0xb63c] - 0x55cca125d6c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca1261cb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca1262cc0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ testbin/primary/macros:[0xa7a2] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13runtime_errorD2Ev+63)[0xc8643] - 0x55cca125c8a0
+@ testbin/primary/macros:[0x3b96] - 0x55cca125c8e0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6c0 0x25
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6f0 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125ecb0 0x1000
+@ testbin/primary/macros:[0xb63c] - 0x55cca125d6f0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125ecb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ testbin/primary/macros:[0x39b4] - 0x55cca125d6c0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6c0 0x19
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6f0 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125dca0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125ecb0 0x1000
+@ testbin/primary/macros:[0xb63c] - 0x55cca125d6f0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125dca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125ecb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ testbin/primary/macros:[0xa732] + 0x55cca125dca0 0x1000
+@ testbin/primary/macros:[0xa775] < 0x55cca125dca0
+@ testbin/primary/macros:[0xa775] > 0x55cca125dca0 0x2000
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125fcb0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125fcb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ testbin/primary/macros:[0xc16b] + 0x55cca125d6f0 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125b4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55cca125c6c0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca125fcb0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55cca1260cc0 0x1000
+@ testbin/primary/macros:[0xb63c] - 0x55cca125d6f0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca125fcb0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125b4d0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55cca1260cc0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55cca125c6c0
+@ testbin/primary/macros:[0xa7a2] - 0x55cca125dca0
+@ testbin/primary/macros:[0x3a2a] - 0x55cca125d6c0
+@ testbin/primary/macros:(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED2Ev+20)[0x8820] - 0x55cca125b490
+@ /lib/x86_64-linux-gnu/libc.so.6:(fdopen+9e)[0x7e18e] + 0x563f468ae4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468b1cb0 0x1000
+@ ./raColTest:[0x39b9] - 0x563f468af7e0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468afbc0 0xb5
+@ ./raColTest:(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm+b8)[0x4742] - 0x563f468af560
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x563f468af560 0x5a
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x563f468b0750 0x3e
+@ ./raColTest:[0xac90] + 0x563f468b06c0 0x1d
+@ ./raColTest:[0xacb0] - 0x563f468af560
+@ ./raColTest:[0xacb8] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af7e0 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468afc80 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b2cc0 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a30 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0a30
+@ ./raColTest:[0x9589] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b09d0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af560 0x68
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a30 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0a30
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x40
+@ ./raColTest:[0x989a] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468aeac0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0940 0x80
+@ ./raColTest:[0x989a] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af780 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468aeac0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af800 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468aeac0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468aeac0 0x15
+@ ./raColTest:[0x989a] - 0x563f468b0940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c40 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a60 0x15
+@ ./raColTest:[0x99e6] - 0x563f468b0a90
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b08c0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ ./raColTest:[0x9ab0] - 0x563f468b0720
+@ ./raColTest:[0x7913] - 0x563f468af7e0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x563f468b2cc0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468afc80
+@ ./raColTest:[0x8d2d] - 0x563f468af800
+@ ./raColTest:[0x8d2d] - 0x563f468af780
+@ ./raColTest:[0x8d2d] - 0x563f468b07a0
+@ ./raColTest:[0x8d2d] - 0x563f468b08c0
+@ ./raColTest:[0x8d20] - 0x563f468b0a60
+@ ./raColTest:[0x8d2d] - 0x563f468b0c40
+@ ./raColTest:[0x8d2d] - 0x563f468b09d0
+@ ./raColTest:[0x8f42] - 0x563f468aeac0
+@ ./raColTest:[0x8197] - 0x563f468b0ab0
+@ ./raColTest:[0x8d99] - 0x563f468af560
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0xafb8e] + 0x5623803d82a0 0x12000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ea490 0x11
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ea4b0 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x5623803ea4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ea6b0 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec6c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec6f0 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec750 0x40
+@ testbin/primary/test_runner:[0x88aa] - 0x5623803ec720
+@ testbin/primary/test_runner:[0x9749] - 0x5623803ec6f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec7a0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec800 0x68
+@ testbin/primary/test_runner:[0x9b96] - 0x5623803ec750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec750 0x40
+@ testbin/primary/test_runner:[0x88aa] - 0x5623803ec720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec870 0x40
+@ testbin/primary/test_runner:[0x9a5a] - 0x5623803ec6f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec8c0 0x50
+@ testbin/primary/test_runner:[0x9b96] - 0x5623803ec750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec920 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec750 0x40
+@ testbin/primary/test_runner:[0x88aa] - 0x5623803ec6f0
+@ testbin/primary/test_runner:[0x9749] - 0x5623803ec920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec940 0x80
+@ testbin/primary/test_runner:[0x9a5a] - 0x5623803ec870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec9d0 0x50
+@ testbin/primary/test_runner:[0x9b96] - 0x5623803ec750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec920 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec750 0x40
+@ testbin/primary/test_runner:[0x88aa] - 0x5623803ec6f0
+@ testbin/primary/test_runner:[0x9749] - 0x5623803ec920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803eca30 0x50
+@ testbin/primary/test_runner:[0x9b96] - 0x5623803ec750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec920 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803eca90 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec750 0x40
+@ testbin/primary/test_runner:[0x88aa] - 0x5623803ec6f0
+@ testbin/primary/test_runner:[0x9749] - 0x5623803ec920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ecab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec920 0x15
+@ testbin/primary/test_runner:[0x9a5a] - 0x5623803ec940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ecbc0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ecc20 0x15
+@ testbin/primary/test_runner:[0x9ba6] - 0x5623803eca90
+@ testbin/primary/test_runner:[0x9b96] - 0x5623803ec750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ec750 0x40
+@ testbin/primary/test_runner:[0x88aa] - 0x5623803ec6f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x5623803ecc40 0x50
+@ testbin/primary/test_runner:[0x9b96] - 0x5623803ec750
+@ testbin/primary/test_runner:[0x9c70] - 0x5623803ec6c0
+@ testbin/primary/test_runner:[0x5c0c] - 0x5623803ea4b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x5623803ea4b0 0xc
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x5623803ea6b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x5623803ea4d0
+@ testbin/primary/test_runner:[0x8eed] - 0x5623803eca30
+@ testbin/primary/test_runner:[0x8eed] - 0x5623803ec9d0
+@ testbin/primary/test_runner:[0x8eed] - 0x5623803ec8c0
+@ testbin/primary/test_runner:[0x8eed] - 0x5623803ecc40
+@ testbin/primary/test_runner:[0x8ee0] - 0x5623803ecc20
+@ testbin/primary/test_runner:[0x8eed] - 0x5623803ecbc0
+@ testbin/primary/test_runner:[0x8eed] - 0x5623803ec7a0
+@ testbin/primary/test_runner:[0x9102] - 0x5623803ec920
+@ testbin/primary/test_runner:[0x67fc] - 0x5623803ecab0
+@ testbin/primary/test_runner:[0x8f59] - 0x5623803ec800
+@ testbin/primary/test_runner:[0xbe0b] + 0x5623803ec6c0 0x25
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x5623803ea4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x5623803ea6b0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x5623803ea6b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x5623803ea4d0
+@ testbin/primary/test_runner:[0xbe0b] + 0x5623803ec6f0 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x5623803ea4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x5623803ea6b0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x5623803ea890 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x5623803ecca0 0x1000
+@ testbin/primary/test_runner:[0xb2dc] - 0x5623803ec6f0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x5623803ea890
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x5623803ea4d0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x5623803ecca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x5623803ea6b0
+@ testbin/primary/test_runner:[0x3808] - 0x5623803ec6c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x5623803ea890 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x39f24] + 0x563f468af7e0 0x14
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x39f6a] + 0x563f468aeac0 0x2
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x39faf] - 0x563f468af7e0
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x39fb7] - 0x563f468aeac0
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468afc80 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468b2cc0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x563f468b2cc0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468afc80
+@ ./raColTest:[0xbc4b] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468afc80 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468afe60 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468b2cc0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468b3cd0 0x1000
+@ ./raColTest:[0xb11c] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x563f468b2cc0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468afc80
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x563f468b3cd0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468afe60
+@ /lib/x86_64-linux-gnu/libc.so.6:(fdopen+9e)[0x7e18e] + 0x563f468afe60 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468b2cc0 0x1000
+@ ./raColTest:[0x39b9] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0040 0xab
+@ ./raColTest:(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm+b8)[0x4742] - 0x563f468b0bc0
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x563f468b09d0 0x55
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x563f468b0750 0x3e
+@ ./raColTest:[0xac90] + 0x563f468aeac0 0x18
+@ ./raColTest:[0xacb0] - 0x563f468b09d0
+@ ./raColTest:[0xacb8] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af7e0 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468afc80 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b3cd0 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b09d0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af560 0x68
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x40
+@ ./raColTest:[0x989a] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ ./raColTest:[0x9589] - 0x563f468b0a90
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0940 0x80
+@ ./raColTest:[0x989a] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af780 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ ./raColTest:[0x9589] - 0x563f468b0a90
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af800 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a30 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ ./raColTest:[0x9589] - 0x563f468b0a90
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a90 0x15
+@ ./raColTest:[0x989a] - 0x563f468b0940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c40 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0a50 0x15
+@ ./raColTest:[0x99e6] - 0x563f468b0a30
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b08c0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ ./raColTest:[0x9ab0] - 0x563f468b06c0
+@ ./raColTest:[0x7913] - 0x563f468af7e0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x563f468b3cd0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468afc80
+@ ./raColTest:[0x8d2d] - 0x563f468af800
+@ ./raColTest:[0x8d2d] - 0x563f468af780
+@ ./raColTest:[0x8d2d] - 0x563f468b07a0
+@ ./raColTest:[0x8d2d] - 0x563f468b08c0
+@ ./raColTest:[0x8d20] - 0x563f468b0a50
+@ ./raColTest:[0x8d2d] - 0x563f468b0c40
+@ ./raColTest:[0x8d2d] - 0x563f468b09d0
+@ ./raColTest:[0x8f42] - 0x563f468b0a90
+@ ./raColTest:[0x8197] - 0x563f468b0ab0
+@ ./raColTest:[0x8d99] - 0x563f468af560
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:[0xafb8e] + 0x55d1b1c5a2a0 0x12000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6c490 0x11
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6c4b0 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55d1b1c6c4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6c6b0 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e6c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e6f0 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e750 0x40
+@ testbin/primary/logger:[0x87aa] - 0x55d1b1c6e720
+@ testbin/primary/logger:[0x9649] - 0x55d1b1c6e6f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e7a0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e800 0x68
+@ testbin/primary/logger:[0x9a96] - 0x55d1b1c6e750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e720 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e750 0x40
+@ testbin/primary/logger:[0x87aa] - 0x55d1b1c6e720
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e870 0x40
+@ testbin/primary/logger:[0x995a] - 0x55d1b1c6e6f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e8c0 0x50
+@ testbin/primary/logger:[0x9a96] - 0x55d1b1c6e750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e920 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e750 0x40
+@ testbin/primary/logger:[0x87aa] - 0x55d1b1c6e6f0
+@ testbin/primary/logger:[0x9649] - 0x55d1b1c6e920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e940 0x80
+@ testbin/primary/logger:[0x995a] - 0x55d1b1c6e870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e9d0 0x50
+@ testbin/primary/logger:[0x9a96] - 0x55d1b1c6e750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e920 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e750 0x40
+@ testbin/primary/logger:[0x87aa] - 0x55d1b1c6e6f0
+@ testbin/primary/logger:[0x9649] - 0x55d1b1c6e920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6ea30 0x50
+@ testbin/primary/logger:[0x9a96] - 0x55d1b1c6e750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e920 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6ea90 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e750 0x40
+@ testbin/primary/logger:[0x87aa] - 0x55d1b1c6e6f0
+@ testbin/primary/logger:[0x9649] - 0x55d1b1c6e920
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6eab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e920 0x15
+@ testbin/primary/logger:[0x995a] - 0x55d1b1c6e940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6ebc0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6ec20 0x15
+@ testbin/primary/logger:[0x9aa6] - 0x55d1b1c6ea90
+@ testbin/primary/logger:[0x9a96] - 0x55d1b1c6e750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e6f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6e750 0x40
+@ testbin/primary/logger:[0x87aa] - 0x55d1b1c6e6f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x55d1b1c6ec40 0x50
+@ testbin/primary/logger:[0x9a96] - 0x55d1b1c6e750
+@ testbin/primary/logger:[0x9b70] - 0x55d1b1c6e6c0
+@ testbin/primary/logger:[0x5b0c] - 0x55d1b1c6c4b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(__strdup+1a)[0xa97aa] + 0x55d1b1c6c4b0 0xc
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x55d1b1c6c6b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55d1b1c6c4d0
+@ testbin/primary/logger:[0x8ded] - 0x55d1b1c6ea30
+@ testbin/primary/logger:[0x8ded] - 0x55d1b1c6e9d0
+@ testbin/primary/logger:[0x8ded] - 0x55d1b1c6e8c0
+@ testbin/primary/logger:[0x8ded] - 0x55d1b1c6ec40
+@ testbin/primary/logger:[0x8de0] - 0x55d1b1c6ec20
+@ testbin/primary/logger:[0x8ded] - 0x55d1b1c6ebc0
+@ testbin/primary/logger:[0x8ded] - 0x55d1b1c6e7a0
+@ testbin/primary/logger:[0x9002] - 0x55d1b1c6e920
+@ testbin/primary/logger:[0x66fc] - 0x55d1b1c6eab0
+@ testbin/primary/logger:[0x8e59] - 0x55d1b1c6e800
+@ testbin/primary/logger:[0xbd0b] + 0x55d1b1c6e6c0 0x19
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55d1b1c6c4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55d1b1c6c6b0 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55d1b1c6c6b0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55d1b1c6c4d0
+@ testbin/primary/logger:[0xbd0b] + 0x55d1b1c6e6f0 0x20
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55d1b1c6c4d0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x55d1b1c6c6b0 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55d1b1c6c890 0x1000
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55d1b1c6eca0 0x1000
+@ testbin/primary/logger:[0xb1dc] - 0x55d1b1c6e6f0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55d1b1c6c890
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55d1b1c6c4d0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x55d1b1c6eca0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x55d1b1c6c6b0
+@ testbin/primary/logger:[0x37e8] - 0x55d1b1c6e6c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x55d1b1c6c890 0x1000
+@ testbin/primary/logger:(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED2Ev+20)[0x83c0] - 0x55d1b1c6c490
+@ /lib/x86_64-linux-gnu/libc.so.6:(fdopen+9e)[0x7e18e] + 0x563f468afc80 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468b3cd0 0x1000
+@ ./raColTest:[0x39b9] - 0x563f468aeac0
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468b0100 0x1d8
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_file_doallocate+83)[0x7ddb3] + 0x563f468b4ce0 0x1000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ ./raColTest:[0x9ded] + 0x563f468aeac0 0x1
+@ ./raColTest:[0xa01b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af420 0x98
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x3d
+@ ./raColTest:[0x9f57] - 0x563f468b06c0
+@ ./raColTest:[0x9ded] + 0x563f468b0a30 0x33
+@ ./raColTest:[0xa01b] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b02e0 0x130
+@ ./raColTest:[0xa5a9] - 0x563f468af420
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ ./raColTest:[0x9ded] + 0x563f468af7e0 0x1
+@ ./raColTest:[0xa01b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0420 0x260
+@ ./raColTest:[0xa5a9] - 0x563f468b02e0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ ./raColTest:[0x9ded] + 0x563f468b0a90 0x1
+@ ./raColTest:[0xa01b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ ./raColTest:[0x9ded] + 0x563f468b0720 0x19
+@ ./raColTest:[0xa01b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5cf0 0x4c0
+@ ./raColTest:[0xa5a9] - 0x563f468b0420
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ ./raColTest:[0x9ded] + 0x563f468b0a70 0x1
+@ ./raColTest:[0xa01b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ ./raColTest:[0x9ded] + 0x563f468b0690 0x16
+@ ./raColTest:[0xa01b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ ./raColTest:[0x9ded] + 0x563f468b0bc0 0x17
+@ ./raColTest:[0xa01b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ ./raColTest:[0x9ded] + 0x563f468b0be0 0x1
+@ ./raColTest:[0xa01b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b61c0 0x980
+@ ./raColTest:[0xa5a9] - 0x563f468b5cf0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x3d
+@ ./raColTest:[0x9f57] - 0x563f468b06c0
+@ ./raColTest:[0x9ded] + 0x563f468b5cf0 0x2e
+@ ./raColTest:[0xa01b] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x3d
+@ ./raColTest:[0x9f57] - 0x563f468b06c0
+@ ./raColTest:[0x9ded] + 0x563f468b5d30 0x34
+@ ./raColTest:[0xa01b] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ ./raColTest:[0x9ded] + 0x563f468b0c00 0x1
+@ ./raColTest:[0xa01b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x3d
+@ ./raColTest:[0x9f57] - 0x563f468b06c0
+@ ./raColTest:[0x9ded] + 0x563f468b5d70 0x2c
+@ ./raColTest:[0xa01b] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ ./raColTest:[0x9ded] + 0x563f468b5db0 0x1
+@ ./raColTest:[0xa01b] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_setb+55)[0x8caf5] - 0x563f468b4ce0
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468b0100
+@ ./raColTest:[0xa60d] - 0x563f468b5db0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5db0 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468b0100 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b6b50 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5dd0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b5dd0
+@ ./raColTest:[0x9589] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b09d0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af560 0x68
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5dd0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b5dd0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x40
+@ ./raColTest:[0x989a] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e00 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b5e00
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0940 0x80
+@ ./raColTest:[0x989a] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af780 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e00 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b5e00
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af800 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e00 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e20 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b5e00
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e00 0x15
+@ ./raColTest:[0x989a] - 0x563f468b0940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c40 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e40 0x15
+@ ./raColTest:[0x99e6] - 0x563f468b5e20
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b08c0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ ./raColTest:[0x9ab0] - 0x563f468b06c0
+@ ./raColTest:[0x7913] - 0x563f468b5db0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x563f468b6b50
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468b0100
+@ ./raColTest:[0x8d2d] - 0x563f468af800
+@ ./raColTest:[0x8d2d] - 0x563f468af780
+@ ./raColTest:[0x8d2d] - 0x563f468b07a0
+@ ./raColTest:[0x8d2d] - 0x563f468b08c0
+@ ./raColTest:[0x8d20] - 0x563f468b5e40
+@ ./raColTest:[0x8d2d] - 0x563f468b0c40
+@ ./raColTest:[0x8d2d] - 0x563f468b09d0
+@ ./raColTest:[0x8f42] - 0x563f468b5e00
+@ ./raColTest:[0x8197] - 0x563f468b0ab0
+@ ./raColTest:[0x8d99] - 0x563f468af560
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e00 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468b0100 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b6b50 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5dd0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b5dd0
+@ ./raColTest:[0x9589] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b09d0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af560 0x68
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5dd0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b5dd0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x40
+@ ./raColTest:[0x989a] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c40 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e40 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b5e40
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0940 0x80
+@ ./raColTest:[0x989a] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b08c0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e40 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b5e40
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e40 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5db0 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ ./raColTest:[0x9589] - 0x563f468b5e40
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e40 0x15
+@ ./raColTest:[0x989a] - 0x563f468b0940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af780 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e20 0x15
+@ ./raColTest:[0x99e6] - 0x563f468b5db0
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06f0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06f0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af800 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ ./raColTest:[0x9ab0] - 0x563f468b06c0
+@ ./raColTest:[0x7913] - 0x563f468b5e00
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x563f468b6b50
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468b0100
+@ ./raColTest:[0x8d2d] - 0x563f468b07a0
+@ ./raColTest:[0x8d2d] - 0x563f468b08c0
+@ ./raColTest:[0x8d2d] - 0x563f468b0c40
+@ ./raColTest:[0x8d2d] - 0x563f468af800
+@ ./raColTest:[0x8d20] - 0x563f468b5e20
+@ ./raColTest:[0x8d2d] - 0x563f468af780
+@ ./raColTest:[0x8d2d] - 0x563f468b09d0
+@ ./raColTest:[0x8f42] - 0x563f468b5e40
+@ ./raColTest:[0x8197] - 0x563f468b0ab0
+@ ./raColTest:[0x8d99] - 0x563f468af560
+@ ./raColTest:[0xaa2b] - 0x563f468b5d70
+@ ./raColTest:[0xaa2b] - 0x563f468b0c00
+@ ./raColTest:[0xaa2b] - 0x563f468b5d30
+@ ./raColTest:[0xaa2b] - 0x563f468b5cf0
+@ ./raColTest:[0xaa2b] - 0x563f468b0be0
+@ ./raColTest:[0xaa2b] - 0x563f468b0bc0
+@ ./raColTest:[0xaa2b] - 0x563f468b0690
+@ ./raColTest:[0xaa2b] - 0x563f468b0a70
+@ ./raColTest:[0xaa2b] - 0x563f468b0720
+@ ./raColTest:[0xaa2b] - 0x563f468b0a90
+@ ./raColTest:[0xaa2b] - 0x563f468af7e0
+@ ./raColTest:[0xaa2b] - 0x563f468b0a30
+@ ./raColTest:[0xaa2b] - 0x563f468aeac0
+@ ./raColTest:[0xab75] - 0x563f468b61c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0bc0 0x11
+@ /lib/x86_64-linux-gnu/libc.so.6:[0x7e8ab] + 0x563f468b0100 0x1d8
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e60 0x2000
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0720 0x1f
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0690 0x1a
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06c0
+@ ./raColTest:[0x9589] - 0x563f468b0690
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0690 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b09d0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af560 0x68
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b06c0 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b06c0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0870 0x40
+@ ./raColTest:[0x989a] - 0x563f468b0690
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af780 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0be0 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0690 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0690
+@ ./raColTest:[0x9589] - 0x563f468b0be0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0940 0x80
+@ ./raColTest:[0x989a] - 0x563f468b0870
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468af800 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0be0 0x17
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0690 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0690
+@ ./raColTest:[0x9589] - 0x563f468b0be0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c40 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0be0 0x18
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0c00 0x15
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0690 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0690
+@ ./raColTest:[0x9589] - 0x563f468b0be0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0ab0 0x100
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0be0 0x15
+@ ./raColTest:[0x989a] - 0x563f468b0940
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b08c0 0x50
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b5e40 0x15
+@ ./raColTest:[0x99e6] - 0x563f468b0c00
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0690 0x20
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0750 0x40
+@ ./raColTest:[0x86ea] - 0x563f468b0690
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b07a0 0x50
+@ ./raColTest:[0x99d6] - 0x563f468b0750
+@ ./raColTest:[0x9ab0] - 0x563f468b0720
+@ ./raColTest:[0x6b8b] - 0x563f468b0bc0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_Znwm+1c)[0xb3bac] + 0x563f468b0bc0 0x15
+@ ./raColTest:[0x72ca] - 0x563f468b0bc0
+@ /lib/x86_64-linux-gnu/libstdc++.so.6:(_ZNSt13basic_filebufIcSt11char_traitsIcEE26_M_destroy_internal_bufferEv+22)[0x119712] - 0x563f468b5e60
+@ /lib/x86_64-linux-gnu/libc.so.6:(_IO_fclose+95)[0x7df25] - 0x563f468b0100
+@ ./raColTest:[0x8d2d] - 0x563f468b0c40
+@ ./raColTest:[0x8d2d] - 0x563f468af800
+@ ./raColTest:[0x8d2d] - 0x563f468af780
+@ ./raColTest:[0x8d2d] - 0x563f468b07a0
+@ ./raColTest:[0x8d20] - 0x563f468b5e40
+@ ./raColTest:[0x8d2d] - 0x563f468b08c0
+@ ./raColTest:[0x8d2d] - 0x563f468b09d0
+@ ./raColTest:[0x8f42] - 0x563f468b0be0
+@ ./raColTest:[0x743c] - 0x563f468b0ab0
+@ ./raColTest:[0x8d99] - 0x563f468af560
+@ ./raColTest:[0x4582] - 0x563f468af860
+@ ./raColTest:[0x4582] - 0x563f468afb00
+@ ./raColTest:[0x4582] - 0x563f468afbc0
+@ ./raColTest:[0x4582] - 0x563f468b0040
+@ ./raColTest:[0x4597] - 0x563f468af140
+@ ./raColTest:(_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED2Ev+20)[0x8300] - 0x563f468ae490
