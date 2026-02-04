@@ -1,0 +1,3 @@
+alternating stream entropy metric: -98148.49666617998
+
+EBFM: 0.036691933652981894
