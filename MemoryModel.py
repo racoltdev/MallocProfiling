@@ -119,3 +119,31 @@ class MemorySnapshot:
 				self._update_page(start_page, bit_mask, start_address, start_page_address)
 
 		return valid
+
+	def print_dump(self):
+		keys = list(self.alloc_blocks.keys())
+		end = self.alloc_blocks.get(keys[-1]) + keys[-1]
+		print([numpy.binary_repr(x, width=64) for x in self.get_pages_in_range(keys[0], end)])
+
+# Event is a single value representing one point in time - ie a snapshot
+# lifetime_analysis generates range overlap data, a snapshot cannot do that
+def objects_to_snapshot(MemoryObjects, event=4):
+	memory_snapshot = MemorySnapshot()
+	sort_by_init = sorted(MemoryObjects.values(), key=lambda x: x.alloc_time)
+
+	# TODO every allocated object should have size. Double check this
+
+	for mem_object in sort_by_init:
+		# Construct snapshot of memory at allocation event# "event"
+		end_in_range = True if mem_object.dealloc_time is None else mem_object.dealloc_time > event
+
+		if mem_object.alloc_time <= event and end_in_range:
+			start_address = mem_object.address
+			# Ignore any validation errors for now. Notifying in console is good enough
+			memory_snapshot.malloc(start_address, mem_object.size)
+
+	# no more allocations will occur. allocation list can be sorted and the memory model can be discarded
+	# sort by location in memory
+	memory_snapshot.alloc_blocks = dict(sorted(memory_snapshot.alloc_blocks.items()))
+
+	return memory_snapshot
