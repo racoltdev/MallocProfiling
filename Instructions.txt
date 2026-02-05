@@ -1,5 +1,12 @@
-LD_PRELOAD=/lib/$(gcc -print-multiarch)/libc_malloc_debug.so.0 MALLOC_TRACE="./m.trace" ./{program name}
-mtrace {program_name} "./m.trace"
+To use traditional gcc mtrace with malloc hooks:
+	LD_PRELOAD=/lib/$(gcc -print-multiarch)/libc_malloc_debug.so.0 MALLOC_TRACE="./m.trace" ./{program name}
+	mtrace {program_name} "./m.trace"
+	Warning: This does not work for MT or multiprocess applications. It also probably won't work unless directly executing some C/C++ compiled binary.
+
+To use malloc_mtrace, my utility:
+	LD_PRELOAD=/path/to/mtrace_malloc/libmtrace_malloc.so MALLOC_TRACE="./m.trace" ./{program name}
+	you can then scan it with the traditional mtrace perl script: mtrace {program_name} "./m.trace"
+	or perform further analysis with lifetime_analysis.py and the various fragmentation metric calculators provided.
 
 How to read mtrace logs:
 	Before the colon is the library or exe name performing a memory op
