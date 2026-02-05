@@ -1,3 +1,4 @@
 alternating stream entropy metric: -98148.49666617998
-
+normalized alternating stream entropy metric: 0.08619396774077888
 EBFM: 0.036691933652981894
+Sawicki-Arduino fragmentation: 0.10918908759704504
