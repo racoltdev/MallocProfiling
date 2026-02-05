@@ -1,0 +1,32 @@
+import math
+import sys
+
+def snapshot_to_free_block_stream(memory_snapshot):
+	alloc_blocks = memory_snapshot.alloc_blocks
+	keys = list(alloc_blocks.keys())
+	stream = []
+
+	length = (keys[-1] + alloc_blocks.get(keys[-1])) - keys[0]
+
+	for i in range(len(keys) - 1):
+		curr_block = (keys[i], alloc_blocks.get(keys[i]))
+		next_block = (keys[i + 1], alloc_blocks.get(keys[i + 1]))
+
+		curr_end = curr_block[0] + curr_block[1]
+		if curr_end != next_block[0]:
+			stream.append(next_block[0] - curr_end)
+
+	return stream, length
+
+def entropy(stream, length=None):
+	length = length if length else len(stream)
+	sum_entropy = 0
+	for block in stream:
+		frac = block / length
+		sum_entropy += frac * math.log(abs(frac))
+	return -sum_entropy
+
+def arg_check():
+	if len(sys.argv) != 2:
+		print("Error: Incorrect number of arguments. Please pass the path to a trace file")
+		exit()

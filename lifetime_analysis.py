@@ -1,3 +1,5 @@
+import common
+
 import matplotlib.pyplot as plt
 import sys
 import random
@@ -140,12 +142,6 @@ def plot_unsorted_groups(objs, final_event, ax):
 			# obj is temp or short
 			ax[0].plot(num, 0, '.r')
 
-
-def arg_check():
-	if len(sys.argv) != 2:
-		print("Error: Incorrect number of arguments. Please pass the path to a trace file")
-		exit()
-
 def parse_file():
 	final_event = 0
 	with open(sys.argv[1], 'r') as log_file:
@@ -174,6 +170,6 @@ def plot_memory(final_event):
 	plt.show()
 
 if __name__ == "__main__":
-	arg_check()
+	common.arg_check()
 	final_event = parse_file()
 	plot_memory(final_event)

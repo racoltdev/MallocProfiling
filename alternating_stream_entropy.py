@@ -1,6 +1,6 @@
 import lifetime_analysis
 import MemoryModel
-import entropy_base
+import common
 
 def snapshot_to_alt_stream(memory_snapshot):
 	alloc_blocks = memory_snapshot.alloc_blocks
@@ -28,19 +28,18 @@ def snapshot_to_alt_stream(memory_snapshot):
 	alternating_stream.append(alloc_blocks.get(keys[-1]))
 	return alternating_stream
 
-def alt_stream_entropy(MemoryObjects):
-	memory_snapshot = MemoryModel.objects_to_snapshot(MemoryObjects)#, event=1360)
-	stream = snapshot_to_alt_stream(memory_snapshot)
-	print("Alternating stream entropy fragmentation")
+def alt_stream_entropy(snapshot):
+	stream = snapshot_to_alt_stream(snapshot)
 	# encode n, rather than N. But should try with N
 	# TODO replace n with N
-	entropy_metric = entropy_base.entropy(stream)
+	entropy_metric = common.entropy(stream)
 	#print(f"metric: {entropy_metric / len(stream)}")
-	print(f"alternating stream entropy metric: {entropy_metric}")
 	return entropy_metric
 
 if __name__ == "__main__":
-	lifetime_analysis.arg_check()
+	common.arg_check()
 	final_event = lifetime_analysis.parse_file()
 	MemoryObjects = lifetime_analysis.objects
-	alt_stream_entropy(MemoryObjects)
+	memory_snapshot = MemoryModel.objects_to_snapshot(MemoryObjects)#, event=1360)
+	metric = alt_stream_entropy(memory_snapshot)
+	print(f"alternating stream entropy metric: {metric}")
