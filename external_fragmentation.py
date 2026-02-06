@@ -1,0 +1,18 @@
+import common
+import lifetime_analysis
+import MemoryModel
+
+def external_frag(snapshot):
+	stream, _ = common.snapshot_to_free_block_stream(snapshot)
+	free_size = sum(stream)
+	free_max = max(stream)
+	metric = 1 - (free_max / free_size)
+	return metric
+
+if __name__ == "__main__":
+	common.arg_check()
+	final_event = lifetime_analysis.parse_file()
+	MemoryObjects = lifetime_analysis.objects
+	memory_snapshot = MemoryModel.objects_to_snapshot(MemoryObjects)
+	frag_metric = external_frag(memory_snapshot)
+	print(f"external fragmentation: {frag_metric}")

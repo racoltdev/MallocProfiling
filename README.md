@@ -4,8 +4,8 @@ This file calculates a fragmentation metric related to information entropy, give
 ### ebfm.py:
 Implements ebfm as shown in [2], [7]
 
-### Sawicki_Arduino.py:
-This is an equation posited by Adam Sawicki in [3] and (similarly) implemented by arduino to measure allocator performance following [4]. I cannot find academic use of this forumala, although it shares some similarities to the RSS formula used in [5], which is, of course, uncited and unexplained.
+### esp_umm.py:
+This is very similar to an equation implemented by the esp8266/arduino team to measure allocator performance following [4]. I cannot find academic use of this forumala, although it shares some similarities to the RSS formula used in [5], which is, of course, uncited and unexplained. An version identical to the one I use was posited by Adam Sawiki [3].
 
 ### external_fragmentation.py
 This is the common definition of fragmentation, originally developed by [6] \(as far as i can tell\). It's even listed on wikipedia as *the* fragmentation metric \(the page then ignores any other existing or used measures, but that's wikipedia for you\). It is dependent only on the size of the largest free block and the total free memory. This metric obviously has problems, but its common.
@@ -28,7 +28,7 @@ Implemented as per [2]. Attempts to combine various existing metrics into someth
 Sawicki / Arduino method
 * Adam Sawicki, david gauchard (d-a-v github user)
 * 3: https://asawicki.info/news_1757_a_metric_for_memory_fragmentation
-* 4: https://github.com/esp8266/Arduino/pull/5090
+* 4: https://github.com/esp8266/Arduino/blob/3.1.2/cores/esp8266/umm_malloc/umm_info.c
 <!-- end list -->
 5: Fragmentation metrics and fragmentation-aware algorithm for spectrally/spatially flexible optical networks
 * Piotr Lechowicz, Massimo Tornatore, Adam Wªodarczyk, Krzysztof Walkowiak

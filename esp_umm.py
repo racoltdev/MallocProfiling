@@ -4,7 +4,7 @@ import common
 
 import math
 
-def sawicki_arduino(snapshot):
+def esp_umm(snapshot):
 	stream, _ = common.snapshot_to_free_block_stream(snapshot)
 	quality, free_size = 0, 0
 
@@ -20,5 +20,5 @@ if __name__ == "__main__":
 	final_event = lifetime_analysis.parse_file()
 	MemoryObjects = lifetime_analysis.objects
 	memory_snapshot = MemoryModel.objects_to_snapshot(MemoryObjects)
-	frag_metric = sawicki_arduino(memory_snapshot)
-	print(f"Sawicki-Arduino fragmentation: {frag_metric}")
+	frag_metric = esp_umm(memory_snapshot)
+	print(f"esp_umm fragmentation: {frag_metric}")
