@@ -5,3 +5,4 @@ racoltest/
 gcc/
 __pycache__/
 .coverage
+data/

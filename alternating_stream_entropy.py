@@ -36,10 +36,22 @@ def alt_stream_entropy(snapshot):
 	#print(f"metric: {entropy_metric / len(stream)}")
 	return entropy_metric
 
+def norm_alt_entropy(snapshot):
+	stream = snapshot_to_alt_stream(snapshot)
+
+	alloc_blocks = snapshot.alloc_blocks
+	keys = list(alloc_blocks.keys())
+	length = (keys[-1] + alloc_blocks.get(keys[-1])) - keys[0]
+
+	entropy_metric = common.entropy(stream, length)
+	return entropy_metric
+
 if __name__ == "__main__":
 	common.arg_check()
 	final_event = lifetime_analysis.parse_file()
 	MemoryObjects = lifetime_analysis.objects
 	memory_snapshot = MemoryModel.objects_to_snapshot(MemoryObjects)#, event=1360)
 	metric = alt_stream_entropy(memory_snapshot)
-	print(f"alternating stream entropy metric: {metric}")
+	print(f"alternating entropy metric: {metric}")
+	norm_metric = norm_alt_entropy(memory_snapshot)
+	print(f"normalized alternating entropy metric: {norm_metric}")

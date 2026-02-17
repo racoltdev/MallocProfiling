@@ -1,6 +1,6 @@
-alternating stream entropy metric: -98148.49666617998
-normalized alternating stream entropy metric: 0.08619396774077888
-EBFM: 0.036691933652981894
+alternating entropy metric: -98148.49666617998
+normalized alternating entropy metric: 0.08619396774077888
+ebfm: 0.036691933652981894
 esp-umm fragmentation: 0.10918908759704504
 external_frag: 0.057034220532319435
 ssfm: 0.058409655997230366

@@ -1,5 +1,11 @@
 ### alternating_stream_entropy.py:
-This file calculates a fragmentation metric related to information entropy, given a trace file. In reality, this metric diverges quite strongly from traditional entropy interpretations, and may better be understood as the assumed complexity of finding a suitable free space for allocating any size block by an allocator. An ideal entropy based fragmentation metric would attempt to measure the probability of the arrangment of allocated and free blocks - more precisely, how many ways there are to permute the allocated and free blocks within the available memory region. Calculating the permutations across realistic memory samples is prohibitively computationally expensive, so instead similar entropy based metrics perform some estimation of this value. [2], [7] substitutes the permutation based probability with a ratio of the size of each free block over the total number of blocks. My method is extremely similar, except it accounts for the size of all blocks (free or not), and the total number of all blocks. Additionally, some method of encoding this information must be used, since it is unreasonable to treat free and allocated blocks the same way when calculating fragmentation. Both are useful, but they do have fundamental differences in regards to the work an allocator will have to do to perform an allocation. The information is encoded as a stream of integers, the first always being positive. Following values will have the same sign as the previous value if they match the allocation state (allocated vs free) of the previous block. For example, a memory region with 3 alloocated blocks of size 1, followed by 2 free blocks of size 3 would be encoded into a stream as [1, -1,, 1, 3, -3].
+This file calculates a fragmentation metric related to information entropy, given a trace file. In reality, this metric diverges quite strongly from traditional entropy interpretations, and may better be understood as the assumed complexity of finding a suitable free space for allocating any size block by an allocator. An ideal entropy based fragmentation metric would attempt to measure the probability of the arrangment of allocated and free blocks - more precisely, how many ways there are to permute the allocated and free blocks within the available memory region. Calculating the permutations across realistic memory samples is prohibitively computationally expensive, so instead similar entropy based metrics perform some estimation of this value. [2], [7] substitutes the permutation based probability with a ratio of the size of each free block over the total number of blocks. My method is extremely similar, except it accounts for the size of all blocks (free or not), and the total number of all blocks. Additionally, some method of encoding this information must be used, since it is unreasonable to treat free and allocated blocks the same way when calculating fragmentation. Both are useful, but they do have fundamental differences in regards to the work an allocator will have to do to perform an allocation. The information is encoded as a stream of integers, the first always being positive. Following values will have the same sign as the previous value if they match the allocation state (allocated vs free) of the previous block. For example, a memory region with 3 alloocated blocks of size 1, followed by 2 free blocks of size 3 would be encoded into a stream as [1, -1,, 1, 3, -3]. <br>
+Note: <br>
+	p(b) = perm(mem_size, options) / perm(mem_size, mem_size / 2) <br>
+	perm(a, b) can be approximated by a^b when a >> b (https://math.stackexchange.com/questions/4277833/approximation-of-permutation). This is still very large and hard to compute. <br>
+	a^b can be arbitrarily scaled by some non-linear factor to keep the numbers reasonable to represent while still being useful. <br>
+	log(a)^log(b) stays small. Will have to test whether this is even useful. <br>
+	See also: https://arxiv.org/html/2411.04718v2
 
 ### ebfm.py:
 Implements ebfm as shown in [2], [7]
@@ -24,9 +30,11 @@ Implemented as per [2]. Attempts to combine various existing metrics into someth
 2: A novel fragmentation metric and fragmentation-aware adaptive routing and spectrum allocation algorithm in elastic optical network
 * Ruchi Srivastava, Yatindra Nath Singh
 * https://www.sciencedirect.com/science/article/abs/pii/S1068520025001932
+* Note: RMSFM used in this paper is interesting and may have applications in paging/virtual memory systems since it accounts for the last occupied block
+* Note: EON papers - such as [9] - may choose frag metrics which can be used to compare all different possible allocations for a certain request (or batch of requests) and choose the optimal allocation according to that metric. Alternatively, as this one does, it may be attempting to decide which structure to allocate to given each's existing fragmentation. While I have a similar goal of minimizing fragmentation, the small scope and real time requirements, as well as being able to actually test fit allocations is out of scope for me. A method of test fitting only a subset of allocations could be interesting though.
 <!-- end list -->
-Sawicki / Arduino method
-* Adam Sawicki, david gauchard (d-a-v github user)
+ESP UMM Arduino method
+* David Gauchard (d-a-v github user)
 * 3: https://asawicki.info/news_1757_a_metric_for_memory_fragmentation
 * 4: https://github.com/esp8266/Arduino/blob/3.1.2/cores/esp8266/umm_malloc/umm_info.c
 <!-- end list -->
@@ -46,6 +54,11 @@ Sawicki / Arduino method
 * Christos Panagiotis Lamprakos, Sotirios Xydis, Peter Kourzanov, Manu Perumkunnil, Francky Catthoor, Dimitrios Soudris
 * https://dl.acm.org/doi/10.1145/3617651.3622989
 * Note: metric used is roughly `{sum of free space} / {size of memory available to the program}`. Intended for modern systems with virtual memory, paging.
+<!-- end list -->
+9: A novel two-dimensional metric for fragmentation evaluation in elastic optical networks
+* Yaghoub Khorasani, Akbar Ghaffarpour Rahbar, Mohammad Jafari-Beyrami
+* https://doi.org/10.1016/j.comnet.2022.109275
+* Note: this method depends on the request (or batch of requests) being made. Definitely interesting for real time applications
 <!-- end list -->
 data collected using mtrace_malloc (https://github.com/racoltdev/malloc/tree/master)
 
