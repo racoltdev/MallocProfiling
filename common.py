@@ -30,3 +30,4 @@ def arg_check():
 	if len(sys.argv) != 2:
 		print("Error: Incorrect number of arguments. Please pass the path to a trace file")
 		exit()
+	return sys.argv[1]

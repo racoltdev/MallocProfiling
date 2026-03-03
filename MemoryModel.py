@@ -128,9 +128,13 @@ class MemorySnapshot:
 
 		page &= bitmask
 		parent_page = self.get_page(start_address, max_depth=self.max_depth - 1)
-		parent_page[page_address] = page
+		if page == 0:
+			del parent_page[page_address]
+		else:
+			parent_page[page_address] = page
 
 	# if free(1), and some allocation exists starting @2, this will not remove the record from alloc_blocks
+	# even if the length of the allocation @1 is greater than 1
 	def free(self, start_address):
 		valid = True
 		length = self.alloc_blocks.get(start_address)
@@ -201,7 +205,7 @@ class MemorySnapshot:
 		print([numpy.binary_repr(x, width=64) for x in self.get_pages_in_range(keys[0], end)])
 
 # Event is a single value representing one point in time - ie a snapshot
-# lifetime_analysis generates range overlap data, a snapshot cannot do that
+# lifetime_analysis generates lifetime range overlap data, a snapshot cannot do that
 def objects_to_snapshot(MemoryObjects, event=4):
 	memory_snapshot = MemorySnapshot()
 	sort_by_init = sorted(MemoryObjects.values(), key=lambda x: x.alloc_time)
