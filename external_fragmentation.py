@@ -4,10 +4,14 @@ import MemoryModel
 
 def external_frag(snapshot):
 	stream, _ = common.snapshot_to_free_block_stream(snapshot)
-	free_size = sum(stream)
-	free_max = max(stream)
-	metric = 1 - (free_max / free_size)
-	return metric
+	# TODO 0 might not be the correct value for this case
+	if len(stream) == 0:
+		return 0
+	else:
+		free_size = sum(stream)
+		free_max = max(stream)
+		metric = 1 - (free_max / free_size)
+		return metric
 
 if __name__ == "__main__":
 	common.arg_check()

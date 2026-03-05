@@ -11,9 +11,14 @@ def esp_umm(snapshot):
 	for f in stream:
 		quality += f**2
 		free_size += f
-	quality_ratio = math.sqrt(quality) / free_size
-	frag_metric = 1 - (quality_ratio**2)
-	return frag_metric
+
+	# TODO 0 might not be the correct value for this case. Double check that
+	if free_size == 0:
+		return 0
+	else:
+		quality_ratio = math.sqrt(quality) / free_size
+		frag_metric = 1 - (quality_ratio**2)
+		return frag_metric
 
 if __name__ == "__main__":
 	common.arg_check()

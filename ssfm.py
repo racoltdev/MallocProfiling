@@ -4,6 +4,10 @@ import MemoryModel
 
 def ssfm(snapshot):
 	stream, length = common.snapshot_to_free_block_stream(snapshot)
+	# TODO check if 0 is right for this case
+	if len(stream) == 0:
+		return 0
+
 	free_size = sum(stream)
 	free_max = max(stream)
 	corrected_external = free_max / (1 + free_size)
