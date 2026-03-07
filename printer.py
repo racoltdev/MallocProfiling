@@ -10,7 +10,7 @@ def printer(msg, progress_msg=False):
 		print(f"\r{msg}", end='')
 
 	elif last_msg_is_progress and not progress_msg:
-		print(f"\r{msg}\n{last_progress_upd}", end='')
+		print(f"\r\033[K{msg}\n{last_progress_upd}", end='')
 
 	elif not last_msg_is_progress and progress_msg:
 		last_msg_is_progress = True
