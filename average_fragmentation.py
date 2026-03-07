@@ -74,7 +74,7 @@ if __name__ == "__main__":
 				func_avg = pid_avgs[i]
 				metric = func(model)
 				last_step_metrics[pid][i] = metric
-				metrics[pid][i] = iter_avg(line_num, func_avg, metric)
+				metrics[pid][i] = iter_avg(line_num / 10000, func_avg, metric)
 		outf.write(f"{line_num}, {last_step_metrics}\n")
 		progress_bar(byte_pos, file_size, start_time)
 
