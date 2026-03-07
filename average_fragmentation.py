@@ -1,6 +1,6 @@
 import MemoryModel
 import common
-import mtrace_parser
+import mptrace_parser
 from printer import printer
 
 import esp_umm
@@ -59,7 +59,7 @@ if __name__ == "__main__":
 	# This doesn't compute a true average since I'm not snapshotting at every event
 	# Higher timestep means faster computation since fewer stream conversion have to be done
 	# Lower timestep means higher accuracy and lower memory usage spikes
-	for models, line_num, byte_pos in mtrace_parser.parse(trace_file, 10000):
+	for models, line_num, byte_pos in mptrace_parser.parse(trace_file, 10000):
 		for pid, model in models.items():
 			if (model.alloc_blocks == {}):
 				continue
