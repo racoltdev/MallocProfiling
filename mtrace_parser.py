@@ -1,4 +1,5 @@
 import MemoryModel
+from printer import printer
 
 def parse_line(line, num):
 	valid_ops = ['-', '+', '!', '>', '<']
@@ -7,8 +8,8 @@ def parse_line(line, num):
 	pid = line[0]
 	op = line[2]
 	if len(op) != 1 or op not in valid_ops:
-		print(f"Error: Could not parse line {num}:")
-		print(f"\t{line}")
+		printer(f"Error: Could not parse line {num}:")
+		printer(f"\t{line}")
 
 	address = int(line[3], 16)
 	size = None
@@ -26,12 +27,12 @@ def track_obj(pid, address, op, size, num, models):
 	if obj is None:
 		if op == "<":
 			# realloc((void*)null, (int)x) isn't an error, but mtrace should not write "<" in this case. "+" is preferable.
-			print(f"""[Parser] Error: pointer realloc'd before being assigned @ {hex(address)}, :{num}\n
+			printer(f"""[Parser] Error: pointer realloc'd before being assigned @ {hex(address)}, :{num}\n
 \tThere is an error in your log file, tracer, or allocator!""")
 		elif op == '-':
-			print(f"[Parser] Warn: object free'd before being assigned @ {hex(address)}, :{num}")
+			printer(f"[Parser] Warn: object free'd before being assigned @ {hex(address)}, :{num}")
 		elif op == "!":
-			print(f"[Parser] Info: realloc failed on null pointer, :{num}")
+			printer(f"[Parser] Info: realloc failed on null pointer, :{num}")
 		else:
 			pid_mem.malloc(address, size)
 			#print(pid_mem)
@@ -42,18 +43,18 @@ def track_obj(pid, address, op, size, num, models):
 		# Alloc
 		elif op == "+":
 			# error: double assigning memory. Do not track this
-			print(f"[Parser] Warn: double assigning memory @ {hex(address)}, :{num}")
+			printer(f"[Parser] Warn: double assigning memory @ {hex(address)}, :{num}")
 		# Alloc fail
 		elif op == "!":
 			# realloc failed. Don't track
-			print(f"[Parser] Info: realloc failed @ {hex(address)} to size {hex(size)}, :{num}")
+			printer(f"[Parser] Info: realloc failed @ {hex(address)} to size {hex(size)}, :{num}")
 		# ptr realloc'd
 		elif op == "<":
 			pid_mem.free(address)
 		# new address from realloc
 		elif op == ">":
 			# double assigning memory. do not track this
-			print("[Parser] Warn: double assigning memory @ {hex(address)}, :{num}")
+			printer("[Parser] Warn: double assigning memory @ {hex(address)}, :{num}")
 	models[pid] = pid_mem
 	#print("\n\n")
 

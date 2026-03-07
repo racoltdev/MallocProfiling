@@ -1,3 +1,5 @@
+from printer import printer
+
 import numpy
 
 # TODO add a free function so this can iterate through large datasets without eating endless memory
@@ -85,7 +87,7 @@ class MemorySnapshot:
 			if len(pages_to_verify) > 1:
 				if start_page & ~start_bit_mask != start_page:
 					err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
-					print(err.format(int(start_address), start_page_address + self.page_size))
+					printer(err.format(int(start_address), start_page_address + self.page_size))
 					valid = False
 
 				self._malloc_update_page(start_page, start_bit_mask, start_address, start_page_address)
@@ -93,7 +95,7 @@ class MemorySnapshot:
 				end_page = pages_to_verify[-1]
 				if end_page & ~end_bit_mask != end_page:
 					err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
-					print(err.format(int(end_address), end_page_address + self.page_size))
+					printer(err.format(int(end_address), end_page_address + self.page_size))
 					valid = False
 
 				self._malloc_update_page(end_page, end_bit_mask, end_address, end_page_address)
@@ -106,7 +108,7 @@ class MemorySnapshot:
 					if p & ~bitmask != p:
 						err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
 						err_range_end = range_start + self.page_size - 1
-						print(err.format(range_start, err_range_end))
+						printer(err.format(range_start, err_range_end))
 						valid = False
 
 					self._malloc_update_page(p, bitmask, range_start, range_start)
@@ -115,7 +117,7 @@ class MemorySnapshot:
 				bit_mask = start_bit_mask & end_bit_mask
 				if start_page & ~bit_mask != start_page:
 					err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
-					print(err.format(int(start_address), int(end_address)))
+					printer(err.format(int(start_address), int(end_address)))
 					valid = False
 
 				self._malloc_update_page(start_page, bit_mask, start_address, start_page_address)
@@ -141,7 +143,7 @@ class MemorySnapshot:
 
 		# No allocation here, no work to be done
 		if length is None:
-			print("[MemoryModel] Warn: Attempting to free an unallocated block @ {0:#016x}".format(start_address))
+			printer("[MemoryModel] Warn: Attempting to free an unallocated block @ {0:#016x}".format(start_address))
 			return
 
 		del self.alloc_blocks[start_address]
@@ -164,7 +166,7 @@ class MemorySnapshot:
 			if len(pages_to_verify) > 1:
 				if start_page | ~start_bit_mask != start_page:
 					err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
-					print(err.format(int(start_address), start_page_address + self.page_size))
+					printer(err.format(int(start_address), start_page_address + self.page_size))
 					valid = False
 
 				self._free_update_page(start_page, start_bit_mask, start_address, start_page_address)
@@ -172,7 +174,7 @@ class MemorySnapshot:
 				end_page = pages_to_verify[-1]
 				if end_page | ~end_bit_mask != end_page:
 					err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
-					print(err.format(int(end_address), end_page_address + self.page_size))
+					printer(err.format(int(end_address), end_page_address + self.page_size))
 					valid = False
 
 				self._free_update_page(end_page, end_bit_mask, end_address, end_page_address)
@@ -185,7 +187,7 @@ class MemorySnapshot:
 					if p | ~bitmask != p:
 						err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
 						err_range_end = range_start + self.page_size - 1
-						print(err.format(range_start, err_range_end))
+						printer(err.format(range_start, err_range_end))
 						valid = False
 
 					self._free_update_page(p, bitmask, range_start, range_start)
@@ -194,7 +196,7 @@ class MemorySnapshot:
 				bit_mask = start_bit_mask | end_bit_mask
 				if start_page | ~bit_mask != start_page:
 					err = "[MemoryModel] Warn: Double allocation in range {0:#016x}, {1:#016x}"
-					print(err.format(int(start_address), int(end_address)))
+					printer(err.format(int(start_address), int(end_address)))
 					valid = False
 
 				self._free_update_page(start_page, bit_mask, start_address, start_page_address)

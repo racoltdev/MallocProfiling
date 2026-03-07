@@ -1,6 +1,7 @@
 import MemoryModel
 import common
 import mtrace_parser
+from printer import printer
 
 import esp_umm
 import ebfm
@@ -28,7 +29,7 @@ if __name__ == "__main__":
 
 	outf = open(output_file, "x")
 	file_size = os.path.getsize(trace_file)
-	print("Progress: 0%", end="")
+	printer("Progress: 0%", True)
 
 	outf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
 
@@ -48,12 +49,12 @@ if __name__ == "__main__":
 				metrics[pid][i] = iter_avg(line_num, func_avg, metric)
 		outf.write(f"{line_num}, {metrics}\n")
 		# f.tell() may be inaccurate if not using binary mode depending on non-ascii chars and os
-		print("\rProgress: {:.3f} %".format(byte_pos / file_size * 100), end="")
+		printer("Progress: {:.3f} %".format(byte_pos / file_size * 100), True)
 
-	print(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
+	printer(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
 	outf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
 	for pid, avg_frag in metrics.items():
-		print(f"{pid}, {avg_frag}")
+		printer(f"{pid}, {avg_frag}")
 		outf.write(f"{pid}, {avg_frag}")
 
 	outf.close()
