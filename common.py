@@ -31,3 +31,9 @@ def arg_check():
 		print("Error: Incorrect number of arguments. Please pass the path to a trace file")
 		exit()
 	return sys.argv[1]
+
+def arg_check_io():
+	if len(sys.argv) != 3:
+		print("Error: Incorrect number of arguments. Expected 2.\n\tInput mptrace file\n\tOutput file")
+		exit()
+	return sys.argv[1:]

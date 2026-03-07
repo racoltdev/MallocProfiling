@@ -9,6 +9,7 @@ import external_fragmentation
 import ssfm
 
 import numpy
+import sys
 
 _FRAG_FUNCTIONS = (alternating_stream_entropy.alt_stream_entropy, alternating_stream_entropy.norm_alt_entropy, ebfm.ebfm, esp_umm.esp_umm, external_fragmentation.external_frag, ssfm.ssfm)
 
@@ -21,15 +22,21 @@ def iter_avg(n, old_avg, new_val):
 # is taken once every n timesteps and fragmentation is calculated at that timestep
 # An average fragmentation rate for each metric is calculated between all timesteps and all processes
 if __name__ == "__main__":
-	trace_file = common.arg_check()
+	trace_file, output_file = common.arg_check_io()
 	metrics = {}
 	lines = 0
 	progress = 0
 
+	outf = open(output_file, "x")
+
+	# there's a faster way to do this by getting size of file, and accumulating
+	# line length in bytes on each read
 	with open(trace_file, 'r') as f:
 		lines = sum(1 for line in f)
 
 	print("Progress: 0%", end="")
+
+	outf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
 
 	# This doesn't compute a true average since I'm not snapshotting at every event
 	# Higher timestep means faster computation since fewer stream conversion have to be done
@@ -43,19 +50,15 @@ if __name__ == "__main__":
 			metrics[pid] = pid_avgs
 			for i, func in enumerate(_FRAG_FUNCTIONS):
 				func_avg = pid_avgs[i]
-				print(metrics)
-				print(pid_avgs)
-				print(func_avg)
 				metric = func(model)
 				metrics[pid][i] = iter_avg(progress, func_avg, metric)
-				# pid_metric_avgs[i].append(func(model))
-				# metrics[pid] = pid_metric_avgs
+		outf.write(f"{progress}, {metrics}\n")
 		print("\rProgress: {:.3f} %".format(progress / lines * 100), end="")
 
-	for pid in metrics.values():
-		for i, method in enumerate(pid):
-			pid[i] = float(numpy.average(method))
 	print(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
-	for k, v in metrics.items():
-		print(f"{k}, {v}")
+	outf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
+	for pid, avg_frag in metrics.items():
+		print(f"{pid}, {avg_frag}")
+		outf.write(f"{pid}, {avg_frag}")
 
+	outf.close()
