@@ -69,12 +69,15 @@ def parse(trace_file, limit):
 	with open(trace_file, 'rb') as f:
 		# Ignore existance of Start line if its there
 		start = f.tell()
-		header = str(f.readline())
-		if header != "= Start\n":
+
+		# [2: to remove "b'"
+		# [:-3] to remove "\\n"
+		header = str(f.readline())[2:-3]
+		if header != "= Start":
 			f.seek(start)
 
 		for num, line in enumerate(f, 1):
-			obj = parse_line(str(line)[1:-3], num)
+			obj = parse_line(str(line)[2:-3], num)
 			track_obj(*obj, num, models)
 			if num % limit == 0:
 				yield (models, num, f.tell())

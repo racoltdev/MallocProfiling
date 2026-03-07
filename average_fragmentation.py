@@ -52,34 +52,38 @@ if __name__ == "__main__":
 
 	start_time = int(time.time())
 	progress_bar(0, file_size, start_time)
-	#printer("Progress: 0%", True)
 
-	outf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
+	outf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}\n")
 
 	# This doesn't compute a true average since I'm not snapshotting at every event
 	# Higher timestep means faster computation since fewer stream conversion have to be done
 	# Lower timestep means higher accuracy and lower memory usage spikes
 	for models, line_num, byte_pos in mptrace_parser.parse(trace_file, 10000):
+		last_step_metrics = {}
 		for pid, model in models.items():
 			if (model.alloc_blocks == {}):
 				continue
+
 			pid_avgs = metrics.get(pid, [0] * len(_FRAG_FUNCTIONS))
 			# Why can't I just set the default with get 😭
 			metrics[pid] = pid_avgs
+
+			last_step_metrics[pid] = last_step_metrics.get(pid, [0] * len(_FRAG_FUNCTIONS))
+
 			for i, func in enumerate(_FRAG_FUNCTIONS):
 				func_avg = pid_avgs[i]
 				metric = func(model)
+				last_step_metrics[pid][i] = metric
 				metrics[pid][i] = iter_avg(line_num, func_avg, metric)
-		outf.write(f"{line_num}, {metrics}\n")
-		# f.tell() may be inaccurate if not using binary mode depending on non-ascii chars and os
-		# printer("Progress: {:.3f} %".format(byte_pos / file_size * 100), True)
+		outf.write(f"{line_num}, {last_step_metrics}\n")
 		progress_bar(byte_pos, file_size, start_time)
 
 	printer(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
-	outf.write(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
+	outf.write(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}\n")
 	for pid, avg_frag in metrics.items():
+
 		printer(f"{pid}, {avg_frag}")
-		outf.write(f"{pid}, {avg_frag}")
+		outf.write(f"{pid}, {avg_frag}\n")
 
 	outf.close()
 	print()
