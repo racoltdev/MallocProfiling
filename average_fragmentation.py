@@ -10,6 +10,7 @@ import ssfm
 
 import numpy
 import sys
+import os
 
 _FRAG_FUNCTIONS = (alternating_stream_entropy.alt_stream_entropy, alternating_stream_entropy.norm_alt_entropy, ebfm.ebfm, esp_umm.esp_umm, external_fragmentation.external_frag, ssfm.ssfm)
 
@@ -24,16 +25,9 @@ def iter_avg(n, old_avg, new_val):
 if __name__ == "__main__":
 	trace_file, output_file = common.arg_check_io()
 	metrics = {}
-	lines = 0
-	progress = 0
 
 	outf = open(output_file, "x")
-
-	# there's a faster way to do this by getting size of file, and accumulating
-	# line length in bytes on each read
-	with open(trace_file, 'r') as f:
-		lines = sum(1 for line in f)
-
+	file_size = os.path.getsize(trace_file)
 	print("Progress: 0%", end="")
 
 	outf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
@@ -41,7 +35,7 @@ if __name__ == "__main__":
 	# This doesn't compute a true average since I'm not snapshotting at every event
 	# Higher timestep means faster computation since fewer stream conversion have to be done
 	# Lower timestep means higher accuracy and lower memory usage spikes
-	for models, progress in mtrace_parser.parse(trace_file, 1000):
+	for models, line_num, byte_pos in mtrace_parser.parse(trace_file, 1000):
 		for pid, model in models.items():
 			if (model.alloc_blocks == {}):
 				continue
@@ -51,9 +45,10 @@ if __name__ == "__main__":
 			for i, func in enumerate(_FRAG_FUNCTIONS):
 				func_avg = pid_avgs[i]
 				metric = func(model)
-				metrics[pid][i] = iter_avg(progress, func_avg, metric)
-		outf.write(f"{progress}, {metrics}\n")
-		print("\rProgress: {:.3f} %".format(progress / lines * 100), end="")
+				metrics[pid][i] = iter_avg(line_num, func_avg, metric)
+		outf.write(f"{line_num}, {metrics}\n")
+		# f.tell() may be inaccurate if not using binary mode depending on non-ascii chars and os
+		print("\rProgress: {:.3f} %".format(byte_pos / file_size * 100), end="")
 
 	print(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
 	outf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
