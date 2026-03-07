@@ -82,3 +82,4 @@ if __name__ == "__main__":
 		outf.write(f"{pid}, {avg_frag}")
 
 	outf.close()
+	print()

@@ -62,8 +62,10 @@ def track_obj(pid, address, op, size, num, models):
 def parse(trace_file, limit):
 	models = {}
 	num = 0
+	last_pos = 0
 
 	# f.tell() may be inaccurate if not using binary mode depending on non-ascii chars and os
+	# with open is much faster than f = open()
 	with open(trace_file, 'rb') as f:
 		# Ignore existance of Start line if its there
 		start = f.tell()
@@ -77,4 +79,6 @@ def parse(trace_file, limit):
 			if num % limit == 0:
 				yield (models, num, f.tell())
 
-	yield (models, num, f.tell())
+		last_pos = f.tell()
+
+	yield (models, num, last_pos)
