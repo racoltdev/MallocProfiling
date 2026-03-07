@@ -37,7 +37,7 @@ def progress_bar(completed, total, start_time, bar_length=40):
 		estimated_end_time = int(elapsed_time * (total / completed))
 	estimated_end_format =  time.strftime("%H:%M:%S", time.gmtime(estimated_end_time))
 
-	printer(f"\r\t{percent} [{bar}] | {format_elapsed}<{estimated_end_format}", True)
+	printer(f"{percent} [{bar}] | {format_elapsed}<{estimated_end_format}", True)
 
 # Collect average fragmentation rates of a multiprocess trace throughout it's entire lifetime
 # Calculating fragmentation at every time stamp would be prohibitively expensive, so a snapshot
