@@ -59,7 +59,7 @@ if __name__ == "__main__":
 	# This doesn't compute a true average since I'm not snapshotting at every event
 	# Higher timestep means faster computation since fewer stream conversion have to be done
 	# Lower timestep means higher accuracy and lower memory usage spikes
-	for models, line_num, byte_pos in mtrace_parser.parse(trace_file, 1000):
+	for models, line_num, byte_pos in mtrace_parser.parse(trace_file, 10000):
 		for pid, model in models.items():
 			if (model.alloc_blocks == {}):
 				continue
@@ -75,8 +75,8 @@ if __name__ == "__main__":
 		# printer("Progress: {:.3f} %".format(byte_pos / file_size * 100), True)
 		progress_bar(byte_pos, file_size, start_time)
 
-	printer(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
-	outf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
+	printer(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
+	outf.write(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
 	for pid, avg_frag in metrics.items():
 		printer(f"{pid}, {avg_frag}")
 		outf.write(f"{pid}, {avg_frag}")
