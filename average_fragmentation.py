@@ -45,7 +45,7 @@ def progress_bar(completed, total, start_time, bar_length=40):
 # An average fragmentation rate for each metric is calculated between all timesteps and all processes
 if __name__ == "__main__":
 	trace_file, output_file = common.arg_check_io()
-	metrics = {}
+	avg_metrics = {}
 
 	outf = open(output_file, "x")
 	file_size = os.path.getsize(trace_file)
@@ -58,30 +58,32 @@ if __name__ == "__main__":
 	# This doesn't compute a true average since I'm not snapshotting at every event
 	# Higher timestep means faster computation since fewer stream conversion have to be done
 	# Lower timestep means higher accuracy and lower memory usage spikes
+	#
+	# It may be more fair to take a snapshot of each PID after n events on that PID,
+	# but I ain't doing all that
 	for models, line_num, byte_pos in mptrace_parser.parse(trace_file, 10000):
-		last_step_metrics = {}
+		iter_metrics = {}
 		for pid, model in models.items():
 			if (model.alloc_blocks == {}):
 				continue
 
-			pid_avgs = metrics.get(pid, [0] * len(_FRAG_FUNCTIONS))
+			pid_avgs = avg_metrics.get(pid, [0] * len(_FRAG_FUNCTIONS))
 			# Why can't I just set the default with get 😭
-			metrics[pid] = pid_avgs
+			avg_metrics[pid] = pid_avgs
 
-			last_step_metrics[pid] = last_step_metrics.get(pid, [0] * len(_FRAG_FUNCTIONS))
+			iter_metrics[pid] = iter_metrics.get(pid, [0] * len(_FRAG_FUNCTIONS))
 
 			for i, func in enumerate(_FRAG_FUNCTIONS):
 				func_avg = pid_avgs[i]
 				metric = func(model)
-				last_step_metrics[pid][i] = metric
-				metrics[pid][i] = iter_avg(line_num / 10000, func_avg, metric)
-		outf.write(f"{line_num}, {last_step_metrics}\n")
+				iter_metrics[pid][i] = metric
+				avg_metrics[pid][i] = iter_avg(line_num / 10000, func_avg, metric)
+		outf.write(f"{line_num}, {iter_metrics}\n")
 		progress_bar(byte_pos, file_size, start_time)
 
 	printer(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
 	outf.write(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}\n")
-	for pid, avg_frag in metrics.items():
-
+	for pid, avg_frag in avg_metrics.items():
 		printer(f"{pid}, {avg_frag}")
 		outf.write(f"{pid}, {avg_frag}\n")
 
