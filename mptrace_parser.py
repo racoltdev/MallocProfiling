@@ -15,6 +15,10 @@ def parse_line(line, num):
 	size = None
 	if len(line) == 5:
 		size = int(line[4], 16)
+		# On some systems, malloc(0) returns a pointer instead of null. This obviously takes allocation
+		# space and must be accounted for. See `man malloc`
+		if size == 0:
+			size = 1
 
 	return pid, address, op, size
 
