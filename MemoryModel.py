@@ -23,6 +23,7 @@ class MemorySnapshot:
 		self.page_size = page_size
 		self.pages = {}
 		self.alloc_blocks = {}
+		self.events = 0
 
 	def total_page_bytes(self, depth):
 		return self.page_size ** (self.max_depth - depth)
@@ -62,6 +63,7 @@ class MemorySnapshot:
 		parent_page[page_address] = page
 
 	def malloc(self, start_address, length):
+		self.events += 1
 		valid = True
 		end_address = start_address + length - 1
 
@@ -138,6 +140,7 @@ class MemorySnapshot:
 	# if free(1), and some allocation exists starting @2, this will not remove the record from alloc_blocks
 	# even if the length of the allocation @1 is greater than 1
 	def free(self, start_address):
+		self.events += 1
 		valid = True
 		length = self.alloc_blocks.get(start_address)
 
@@ -200,6 +203,8 @@ class MemorySnapshot:
 					valid = False
 
 				self._free_update_page(start_page, bit_mask, start_address, start_page_address)
+
+		return valid
 
 	def print_dump(self):
 		keys = list(self.alloc_blocks.keys())

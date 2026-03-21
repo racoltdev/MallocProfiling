@@ -15,8 +15,8 @@ import sys
 
 _FRAG_FUNCTIONS = (alternating_stream_entropy.alt_stream_entropy, alternating_stream_entropy.norm_alt_entropy, ebfm.ebfm, esp_umm.esp_umm, external_fragmentation.external_frag, ssfm.ssfm)
 
-def iter_avg(n, old_avg, new_val):
-	avg = old_avg + (new_val - old_avg) / n
+def iter_avg(n, old_avg, new_val, weight=1.0):
+	avg = old_avg + (((new_val - old_avg) * weight) / n)
 	return avg
 
 def progress_bar(completed, total, start_time, bar_length=40):
@@ -46,6 +46,7 @@ def progress_bar(completed, total, start_time, bar_length=40):
 if __name__ == "__main__":
 	trace_file, output_file = common.arg_check_io()
 	avg_metrics = {}
+	step_size = 10000
 
 	outf = open(output_file, "x")
 	file_size = os.path.getsize(trace_file)
@@ -53,15 +54,12 @@ if __name__ == "__main__":
 	start_time = int(time.time())
 	progress_bar(0, file_size, start_time)
 
-	outf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}\n")
+	outf.write(f"trace_line, {{pid, pid_event_num {[x.__name__ for x in _FRAG_FUNCTIONS]}}}\n")
 
 	# This doesn't compute a true average since I'm not snapshotting at every event
 	# Higher timestep means faster computation since fewer stream conversion have to be done
 	# Lower timestep means higher accuracy and lower memory usage spikes
-	#
-	# It may be more fair to take a snapshot of each PID after n events on that PID,
-	# but I ain't doing all that
-	for models, line_num, byte_pos in mptrace_parser.parse(trace_file, 10000):
+	for models, line_num, byte_pos in mptrace_parser.parse(trace_file, step_size):
 		iter_metrics = {}
 		for pid, model in models.items():
 			if (model.alloc_blocks == {}):
@@ -71,21 +69,27 @@ if __name__ == "__main__":
 			# Why can't I just set the default with get 😭
 			avg_metrics[pid] = pid_avgs
 
-			iter_metrics[pid] = iter_metrics.get(pid, [0] * len(_FRAG_FUNCTIONS))
+			n = model.events
+			# n really isn't needed in the key, but it makes printing n easier
+			key = f"{pid}, {n}"
+			iter_metrics[key] = iter_metrics.get(pid, [0] * len(_FRAG_FUNCTIONS))
 
 			for i, func in enumerate(_FRAG_FUNCTIONS):
 				func_avg = pid_avgs[i]
 				metric = func(model)
-				iter_metrics[pid][i] = metric
-				avg_metrics[pid][i] = iter_avg(line_num / 10000, func_avg, metric)
+
+				iter_metrics[key][i] = metric
+				avg_metrics[pid][i] = iter_avg(n, func_avg, metric)
+
 		outf.write(f"{line_num}, {iter_metrics}\n")
 		progress_bar(byte_pos, file_size, start_time)
 
 	printer(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
 	outf.write(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}\n")
 	for pid, avg_frag in avg_metrics.items():
-		printer(f"{pid}, {avg_frag}")
-		outf.write(f"{pid}, {avg_frag}\n")
+		line = f"{pid}, {avg_frag}"
+		printer(line)
+		outf.write(f"{line}\n")
 
 	outf.close()
 	print()
