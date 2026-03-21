@@ -80,6 +80,8 @@ def parse(trace_file, limit):
 			obj = parse_line(str(line)[2:-3], num)
 			track_obj(*obj, num, models)
 			if num % limit == 0:
+				# Will return models even if no events occured to that pid this timestep
+				# This is innefficient but doesn't harm anything
 				yield (models, num, f.tell())
 
 		last_pos = f.tell()
