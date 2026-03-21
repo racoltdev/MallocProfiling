@@ -12,7 +12,8 @@ def esp_umm(snapshot):
 		quality += f**2
 		free_size += f
 
-	# TODO 0 might not be the correct value for this case. Double check that
+	# If free_size == 0, then there is no used memory, or there are no gaps in memory
+	# In this case, default to 0 fragmentation for this metric
 	if free_size == 0:
 		return 0
 	else:

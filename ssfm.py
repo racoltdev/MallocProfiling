@@ -4,7 +4,8 @@ import MemoryModel
 
 def ssfm(snapshot):
 	stream, length = common.snapshot_to_free_block_stream(snapshot)
-	# TODO check if 0 is right for this case
+	# If nothing in stream, there is either no allocated mem, or no gaps in mem
+	# It is safe to default to 0 fragmentation in these cases
 	if len(stream) == 0:
 		return 0
 

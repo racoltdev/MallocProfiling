@@ -2,8 +2,6 @@ from printer import printer
 
 import numpy
 
-# TODO add a free function so this can iterate through large datasets without eating endless memory
-
 # A sparse and efficient structure for modeling memory usage at a given point in time and verifying
 # there is no overlap between allocated blocks.
 # Supports multilevel paging to partially model realistic memory structures. Could be modified in the future
