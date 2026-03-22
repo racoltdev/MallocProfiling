@@ -1,8 +1,7 @@
 .cachedVenv
 venv
 .venv
-racoltest/
-gcc/
+sample_programs/
 __pycache__/
 .coverage
 data/

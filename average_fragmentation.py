@@ -3,11 +3,11 @@ import common
 import mptrace_parser
 from printer import printer
 
-import esp_umm
-import ebfm
-import alternating_stream_entropy
-import external_fragmentation
-import ssfm
+import metrics.esp_umm as esp_umm
+import metrics.ebfm as ebfm
+import metrics.alternating_stream_entropy as alternating_stream_entropy
+import metrics.external_fragmentation as external_fragmentation
+import metrics.ssfm as ssfm
 
 import os
 import time
