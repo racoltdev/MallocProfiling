@@ -23,7 +23,7 @@ pid=$1
 loops=0
 
 while [ 1 ]; do
-	size=$(ls -l /home/andy/Research/Kul/malloc/MallocProfiling/gcc/m.trace | awk '{print $5}');
+	size=$(ls -l /home/andy/Research/Kul/malloc/MallocProfiling/sample_programs/gcc/m.trace | awk '{print $5}');
 	too_big=$((400 * 1024 * 1024 * 1024));
 	if [ $((size)) -gt $too_big ]; then
 		kill_descendant_processes $pid
@@ -32,6 +32,6 @@ while [ 1 ]; do
 	else
 		loops=$((loops + 1))
 		printf "\r%d: All good!" "$loops"
-		sleep $((10));
 	fi
+	sleep $((10));
 done;

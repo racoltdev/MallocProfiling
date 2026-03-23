@@ -5,3 +5,4 @@ sample_programs/
 __pycache__/
 .coverage
 data/
+.vscode
