@@ -49,7 +49,7 @@ class PidPickle:
 # is taken once every n timesteps and fragmentation is calculated at that timestep
 # An average fragmentation rate for each metric is calculated between all timesteps and all processes
 if __name__ == "__main__":
-	trace_file, output_file = common.arg_check_io()
+	trace_file, output_file, verify = common.arg_check_io()
 	sfrag_file = output_file + ".sfrag"
 	afrag_file = output_file + ".afrag"
 	avg_metrics = {}
@@ -71,7 +71,7 @@ if __name__ == "__main__":
 	# This doesn't compute a true average since I'm not snapshotting at every event
 	# Higher timestep means faster computation since fewer stream conversion have to be done
 	# Lower timestep means higher accuracy and lower memory usage spikes
-	for models, line_num, byte_pos in mptrace_parser.parse(trace_file, step_size):
+	for models, line_num, byte_pos in mptrace_parser.parse(trace_file, step_size, verify=verify):
 		for pid, model in models.items():
 			n = model.events
 

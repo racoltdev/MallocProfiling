@@ -23,8 +23,8 @@ def parse_line(line, num):
 	return pid, address, op, size
 
 
-def track_obj(pid, address, op, size, num, models):
-	pid_mem = models.get(pid, MemoryModel.MemorySnapshot(max_depth=2))
+def track_obj(pid, address, op, size, num, models, verify):
+	pid_mem = models.get(pid, MemoryModel.MemorySnapshot(max_depth=2, verify=verify))
 	#print(pid_mem.alloc_blocks)
 
 	obj = pid_mem.alloc_blocks.get(address)
@@ -63,7 +63,7 @@ def track_obj(pid, address, op, size, num, models):
 	#print("\n\n")
 
 
-def parse(trace_file, limit):
+def parse(trace_file, limit, verify=True):
 	models = {}
 	num = 0
 	last_pos = 0
@@ -82,7 +82,7 @@ def parse(trace_file, limit):
 
 		for num, line in enumerate(f, 1):
 			obj = parse_line(str(line)[2:-3], num)
-			track_obj(*obj, num, models)
+			track_obj(*obj, num, models, verify)
 			if num % limit == 0:
 				# Will return models even if no events occured to that pid this timestep
 				# This is innefficient but doesn't harm anything

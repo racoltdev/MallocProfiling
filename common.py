@@ -33,7 +33,17 @@ def arg_check():
 	return sys.argv[1]
 
 def arg_check_io():
-	if len(sys.argv) != 3:
-		print("Error: Incorrect number of arguments. Expected 2.\n\tInput mptrace file\n\tOutput file")
+	args = len(sys.argv)
+	if args == 3:
+		return [*sys.argv[1:], True]
+	elif args == 4:
+		if sys.argv[-1] == "True":
+			sys.argv[-1] = True
+		elif sys.argv[-1] == "False":
+			sys.argv[-1] = False
+		else:
+			print("Error: Invalid argument. Optional third argument 'verify' must be either True or False")
+		return sys.argv[1:]
+	else:
+		print("Error: Incorrect number of arguments. Expected 2.\n\tInput mptrace file\n\tOutput file\n\tOptional: Perform verification bool")
 		exit()
-	return sys.argv[1:]
