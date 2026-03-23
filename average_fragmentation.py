@@ -55,12 +55,12 @@ if __name__ == "__main__":
 	avg_metrics = {}
 	iter_metrics = {}
 	stale_pids = {}
-	cached_pids = {}
+	pickled_pids = {}
 	step_size = 10000
 	# staled, unstaled, pickled, unpickled = 0, 0, 0, 0
 
 	sfragf = open(sfrag_file, "x")
-	stalef = open("stale_pids.pickle", "w+b")
+	picklef = open("stale_pids.pickle", "w+b")
 	file_size = os.path.getsize(trace_file)
 
 	start_time = int(time.time())
@@ -88,8 +88,8 @@ if __name__ == "__main__":
 					# can never assume pid is dead, so these all may become active again
 					pid_avg = [x / stale_pids[pid][0] for x in avg_metrics[pid]]
 					pid_pickle = PidPickle(pid_avg, model)
-					cached_pids[pid] = (stalef.tell(), n)
-					pickle.dump(pid_pickle, stalef)
+					pickled_pids[pid] = (picklef.tell(), n)
+					pickle.dump(pid_pickle, picklef)
 					del stale_pids[pid]
 					del avg_metrics[pid]
 					# pickled += 1
@@ -112,21 +112,21 @@ if __name__ == "__main__":
 					continue
 
 			# recover cached pids from pickle file
-			elif pid in cached_pids and n > cached_pids[pid][1]:
-				stalef.seek(cached_pids[pid][0])
+			elif pid in pickled_pids and n > pickled_pids[pid][1]:
+				picklef.seek(pickled_pids[pid][0])
 
-				pid_pickle = pickle.load(stalef)
+				pid_pickle = pickle.load(picklef)
 				avg_metrics[pid] = pid_pickle.pid_avg
 				cached_model = pid_pickle.model
 				# merge dicts together, with latter dicts overwriting previous keys if overlap
 				# hopefully by restoring blocks and pages, this shouldn't damage state
 				model.alloc_blocks = {**cached_model.alloc_blocks, **model.alloc_blocks}
 				model.pages = {**cached_model.pages, **model.pages}
-				old_n = cached_pids[pid][1]
+				old_n = pickled_pids[pid][1]
 
-				del cached_pids[pid]
+				del pickled_pids[pid]
 				# seek to end of file
-				stalef.seek(0, 2)
+				picklef.seek(0, 2)
 				# unpickled += 1
 
 			pid_avgs = avg_metrics.get(pid, [0] * len(_FRAG_FUNCTIONS))
@@ -146,7 +146,7 @@ if __name__ == "__main__":
 		progress_bar(byte_pos, file_size, start_time)
 
 	sfragf.close()
-	stalef.close()
+	picklef.close()
 	os.remove("stale_pids.pickle")
 
 	for pid, val in stale_pids.items():
