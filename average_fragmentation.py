@@ -11,6 +11,7 @@ import metrics.ssfm as ssfm
 
 import os
 import time
+import pickle
 
 _FRAG_FUNCTIONS = (alternating_stream_entropy.alt_stream_entropy, alternating_stream_entropy.norm_alt_entropy, ebfm.ebfm, esp_umm.esp_umm, external_fragmentation.external_frag, ssfm.ssfm)
 
@@ -35,18 +36,18 @@ class PidCacheItem(CacheItem):
 # An average fragmentation rate for each metric is calculated between all timesteps and all processes
 if __name__ == "__main__":
 	trace_file, output_file, verify = common.arg_check_io()
-	sfrag_file = output_file + ".sfrag"
-	afrag_file = output_file + ".afrag"
+	sfrag_file = output_file + ".sfrag.pickle"
+	afrag_file = output_file + ".afrag.pickle"
 	step_size = 10000
 
-	sfragf = open(sfrag_file, "x")
+	sfragf = open(sfrag_file, "xb")
 	pid_cache = Cache("pid_cache.pickle")
 	file_size = os.path.getsize(trace_file)
 
 	start_time = int(time.time())
 	printer.progress(0, file_size, start_time)
 
-	sfragf.write(f"trace_line, {{pid: (pid_event_num, {[x.__name__ for x in _FRAG_FUNCTIONS]})}}\n")
+	#sfragf.write(f"trace_line, {{pid: (pid_event_num, {[x.__name__ for x in _FRAG_FUNCTIONS]})}}\n")
 
 	# This doesn't compute a true average since I'm not snapshotting at every event
 	# Higher timestep means faster computation since fewer stream conversion have to be done
@@ -82,20 +83,22 @@ if __name__ == "__main__":
 			new_cache_item = PidCacheItem(n, cached_item.pid_avg)
 			pid_cache.update(pid, new_cache_item)
 
-		sfragf.write(f"{line_num}, {iter_metrics}\n")
+		pickle.dump((line_num, iter_metrics), sfragf)
+		#sfragf.write(f"{line_num}, {iter_metrics}\n")
 		printer.progress(byte_pos, file_size, start_time)
 
 	sfragf.close()
 
-	afragf = open(afrag_file, "x")
+	afragf = open(afrag_file, "xb")
 
 	printer.printer(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
-	afragf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}\n")
+	#afragf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}\n")
 
 	for pid, cache_item in pid_cache.all():
-		line = f"{pid}, {[x / cache_item.usage_hash for x in cache_item.pid_avg]}"
-		printer.printer(line)
-		afragf.write(f"{line}\n")
+		true_avg = [x / cache_item.usage_hash for x in cache_item.pid_avg]
+		printer.printer(f"{pid}, {true_avg}")
+		# afragf.write(f"{line}\n")
+		pickle.dump((pid, true_avg), afragf)
 
 	afragf.close()
 	pid_cache.close_cache_file(destroy=True)
