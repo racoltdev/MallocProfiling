@@ -35,14 +35,14 @@ def progress(completed, total, start_time, bar_length=40):
 
 	current_time = int(time.time())
 	elapsed_time = current_time - start_time
-	elapsed_day = elapsed_time / (60 * 60 * 24)
+	elapsed_day = elapsed_time // (60 * 60 * 24)
 	format_elapsed = time.strftime("%H:%M:%S", time.gmtime(elapsed_time))
 
 	estimated_end_time = 0;
 	# Catch divide by zero errors
 	if (completed != 0):
 		estimated_end_time = int(elapsed_time * (total / completed))
-	estimated_end_day = estimated_end_time / (60 * 60 * 24)
+	estimated_end_day = estimated_end_time // (60 * 60 * 24)
 	estimated_end_format =  time.strftime("%H:%M:%S", time.gmtime(estimated_end_time))
 
-	printer(f"{percent} [{bar}] | {elapsed_day}D+{format_elapsed}<{estimated_end_day}D+{estimated_end_format}", True)
+	printer(f"{percent} [{bar}] | {elapsed_day}D +{format_elapsed} < {estimated_end_day}D +{estimated_end_format}", True)
