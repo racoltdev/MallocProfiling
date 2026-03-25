@@ -36,16 +36,16 @@ def arg_check():
 def arg_check_io():
 	args = len(sys.argv)
 	if args == 3:
-		return [*sys.argv[1:], True]
+		return *sys.argv[1:], True
 	elif args == 4:
 		verify = sys.argv[-1].lower()
 		if verify == "true":
-			sys.argv[-1] = True
+			return *sys.argv[1:-1], True
 		elif verify == "false":
-			sys.argv[-1] = False
+			return *sys.argv[1:-1], False
 		else:
 			print("Error: Invalid argument. Optional third argument 'verify' must be either True or False")
-		return sys.argv[1:]
+			exit()
 	else:
 		print("Error: Incorrect number of arguments. Expected 2.\n\tInput mptrace file\n\tOutput file\n\tOptional: Perform verification bool. Defaults to True.")
 		exit()

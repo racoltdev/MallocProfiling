@@ -1,5 +1,7 @@
-import pickle
+import printer
 
+import pickle
+import os
 from typing import Dict
 
 class CacheItem:
@@ -9,24 +11,7 @@ class CacheItem:
 	def pre_pickle(self):
 		pass
 
-	def post_pickle(self, pickled_item, unpickling_data):
-		pass
-
-class PidCacheItem(CacheItem):
-	def __init__(self, event_num, pid_avg):
-		self.usage_hash = event_num
-		self.pid_avg = pid_avg
-
-	def pre_pickle(self):
-		self.pid_avg = [x / self.usage_hash for x in self.pid_avg]
-
-	def post_pickle(self, pickled_item, unpickling_data):
-		# merge dictionaries in place, with new data taking precedence
-		# pickled_item.alloc_blocks.update(unpickling_data.alloc_blocks)
-		# unpickling_data.update(pickled_item.alloc_blocks)
-
-		# self.model.alloc_blocks = {**pickled_item.alloc_blocks, **unpickling_data.alloc_blocks}
-		# self.model.pages = {**pickled_item.pages, **unpickling_data.pages}
+	def post_pickle(self):
 		pass
 
 class _PickleTag:
@@ -42,16 +27,19 @@ class Cache:
 		self._cache_file = cache_file
 		self._cachef = open(cache_file, "w+b")
 
-	def _unpickle(self, key, pickle_tag, unpickling_data):
+	def _unpickle(self, key, pickle_tag, mutate=True):
 		self._cachef.seek(pickle_tag.seek_pos)
 		pickled_item = pickle.load(self._cachef)
-		pickled_item.post_pickle(unpickling_data)
-		self._main_cache[key] = pickled_item
-		del self._pickled_cache[key]
+		pickled_item.post_pickle()
+
+		if mutate:
+			self._main_cache[key] = pickled_item
+			del self._pickled_cache[key]
+
 		self._cachef.seek(0, 2)
 		return pickled_item
 
-	def get(self, key, usage_hash, unpickling_data=None):
+	def get(self, key, usage_hash):
 		cached_usage = None
 
 		if key in self._main_cache:
@@ -86,7 +74,7 @@ class Cache:
 
 			# cache hit. no longer stale, recover to main cache
 			if cached_usage != usage_hash:
-				return self._unpickle(key, pickle_tag, unpickling_data)
+				return self._unpickle(key, pickle_tag)
 
 		return cached_usage # None if does not exist in cache
 
@@ -96,18 +84,28 @@ class Cache:
 		# and determined to be not stale, or items that don't yet exist in the cache
 		self._main_cache[key] = cache_item
 
-	def all(self, unpickling_data=None):
-		for key, item in self._main_cache:
+	def all(self):
+		for key, item in self._main_cache.items():
 			yield (key, item)
 
-		for key, item in self._stale_cache:
+		toprint = True
+		for key, item in self._stale_cache.items():
+			if toprint:
+				printer.printer(f"stale, {key}")
+				toprint = False
 			yield (key, item)
 
-		for key, pickle_tag in self._pickled_cache:
-			yield (key, self._unpickle(key, pickle_tag, unpickling_data))
+		toprint = True
+		for key, pickle_tag in self._pickled_cache.items():
+			if toprint:
+				printer.printer(f"stale, {key}")
+				toprint = False
+			yield (key, self._unpickle(key, pickle_tag, mutate=False))
 
 	def open_cache_file(self):
 		self._cachef = open(self._cache_file, "w+b")
 
-	def close_cache_file(self):
+	def close_cache_file(self, destroy=False):
 		self._cachef.close()
+		if destroy:
+			os.remove(self._cache_file)
