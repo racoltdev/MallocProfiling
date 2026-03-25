@@ -1,7 +1,7 @@
 import MemoryModel
 import common
 import mptrace_parser
-from printer import printer
+import printer
 from cache import Cache
 
 import metrics.esp_umm as esp_umm
@@ -20,25 +20,6 @@ def weighted_moving_average(partial_avg, weight, new_val):
 	partial_avg += (weight * new_val)
 	return partial_avg
 
-def progress_bar(completed, total, start_time, bar_length=40):
-	progress = int((completed / total) * bar_length)
-	done = "█" * progress
-	not_done = "-" * (bar_length - progress)
-	bar = done + not_done
-
-	percent = f"{((completed / total) * 100):.2f}%"
-
-	current_time = int(time.time())
-	elapsed_time = current_time - start_time
-	format_elapsed = time.strftime("%H:%M:%S", time.gmtime(elapsed_time))
-
-	estimated_end_time = 0;
-	# Catch divide by zero errors
-	if (completed != 0):
-		estimated_end_time = int(elapsed_time * (total / completed))
-	estimated_end_format =  time.strftime("%H:%M:%S", time.gmtime(estimated_end_time))
-
-	printer(f"{percent} [{bar}] | {format_elapsed}<{estimated_end_format}", True)
 
 class PidPickle:
 	def __init__(self, pid_avg, model):
@@ -65,7 +46,7 @@ if __name__ == "__main__":
 	file_size = os.path.getsize(trace_file)
 
 	start_time = int(time.time())
-	progress_bar(0, file_size, start_time)
+	printer.progress(0, file_size, start_time)
 
 	sfragf.write(f"trace_line, {{pid: (pid_event_num, {[x.__name__ for x in _FRAG_FUNCTIONS]})}}\n")
 
@@ -140,7 +121,7 @@ if __name__ == "__main__":
 				avg_metrics[pid][i] = weighted_moving_average(func_avg, (n - old_n), metric)
 
 		sfragf.write(f"{line_num}, {iter_metrics}\n")
-		progress_bar(byte_pos, file_size, start_time)
+		printer.progress(byte_pos, file_size, start_time)
 
 	sfragf.close()
 	picklef.close()
@@ -153,11 +134,11 @@ if __name__ == "__main__":
 
 	afragf = open(afrag_file, "x")
 
-	printer(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
+	printer.printer(f"\n\nAverage fragmentation:\npid, {[x.__name__ for x in _FRAG_FUNCTIONS]}")
 	afragf.write(f"pid, {[x.__name__ for x in _FRAG_FUNCTIONS]}\n")
 	for pid, avg_frag in avg_metrics.items():
 		line = f"{pid}, {[x / iter_metrics[pid][0] for x in avg_frag]}"
-		printer(line)
+		printer.printer(line)
 		afragf.write(f"{line}\n")
 
 	afragf.close()

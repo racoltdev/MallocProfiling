@@ -1,3 +1,5 @@
+import time
+
 last_progress_upd = None
 last_msg_is_progress = False
 
@@ -23,3 +25,22 @@ def printer(msg, progress_msg=False):
 	elif not last_msg_is_progress and not progress_msg:
 		print(msg)
 
+def progress(completed, total, start_time, bar_length=40):
+	progress = int((completed / total) * bar_length)
+	done = "█" * progress
+	not_done = "-" * (bar_length - progress)
+	bar = done + not_done
+
+	percent = f"{((completed / total) * 100):.2f}%"
+
+	current_time = int(time.time())
+	elapsed_time = current_time - start_time
+	format_elapsed = time.strftime("%H:%M:%S", time.gmtime(elapsed_time))
+
+	estimated_end_time = 0;
+	# Catch divide by zero errors
+	if (completed != 0):
+		estimated_end_time = int(elapsed_time * (total / completed))
+	estimated_end_format =  time.strftime("%H:%M:%S", time.gmtime(estimated_end_time))
+
+	printer(f"{percent} [{bar}] | {format_elapsed}<{estimated_end_format}", True)
