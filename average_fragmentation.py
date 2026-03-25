@@ -12,6 +12,7 @@ import metrics.ssfm as ssfm
 import os
 import time
 import pickle
+import gzip
 
 _FRAG_FUNCTIONS = (alternating_stream_entropy.alt_stream_entropy, alternating_stream_entropy.norm_alt_entropy, ebfm.ebfm, esp_umm.esp_umm, external_fragmentation.external_frag, ssfm.ssfm)
 
@@ -36,11 +37,11 @@ class PidCacheItem(CacheItem):
 # An average fragmentation rate for each metric is calculated between all timesteps and all processes
 if __name__ == "__main__":
 	trace_file, output_file, verify = common.arg_check_io()
-	sfrag_file = output_file + ".sfrag.pickle"
+	sfrag_file = output_file + ".sfrag.gz"
 	afrag_file = output_file + ".afrag.pickle"
 	step_size = 10000
 
-	sfragf = open(sfrag_file, "xb")
+	sfragf = gzip.open(sfrag_file, "xb")
 	pid_cache = Cache("pid_cache.pickle")
 	file_size = os.path.getsize(trace_file)
 
