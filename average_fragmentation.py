@@ -2,6 +2,7 @@ import MemoryModel
 import common
 import mptrace_parser
 from printer import printer
+from cache import Cache
 
 import metrics.esp_umm as esp_umm
 import metrics.ebfm as ebfm
@@ -57,9 +58,9 @@ if __name__ == "__main__":
 	stale_pids = {}
 	pickled_pids = {}
 	step_size = 10000
-	# staled, unstaled, pickled, unpickled = 0, 0, 0, 0
 
 	sfragf = open(sfrag_file, "x")
+	pid_cache = Cache("stale_pids.pickle")
 	picklef = open("stale_pids.pickle", "w+b")
 	file_size = os.path.getsize(trace_file)
 
@@ -92,13 +93,11 @@ if __name__ == "__main__":
 					pickle.dump(pid_pickle, picklef)
 					del stale_pids[pid]
 					del avg_metrics[pid]
-					# pickled += 1
 					continue
 				else:
 					# pid is no longer stale, unstage it
 					iter_metrics[pid] = stale_pids[pid]
 					del stale_pids[pid]
-					# unstaled += 1
 
 			old_n = 0
 
@@ -108,7 +107,6 @@ if __name__ == "__main__":
 				if n == old_n:
 					stale_pids[pid] = iter_metrics.get(pid)
 					del iter_metrics[pid]
-					# staled += 1
 					continue
 
 			# recover cached pids from pickle file
@@ -127,7 +125,6 @@ if __name__ == "__main__":
 				del pickled_pids[pid]
 				# seek to end of file
 				picklef.seek(0, 2)
-				# unpickled += 1
 
 			pid_avgs = avg_metrics.get(pid, [0] * len(_FRAG_FUNCTIONS))
 			# Why can't I just set the default with get 😭

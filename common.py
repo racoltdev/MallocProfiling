@@ -32,18 +32,20 @@ def arg_check():
 		exit()
 	return sys.argv[1]
 
+# TODO use argparse for input handling
 def arg_check_io():
 	args = len(sys.argv)
 	if args == 3:
 		return [*sys.argv[1:], True]
 	elif args == 4:
-		if sys.argv[-1] == "True":
+		verify = sys.argv[-1].lower()
+		if verify == "true":
 			sys.argv[-1] = True
-		elif sys.argv[-1] == "False":
+		elif verify == "false":
 			sys.argv[-1] = False
 		else:
 			print("Error: Invalid argument. Optional third argument 'verify' must be either True or False")
 		return sys.argv[1:]
 	else:
-		print("Error: Incorrect number of arguments. Expected 2.\n\tInput mptrace file\n\tOutput file\n\tOptional: Perform verification bool")
+		print("Error: Incorrect number of arguments. Expected 2.\n\tInput mptrace file\n\tOutput file\n\tOptional: Perform verification bool. Defaults to True.")
 		exit()
