@@ -91,14 +91,14 @@ class Cache:
 		toprint = True
 		for key, item in self._stale_cache.items():
 			if toprint:
-				printer.printer(f"stale, {key}")
+				printer.printer(f"stale pids:")
 				toprint = False
 			yield (key, item)
 
 		toprint = True
 		for key, pickle_tag in self._pickled_cache.items():
 			if toprint:
-				printer.printer(f"stale, {key}")
+				printer.printer(f"pickled pids:")
 				toprint = False
 			yield (key, self._unpickle(key, pickle_tag, mutate=False))
 
