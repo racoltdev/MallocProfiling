@@ -1,10 +1,12 @@
 import common
 import lifetime_analysis
 import MemoryModel
+import metrics.free_stream_cache as cache
 
 def ebfm(snapshot):
-	stream, length = common.snapshot_to_free_block_stream(snapshot)
-	entropy_metric = common.entropy(stream, length)
+	if cache.stream is None:
+		cache.stream, cache.length = common.snapshot_to_free_block_stream(snapshot)
+	entropy_metric = common.entropy(cache.stream, cache.length)
 	return entropy_metric
 
 if __name__ == "__main__":

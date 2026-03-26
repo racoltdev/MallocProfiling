@@ -1,14 +1,16 @@
 import lifetime_analysis
 import MemoryModel
 import common
+import metrics.free_stream_cache as cache
 
 import math
 
 def esp_umm(snapshot):
-	stream, _ = common.snapshot_to_free_block_stream(snapshot)
+	if cache.stream is None:
+		cache.stream, cache.length = common.snapshot_to_free_block_stream(snapshot)
 	quality, free_size = 0, 0
 
-	for f in stream:
+	for f in cache.stream:
 		quality += f**2
 		free_size += f
 

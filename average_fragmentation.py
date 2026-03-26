@@ -8,6 +8,7 @@ import metrics.ebfm as ebfm
 import metrics.alternating_stream_entropy as alternating_stream_entropy
 import metrics.external_fragmentation as external_fragmentation
 import metrics.ssfm as ssfm
+import metrics.free_stream_cache as free_stream_cache
 
 import os
 import time
@@ -83,6 +84,9 @@ if __name__ == "__main__":
 				cached_item.pid_avg[i] = weighted_moving_average(func_avg, (n - old_n), metric)
 			new_cache_item = PidCacheItem(n, cached_item.pid_avg)
 			pid_cache.update(pid, new_cache_item)
+
+			alternating_stream_entropy.reset_stream_cache()
+			free_stream_cache.reset_stream_cache()
 
 		pickle.dump((line_num, iter_metrics), sfragf)
 		#sfragf.write(f"{line_num}, {iter_metrics}\n")

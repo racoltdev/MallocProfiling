@@ -2,6 +2,8 @@ import lifetime_analysis
 import MemoryModel
 import common
 
+stream = None
+
 def snapshot_to_alt_stream(memory_snapshot):
 	alloc_blocks = memory_snapshot.alloc_blocks
 	keys = list(alloc_blocks.keys())
@@ -29,7 +31,9 @@ def snapshot_to_alt_stream(memory_snapshot):
 	return alternating_stream
 
 def alt_stream_entropy(snapshot):
-	stream = snapshot_to_alt_stream(snapshot)
+	global stream
+	if stream is None:
+		stream = snapshot_to_alt_stream(snapshot)
 	# encode n, rather than N. But should try with N
 	# TODO replace n with N
 	entropy_metric = common.entropy(stream)
@@ -37,7 +41,9 @@ def alt_stream_entropy(snapshot):
 	return entropy_metric
 
 def norm_alt_entropy(snapshot):
-	stream = snapshot_to_alt_stream(snapshot)
+	global stream
+	if stream is None:
+		stream = snapshot_to_alt_stream(snapshot)
 
 	alloc_blocks = snapshot.alloc_blocks
 	keys = list(alloc_blocks.keys())
@@ -45,6 +51,10 @@ def norm_alt_entropy(snapshot):
 
 	entropy_metric = common.entropy(stream, length)
 	return entropy_metric
+
+def reset_stream_cache():
+	global stream
+	stream = None
 
 if __name__ == "__main__":
 	common.arg_check()
