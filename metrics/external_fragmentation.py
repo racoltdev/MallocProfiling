@@ -8,10 +8,10 @@ def external_frag(snapshot):
 		cache.stream, cache.length = common.snapshot_to_free_block_stream(snapshot)
 	# If nothing in stream, there is either no allocated mem, or no gaps in mem
 	# It is safe to default to 0 fragmentation in these cases
-	if len(cache.stream) == 0:
+	free_size = sum(cache.stream)
+	if free_size == 0:
 		return 0
 	else:
-		free_size = sum(cache.stream)
 		free_max = max(cache.stream)
 		metric = 1 - (free_max / free_size)
 		return metric

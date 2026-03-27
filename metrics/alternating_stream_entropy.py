@@ -4,7 +4,12 @@ import common
 
 stream = None
 
-# This func is HELLA slow
+# This and snapshot_to_free_stream are the biggest bottlenecks of the whole program.
+# If it continues to be a problem, c or inline assembly will be needed.
+# I can't make python do this any faster.
+# Could replace stream generation every loop with stream updating every loop. This
+# would need a complex caching system and reworking my whole stack. Absolute last
+# resort option.
 def snapshot_to_alt_stream(memory_snapshot):
 	alloc_blocks = memory_snapshot.alloc_blocks
 	keys = list(alloc_blocks.keys())
