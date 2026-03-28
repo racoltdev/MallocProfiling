@@ -1,0 +1,5 @@
+run `python -Xperf_jit {args}`
+perf record -F 9999 -g -k 1 --call-graph dwarf -o perf.data -p {pid}
+kill when done with `sudo kill -INT {pid}`
+perf inject -i perf.data --jit --output perf.jit.data
+perf script -F +pid -i perf.jit.data > data.perf
