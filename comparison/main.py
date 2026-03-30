@@ -55,7 +55,6 @@ def pid_init(args):
 		for i, line in enumerate(ccommon.read_line(args.afrag)):
 			if i >= args.pc:
 				break
-			line = ccommon.parse_afrag_line(line)
 			args.pid.append(line.pid)
 		if args.pc >= len(args.pid):
 			print(f"[ArgParser] Warn: Requested {args.pc} samples, but only {len(args.pid)} samples exist in provided file")
@@ -63,7 +62,6 @@ def pid_init(args):
 	elif args.pr is not None:
 		all_pid = []
 		for line in ccommon.read_line(args.afrag):
-			line = ccommon.parse_afrag_line(line)
 			all_pid.append(line.pid)
 
 		if args.pr >= len(all_pid):

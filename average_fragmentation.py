@@ -44,6 +44,9 @@ if __name__ == "__main__":
 	step_size = 10000
 
 	sfragf = gzip.open(sfrag_file, "xb")
+	if os.path.exists(afrag_file):
+		print("Error: File exists \"{afrag_file}\"")
+		exit()
 	pid_cache = Cache("pid_cache.pickle")
 	file_size = os.path.getsize(trace_file)
 
@@ -104,7 +107,7 @@ if __name__ == "__main__":
 		true_avg = [x / cache_item.usage_hash for x in cache_item.pid_avg]
 		printer.printer(f"{pid}, {true_avg}")
 		# afragf.write(f"{line}\n")
-		pickle.dump((pid, true_avg), afragf)
+		pickle.dump(sfrag.AfragLine(pid, true_avg), afragf)
 
 	afragf.close()
 	pid_cache.close_cache_file(destroy=True)
