@@ -1,21 +1,11 @@
+print("Importing libraries...")
 import argparse
 import sys
 import os
 import random
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
-import metrics.esp_umm as esp_umm
-import metrics.ebfm as ebfm
-import metrics.alternating_stream_entropy as alternating_stream_entropy
-import metrics.external_fragmentation as external_fragmentation
-import metrics.ssfm as ssfm
-sys.path.remove(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
-
 import correlation
-
-_FRAG_FUNCTIONS = (alternating_stream_entropy.alt_stream_entropy, alternating_stream_entropy.norm_alt_entropy, ebfm.ebfm, esp_umm.esp_umm, external_fragmentation.external_frag, ssfm.ssfm)
-
-_FUNC_NAMES = [x.__name__ for x in _FRAG_FUNCTIONS]
+import ccommon
 
 def create_parser():
 	ap = argparse.ArgumentParser(add_help=True)
@@ -29,66 +19,82 @@ def create_parser():
 
 	pid_select = ap.add_mutually_exclusive_group(required=True)
 	pid_select.add_argument("-p", "--pid", action="extend", nargs="+", type=int, \
-			help="A list of PIDs to compare")
+			help="A list of PIDs to compare", default=[])
 	pid_select.add_argument("--pr", "--random-pid-count", type=int, help="The number of PIDs to randomly sample \
 			from the given afrag file")
 	pid_select.add_argument("--pc", "--first-n-pids", type=int, help="Sample the first n PIDs from the given \
-			given afrag file")
+			afrag file")
+	pid_select.add_argument("--pa", "--all-pids", action="store_true", help="Do not perform pid sampling. Use all \
+			pids in the given afrag file")
 
 	ap.add_argument("--spearman", action="store_true", help="If selected, perform spearman rank correlation")
 
 	ap.add_argument("--metrics", dest="metrics", action="extend", nargs="+", \
-			default=_FUNC_NAMES, choices=_FUNC_NAMES, type=str)
+			default=ccommon._FUNC_NAMES, choices=ccommon._FUNC_NAMES, type=str)
 
 	ap.add_argument("--seed", help="A seed to use for all random numbers. Defaults to current system time")
 
+	return ap
+
 
 def err_check(args):
-	if args.pid is None and args.afrag == None: ap.error("Automatic sampling of pids requires passing an afrag file with the --afrag argument")
+	if args.pid is None and not args.pa and args.afrag == None:
+		args.error("Automatic sampling of pids requires passing an afrag file with the --afrag argument")
 
 	if args.avg and args.afrag is None:
-		ap.error("If avg option is used, an input file must be passed with --afrag")
+		args.error("If avg option is used, an input file must be passed with --afrag")
 	elif args.segment and args.sfrag is None:
-		ap.error("If segment option is used, an input file must be passed with --sfrag")
+		args.error("If segment option is used, an input file must be passed with --sfrag")
 
 
 def pid_init(args):
-	def read_line(afrag):
-		with open(afrag, 'rb') as afragf:
-	        try:
-	            while True:
-	                yield pickle.load(afragf)[0]
-	        except EOFError:
-	            yield None
-
-	if args.pid is not None:
+	if args.pid != [] or args.pa:
 		pass
 
 	elif args.pc is not None:
-		for i in range(args.pc):
-			pid = read_line(args.afrag)
-			if pid is None:
+		for i, line in enumerate(ccommon.read_line(args.afrag)):
+			if i >= args.pc:
 				break
-			args.pid.append(pid)
+			line = ccommon.parse_afrag_line(line)
+			args.pid.append(line.pid)
+		if args.pc >= len(args.pid):
+			print(f"[ArgParser] Warn: Requested {args.pc} samples, but only {len(args.pid)} samples exist in provided file")
 
 	elif args.pr is not None:
 		all_pid = []
-		for pid in read_line(args.afrag):
-			all_pid.append(pid)
+		for line in ccommon.read_line(args.afrag):
+			line = ccommon.parse_afrag_line(line)
+			all_pid.append(line.pid)
+
+		if args.pr >= len(all_pid):
+			print(f"[ArgParser] Warn: Requested {args.pr} samples, but only {len(all_pid)} samples exist in provided file")
+			args.pr = len(all_pid) - 1
 		args.pid = random.sample(all_pid, args.pr)
 
 
-def args():
+def metrics_init(args):
+	indexed_metrics = []
+	for metric in args.metrics:
+		if metric in ccommon._FUNC_NAMES:
+			indexed_metrics.append(ccommon._FUNC_NAMES.index(metric))
+
+	args.metrics = sorted(indexed_metrics)
+
+
+def get_args():
 	ap = create_parser()
 	args = ap.parse_args()
 	err_check(args)
 
 	# Extra initializations
 	random.seed(args.seed)
+	pid_init(args)
+	metrics_init(args)
 
-
+	return args
 
 if __name__ == "__main__":
-	args = args()
+	print("Continuing\n")
+	args = get_args()
 	if args.avg and args.spearman:
-		correlation.afrag_spearman_corr(args.afrag, args.pid
+		correlation.afrag_spearman_corr(args.afrag, args.pid, args.metrics)
