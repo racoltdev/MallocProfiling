@@ -36,7 +36,7 @@ def snapshot_to_alt_stream(memory_snapshot):
 		last_bound = start + length
 	return alternating_stream
 
-def alt_stream_entropy(snapshot):
+def alt_entropy(snapshot):
 	global stream
 	if stream is None:
 		stream = snapshot_to_alt_stream(snapshot)
@@ -52,7 +52,7 @@ def norm_alt_entropy(snapshot):
 		stream = snapshot_to_alt_stream(snapshot)
 
 	alloc_blocks = snapshot.alloc_blocks
-	keys = list(alloc_blocks.keys())
+	keys = sorted(list(alloc_blocks.keys()))
 	length = (keys[-1] + alloc_blocks.get(keys[-1])) - keys[0]
 
 	entropy_metric = common.entropy(stream, length)
