@@ -24,10 +24,11 @@ def create_parser():
 			from the given afrag file")
 	pid_select.add_argument("--pc", "--first-n-pids", type=int, help="Sample the first n PIDs from the given \
 			afrag file")
-	pid_select.add_argument("--pa", "--all-pids", action="store_true", help="Do not perform pid sampling. Use all \
-			pids in the given afrag file")
+	pid_select.add_argument("--pa", "--all-pids", action="store_true", help="Do not perform pid sampling. Use \
+			all	pids in the given afrag file")
 
-	ap.add_argument("--spearman", action="store_true", help="If selected, perform spearman rank correlation")
+	ap.add_argument("--correlation", choices=["pearson", "spearman", "kendall"], help="If selected perform \
+			the listed type of correlation")
 
 	ap.add_argument("--metrics", dest="metrics", action="extend", nargs="+", \
 			default=ccommon._FUNC_NAMES, choices=ccommon._FUNC_NAMES, type=str)
@@ -94,5 +95,5 @@ def get_args():
 if __name__ == "__main__":
 	print("Continuing\n")
 	args = get_args()
-	if args.avg and args.spearman:
-		correlation.afrag_spearman_corr(args.afrag, args.pid, args.metrics)
+	if args.avg and args.correlation:
+		correlation.afrag_corr(args.afrag, args.pid, args.metrics)

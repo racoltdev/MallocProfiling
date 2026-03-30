@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 import ccommon
 
-def afrag_spearman_corr(afrag_file, pids, metrics=[i for i in range(len(ccommon._FUNC_NAMES))]):
+def afrag_corr(afrag_file, pids, metrics=[i for i in range(len(ccommon._FUNC_NAMES))], method="kendall"):
 	all_pids = True if pids == [] else False
 
 	col_names = [metric for i, metric in enumerate(ccommon._FUNC_NAMES) if i in metrics]
@@ -15,7 +15,7 @@ def afrag_spearman_corr(afrag_file, pids, metrics=[i for i in range(len(ccommon.
 			new_row = [metric for i, metric in enumerate(line.metrics) if i in metrics]
 			df.loc[len(df)] = new_row
 
-	corr = df.corr(method="kendall")
+	corr = df.corr(method=method)
 
 	seaborn.heatmap(corr, cmap="flare", annot=True)
 
