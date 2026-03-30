@@ -2,6 +2,7 @@ import common
 import mptrace_parser
 import printer
 from cache import Cache, CacheItem
+import sfrag
 
 import metrics.esp_umm as esp_umm
 import metrics.ebfm as ebfm
@@ -73,13 +74,13 @@ if __name__ == "__main__":
 
 			old_n = cached_item.usage_hash
 
-			iter_metrics[pid] = (n, [0] * len(_FRAG_FUNCTIONS))
+			iter_metrics[pid] = sfrag.PidMetrics(n, [0] * len(_FRAG_FUNCTIONS))
 
 			for i, func in enumerate(_FRAG_FUNCTIONS):
 				func_avg = cached_item.pid_avg[i]
 				metric = func(model)
 
-				iter_metrics[pid][1][i] = metric
+				iter_metrics[pid].func_metrics[i] = metric
 
 				cached_item.pid_avg[i] = weighted_moving_average(func_avg, (n - old_n), metric)
 			new_cache_item = PidCacheItem(n, cached_item.pid_avg)
