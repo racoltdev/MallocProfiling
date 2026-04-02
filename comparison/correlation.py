@@ -16,6 +16,7 @@ def afrag_corr(afrag_file, pids, metrics=[i for i in range(len(ccommon._FUNC_NAM
 			df.loc[len(df)] = new_row
 
 	corr = df.corr(method=method)
+	# Sort cols and rows by sum of correlations
 	corr = corr[sorted(corr.columns, key=lambda col: corr[col].sum())]
 	corr = corr.reindex(list(corr.columns))
 

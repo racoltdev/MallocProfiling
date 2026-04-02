@@ -77,7 +77,10 @@ if __name__ == "__main__":
 
 			old_n = cached_item.usage_hash
 
-			iter_metrics[pid] = sfrag.PidMetrics(n, [0] * len(_FRAG_FUNCTIONS))
+			model.alloc_blocks = dict(sorted(model.alloc_blocks.items()))
+			keys = list(model.alloc_blocks.keys())
+			mem_size = (keys[-1] + model.alloc_blocks.get(keys[-1])) - keys[0]
+			iter_metrics[pid] = sfrag.PidMetrics(n, [0] * len(_FRAG_FUNCTIONS), mem_size)
 
 			for i, func in enumerate(_FRAG_FUNCTIONS):
 				func_avg = cached_item.pid_avg[i]
