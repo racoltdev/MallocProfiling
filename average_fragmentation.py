@@ -110,7 +110,7 @@ if __name__ == "__main__":
 		true_avg = [x / cache_item.usage_hash for x in cache_item.pid_avg]
 		printer.printer(f"{pid}, {true_avg}")
 		# afragf.write(f"{line}\n")
-		pickle.dump(sfrag.AfragLine(pid, true_avg), afragf)
+		pickle.dump(sfrag.AfragLine(pid, true_avg, cache_item.usage_hash), afragf)
 
 	afragf.close()
 	pid_cache.close_cache_file(destroy=True)
