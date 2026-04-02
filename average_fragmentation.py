@@ -92,7 +92,7 @@ if __name__ == "__main__":
 			alternating_stream_entropy.reset_stream_cache()
 			free_stream_cache.reset_stream_cache()
 
-		pickle.dump((line_num, iter_metrics), sfragf)
+		pickle.dump(sfrag.SfragLine(line_num, iter_metrics), sfragf)
 		#sfragf.write(f"{line_num}, {iter_metrics}\n")
 		printer.progress(byte_pos, file_size, start_time)
 
