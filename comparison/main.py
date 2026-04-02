@@ -96,4 +96,4 @@ if __name__ == "__main__":
 	print("Continuing\n")
 	args = get_args()
 	if args.avg and args.correlation:
-		correlation.afrag_corr(args.afrag, args.pid, args.metrics)
+		correlation.afrag_corr(args.afrag, args.pid, args.metrics, args.correlation)

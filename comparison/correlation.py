@@ -16,9 +16,12 @@ def afrag_corr(afrag_file, pids, metrics=[i for i in range(len(ccommon._FUNC_NAM
 			df.loc[len(df)] = new_row
 
 	corr = df.corr(method=method)
+	corr = corr[sorted(corr.columns, key=lambda col: corr[col].sum())]
+	corr = corr.reindex(list(corr.columns))
 
 	seaborn.heatmap(corr, cmap="flare", annot=True)
 
-	plt.title(afrag_file)
+	file_name = afrag_file.split("/")[-1]
+	plt.title(f"{file_name} {method} correlation")
 	plt.show()
 
