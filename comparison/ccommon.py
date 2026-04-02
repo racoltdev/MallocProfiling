@@ -2,6 +2,7 @@ import sys
 import os
 
 import pickle
+import gzip
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
 
@@ -20,8 +21,12 @@ _FRAG_FUNCTIONS = (alternating_stream_entropy.alt_entropy, alternating_stream_en
 
 _FUNC_NAMES = [x.__name__ for x in _FRAG_FUNCTIONS]
 
-def read_line(pickle_file):
-	with open(pickle_file, 'rb') as picklef:
+def read_line(pickle_file, gz=False):
+	if gz:
+		fopen = gzip.open
+	else:
+		fopen = open
+	with fopen(pickle_file, 'rb') as picklef:
 		try:
 			while True:
 				yield pickle.load(picklef)

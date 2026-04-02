@@ -4,7 +4,7 @@ import sys
 import os
 import random
 
-import correlation
+import plotter
 import ccommon
 
 def create_parser():
@@ -27,8 +27,8 @@ Read the argument descriptions carefully and see the examples section to see how
 	ap.add_argument("--sfrag", type=str, help="Path to an sfrag.pickle.gzip file")
 
 	pid_select = ap.add_mutually_exclusive_group(required=True)
-	pid_select.add_argument("-p", "--pid", action="extend", nargs="+", type=int, \
-			help="A list of PIDs to compare", default=[])
+	pid_select.add_argument("-p", "--pid", action="extend", nargs="+", \
+			help="A list of PIDs to compare. Each PID must be an integer-like string.", default=[])
 	pid_select.add_argument("--pr", "--random-pid-count", type=int, help="The number of PIDs to randomly sample \
 			from the given afrag file")
 	pid_select.add_argument("--pc", "--first-n-pids", type=int, help="Sample the first n PIDs from the given \
@@ -40,9 +40,10 @@ Read the argument descriptions carefully and see the examples section to see how
 
 	ap.add_argument("--correlation", choices=["pearson", "spearman", "kendall"], help="If selected perform \
 			the listed type of correlation")
-	ap.add_argument("--lifetime", nargs="?", default=None, const="unbounded", help="If selected, plot a line chart \
-			of the selected metrics and pids throughout their lifetime. If an additional \"bounded\" argument is \
-			given, also plot the highest and lowest scoring pids for each metric at each timestep.")
+	ap.add_argument("--lifetime", nargs="?", default=None, const="unbounded", choices=["bounded", "unbounded"], \
+			help="If selected, plot a line chart of the selected metrics and pids throughout their lifetime. If \
+			an additional \"bounded\" argument is given, also plot the highest and lowest scoring pids for each \
+			metric at each timestep.")
 
 	ap.add_argument("--metrics", dest="metrics", action="extend", nargs="+", \
 			default=ccommon._FUNC_NAMES, choices=ccommon._FUNC_NAMES, type=str)
@@ -94,7 +95,7 @@ def pid_init(args):
 		pids = {}
 		for line in ccommon.read_line(args.afrag):
 			pids[line.pid] = line.event_count
-		args.pid = sorted(pids, key=pids.get)[0]
+		args.pid = [sorted(pids, key=pids.get)[-1]]
 
 
 def metrics_init(args):
@@ -124,9 +125,13 @@ if __name__ == "__main__":
 	ccommon.vprint(args, verbose=args.verbose)
 
 	if args.avg and args.correlation:
-		correlation.afrag_corr(args.afrag, args.pid, args.metrics, args.correlation)
+		plotter.afrag_corr(args.afrag, args.pid, args.metrics, args.correlation)
 	elif args.segment and args.correlation:
 		raise NotImplementedError("Correlation across an sfrag file is not implemented")
+
+	if args.segment and args.lifetime:
+		bounded = True if args.lifetime == "bounded" else False
+		plotter.sfrag_lifetime(args.sfrag, args.pid, args.metrics, args.event_limit, bounded)
 
 	plot = args.correlation or args.lifetime
 	if not plot:
