@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
 	sfragf = gzip.open(sfrag_file, "xb")
 	if os.path.exists(afrag_file):
-		print("Error: File exists \"{afrag_file}\"")
+		print(f"Error: File exists {afrag_file}")
 		exit()
 	pid_cache = Cache("pid_cache.pickle")
 	file_size = os.path.getsize(trace_file)
@@ -114,3 +114,4 @@ if __name__ == "__main__":
 
 	afragf.close()
 	pid_cache.close_cache_file(destroy=True)
+	print()

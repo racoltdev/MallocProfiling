@@ -15,4 +15,4 @@ class AfragLine:
 	def __init__(self, pid, metrics : list, event_count):
 		self.pid = pid
 		self.metrics = metrics
-		self.event_counts = event_count
+		self.event_count = event_count

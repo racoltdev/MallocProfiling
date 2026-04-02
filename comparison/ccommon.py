@@ -27,3 +27,10 @@ def read_line(pickle_file):
 				yield pickle.load(picklef)
 		except EOFError:
 			pass
+
+def vprint(msg, verbose=None):
+	if verbose is not None:
+		vprint._verbose = verbose
+
+	if vprint._verbose:
+		print(msg)

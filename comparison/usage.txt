@@ -1,0 +1,10 @@
+examples:
+$ python main.py --avg --afrag ../data/build.racoltest.afrag.pickle --pa --correlation spearman
+	generate a correlation map on an afrag file, and use all pids and metrics
+
+$ python main.py --segment --afrag ../data/build.racoltest.afrag.pickle --sfrag \
+../data/build.racoltest.sfrag.gz --pm -e 1000 --lifetime bounded --metrics ebfm ssfm
+	generate a line chart of the fragmentation metrics over time using an sfrag file. Only chart
+	the first 1000 events. Focus of the chart for each metric will be the most commonly used pid
+	through the programs lifetime, and lowest and highest scoring pids will be plotted at each
+	time step as well. Only plot ebfm and ssfm metrics.
