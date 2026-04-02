@@ -1,3 +1,4 @@
+import math
 import pandas
 import seaborn
 import matplotlib.pyplot as plt
@@ -36,8 +37,14 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 		raise NotImplementedError("Lifetime can only be plotted for one pid at a time, currently")
 
 	func_names = [metric for i, metric in enumerate(ccommon._FUNC_NAMES) if i in metrics]
+	#type_names = ["tracked_value", "low", "high"]
+	#metric_names = func_names + "mem_size"
+
 	col_names = ["time", "type", "metric name", "metric"]
-	df = pandas.DataFrame(columns=col_names)
+
+	dfs = {i : pandas.DataFrame(columns=col_names) for i in metrics}
+	dfs = dict(sorted(dfs.items()))
+	dfs["mem_size"] = pandas.DataFrame(columns=col_names)
 
 	def get_metric_bounds(line):
 		low, high = {}, {}
@@ -53,9 +60,12 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 		return low, high
 
 	def make_rows(df, func_metrics, event_num, type_name):
-		for metric, name in zip(func_metrics, func_names):
+		for i, (metric, name) in enumerate(zip(func_metrics, func_names)):
 			new_row = [event_num, type_name, name, metric]
-			df.loc[len(df)] = new_row
+			dfs[i].loc[len(dfs[i])] = new_row
+
+	def normalize(df):
+		pass
 
 	events = 0
 	for pid in pids:
@@ -64,23 +74,24 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 				pid_metrics = line.segment_metrics.get(pid)
 
 				func_metrics = [metric for i, metric in enumerate(pid_metrics.func_metrics) if i in metrics]
-				make_rows(df, func_metrics, line.event_num, "tracked value")
-				new_row = [line.event_num, "tracked value", "mem size", pid_metrics.mem_bounds]
-				df.loc[len(df)] = new_row
+				make_rows(dfs, func_metrics, line.event_num, "tracked value")
+				new_row = [line.event_num, "tracked value", "mem size", math.log(pid_metrics.mem_bounds, 100)]
+				dfs["mem_size"].loc[len(dfs["mem_size"])] = new_row
 
 				low, high = get_metric_bounds(line)
 
-				make_rows(df, low, line.event_num, "low")
-				make_rows(df, high, line.event_num, "high")
+				make_rows(dfs, low, line.event_num, "low")
+				make_rows(dfs, high, line.event_num, "high")
 				events += 1
 
-				ccommon.vprint(df)
 
 				if event_limit is not None and events > event_limit:
 					break
 
-	print()
-	print(df)
+	normalize(dfs)
+	df = pandas.concat(dfs.values(), ignore_index=True)
+
+	ccommon.vprint(df)
 	seaborn.lineplot(data=df, x="time", y="metric", style="type", hue="metric name")
 	plt.show()
 
