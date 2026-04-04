@@ -40,16 +40,16 @@ def get_outlier_indices(data):
 	std = numpy.std(data)
 
 	threshold = 3
-	low, high = 0, 0
+	low, high = 0, None
 	for i, key in enumerate(data):
 		z_score = (key - mean) / std
 		if abs(z_score) > threshold:
-			if i == (low + 1):
-				low = i
+			if i == (low):
+				low = i + 1
 			else:
 				high = i
 				break
-	return low + 1, high - 1
+	return low, high
 
 
 # Collect average fragmentation rates of a multiprocess trace throughout it's entire lifetime
