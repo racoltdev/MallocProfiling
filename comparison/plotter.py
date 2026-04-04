@@ -3,12 +3,8 @@ import pandas
 import seaborn
 import matplotlib.pyplot as plt
 import numpy
-from scipy.stats.mstats import winsorize
 
 import ccommon
-
-def _get_col_names(metrics):
-	col_names = [metric for i, metric in enumerate(ccommon._FUNC_NAMES) if i in metrics]
 
 def afrag_corr(afrag_file, pids, metrics, method="kendall"):
 	all_pids = True if pids == [] else False
@@ -16,10 +12,14 @@ def afrag_corr(afrag_file, pids, metrics, method="kendall"):
 	col_names = [metric for i, metric in enumerate(ccommon._FUNC_NAMES) if i in metrics]
 	df = pandas.DataFrame(columns=col_names)
 
+	#df["metric"] = (df["metric"] - df["metric"].min()) / (df["metric"].max() - df["metric"].min())
 	for line in ccommon.read_line(afrag_file):
 		if all_pids or line.pid in pids:
 			new_row = [metric for i, metric in enumerate(line.metrics) if i in metrics]
 			df.loc[len(df)] = new_row
+
+	# normalize each metric. For spearman and kednall this really should matter but¯\(ツ)/¯
+	df=(df-df.min())/(df.max()-df.min())
 
 	corr = df.corr(method=method)
 	# Sort cols and rows by sum of correlations
@@ -65,25 +65,17 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 		for i, (metric, name) in enumerate(zip(func_metrics, func_names)):
 			new_row = [event_num, type_name, name, metric]
 			dfs[i].loc[len(dfs[i])] = new_row
-			#print(new_row)
-
-	def normalize(dfs):
-		pass
 
 	events = 0
 	for pid in pids:
 		for line in ccommon.read_line(sfrag_file, gz=True):
 			if pid in line.segment_metrics.keys():
 				pid_metrics = line.segment_metrics.get(pid)
-				#print(line.event_num)
-				#print(pid_metrics.func_metrics)
 
 				func_metrics = [metric for i, metric in enumerate(pid_metrics.func_metrics) if i in metrics]
 				make_rows(dfs, func_metrics, line.event_num, "tracked value")
 				new_row = [line.event_num, "tracked value", "mem size", pid_metrics.mem_bounds]
 				dfs["mem_size"].loc[len(dfs["mem_size"])] = new_row
-				#print(new_row)
-				#input()
 
 				if bounded:
 					low, high = get_metric_bounds(line)
@@ -100,8 +92,8 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 		#df["metric"] = df["metric"].map(lambda x: numpy.sqrt(x))
 		#winsorize(df["metric"], limits=[0.1, 0.25])
 		df["metric"] = (df["metric"] - df["metric"].min()) / (df["metric"].max() - df["metric"].min())
+		#df["metric"] = df["metric"].map(lambda x: numpy.sqrt(x))
 		dfs[key]["metric"] = df["metric"]
-		#print(dfs[key].to_string())
 	df = pandas.concat(dfs.values(), ignore_index=True)
 
 	ccommon.vprint(df)

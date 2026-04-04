@@ -96,23 +96,18 @@ if __name__ == "__main__":
 
 			old_n = cached_item.usage_hash
 
-			# uncommenting this breaks literally everything ???????
-			# mem size estimates (including inside norm_alt_entropy) assume
-			# alloc_blocks is sorted, so I need to sort it but this aint it
-			#if (pid == "427683"):
-			#	print({k: model.alloc_blocks[k] for k in list(model.alloc_blocks)[-10:]})
 			model.alloc_blocks = dict(sorted(model.alloc_blocks.items()))
-			#if (pid == "427683"):
-			#	print({k: model.alloc_blocks[k] for k in list(model.alloc_blocks)[-10:]})
-			#	input()
-			keys = list(model.alloc_blocks.keys())
-			low_outlier, high_outlier = get_outlier_indices(keys)
-			#low_outlier, high_outlier = 0, -1
+			low_outlier, high_outlier = get_outlier_indices(list(model.alloc_blocks.keys()))
+
+			# This is very slow. Finding a way to do this without a full deepcopy, or with something faster than
+			# z-score normalization would be great
 			culled_model = copy.deepcopy(model)
 			culled_model.alloc_blocks = {k : culled_model.alloc_blocks[k] for k in list(model.alloc_blocks)[low_outlier:high_outlier]}
+
 			keys = list(culled_model.alloc_blocks.keys())
 			high_mem = keys[-1] + culled_model.alloc_blocks.get(keys[-1])
 			mem_size = high_mem - keys[0]
+
 			iter_metrics[pid] = sfrag.PidMetrics(n, [0] * len(_FRAG_FUNCTIONS), mem_size)
 
 			for i, func in enumerate(_FRAG_FUNCTIONS):
