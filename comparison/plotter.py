@@ -2,6 +2,8 @@ import math
 import pandas
 import seaborn
 import matplotlib.pyplot as plt
+import numpy
+from scipy.stats.mstats import winsorize
 
 import ccommon
 
@@ -94,10 +96,10 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 					break
 
 	for key, df in dfs.items():
-		#print(df.to_string())
-		#dfs[key]["metric"] = (df["metric"]-df["metric"].mean())/df["metric"].std()
+		# both of these outlier methods don't work all that well
+		#df["metric"] = df["metric"].map(lambda x: numpy.sqrt(x))
+		#winsorize(df["metric"], limits=[0.1, 0.25])
 		df["metric"] = (df["metric"] - df["metric"].min()) / (df["metric"].max() - df["metric"].min())
-		#dfs[key]["metric"] = df["metric"].map(lambda x: math.log(x + 0.001))
 		dfs[key]["metric"] = df["metric"]
 		#print(dfs[key].to_string())
 	df = pandas.concat(dfs.values(), ignore_index=True)

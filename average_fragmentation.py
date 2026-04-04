@@ -16,6 +16,7 @@ import time
 import pickle
 import gzip
 import numpy
+import copy
 
 _FRAG_FUNCTIONS = (alternating_stream_entropy.alt_entropy, alternating_stream_entropy.norm_alt_entropy, ebfm.ebfm, esp_umm.esp_umm, external_fragmentation.external_frag, ssfm.ssfm)
 
@@ -106,12 +107,17 @@ if __name__ == "__main__":
 			#	input()
 			keys = list(model.alloc_blocks.keys())
 			low_outlier, high_outlier = get_outlier_indices(keys)
-			mem_size = (keys[high_outlier] + model.alloc_blocks.get(keys[high_outlier])) - keys[low_outlier]
+			#low_outlier, high_outlier = 0, -1
+			culled_model = copy.deepcopy(model)
+			culled_model.alloc_blocks = {k : culled_model.alloc_blocks[k] for k in list(model.alloc_blocks)[low_outlier:high_outlier]}
+			keys = list(culled_model.alloc_blocks.keys())
+			high_mem = keys[-1] + culled_model.alloc_blocks.get(keys[-1])
+			mem_size = high_mem - keys[0]
 			iter_metrics[pid] = sfrag.PidMetrics(n, [0] * len(_FRAG_FUNCTIONS), mem_size)
 
 			for i, func in enumerate(_FRAG_FUNCTIONS):
 				func_avg = cached_item.pid_avg[i]
-				metric = func(model)
+				metric = func(culled_model)
 
 				iter_metrics[pid].func_metrics[i] = metric
 
