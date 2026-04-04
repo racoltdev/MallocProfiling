@@ -15,6 +15,7 @@ import os
 import time
 import pickle
 import gzip
+import numpy
 
 _FRAG_FUNCTIONS = (alternating_stream_entropy.alt_entropy, alternating_stream_entropy.norm_alt_entropy, ebfm.ebfm, esp_umm.esp_umm, external_fragmentation.external_frag, ssfm.ssfm)
 
@@ -32,6 +33,23 @@ class PidCacheItem(CacheItem):
 
 	def post_pickle(self):
 		self.pid_avg = [x * self.usage_hash for x in self.pid_avg]
+
+def get_outlier_indices(data):
+	mean = numpy.mean(data)
+	std = numpy.std(data)
+
+	threshold = 3
+	low, high = 0, 0
+	for i, key in enumerate(data):
+		z_score = (key - mean) / std
+		if abs(z_score) > threshold:
+			if i == (low + 1):
+				low = i
+			else:
+				high = i
+				break
+	return low + 1, high - 1
+
 
 # Collect average fragmentation rates of a multiprocess trace throughout it's entire lifetime
 # Calculating fragmentation at every time stamp would be prohibitively expensive, so a snapshot
@@ -77,9 +95,18 @@ if __name__ == "__main__":
 
 			old_n = cached_item.usage_hash
 
+			# uncommenting this breaks literally everything ???????
+			# mem size estimates (including inside norm_alt_entropy) assume
+			# alloc_blocks is sorted, so I need to sort it but this aint it
+			#if (pid == "427683"):
+			#	print({k: model.alloc_blocks[k] for k in list(model.alloc_blocks)[-10:]})
 			model.alloc_blocks = dict(sorted(model.alloc_blocks.items()))
+			#if (pid == "427683"):
+			#	print({k: model.alloc_blocks[k] for k in list(model.alloc_blocks)[-10:]})
+			#	input()
 			keys = list(model.alloc_blocks.keys())
-			mem_size = (keys[-1] + model.alloc_blocks.get(keys[-1])) - keys[0]
+			low_outlier, high_outlier = get_outlier_indices(keys)
+			mem_size = (keys[high_outlier] + model.alloc_blocks.get(keys[high_outlier])) - keys[low_outlier]
 			iter_metrics[pid] = sfrag.PidMetrics(n, [0] * len(_FRAG_FUNCTIONS), mem_size)
 
 			for i, func in enumerate(_FRAG_FUNCTIONS):

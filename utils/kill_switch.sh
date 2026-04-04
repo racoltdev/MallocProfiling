@@ -26,7 +26,7 @@ while [ 1 ]; do
 	size=$(ls -l /home/andy/Research/Kul/malloc/MallocProfiling/sample_programs/gcc/m.trace | awk '{print $5}');
 	too_big=$((400 * 1024 * 1024 * 1024));
 	if [ $((size)) -gt $too_big ]; then
-		kill_descendant_processes $pid
+		kill_descendant_processes $pid true
 		printf "\r%d: Killed process. Too many resources used\n" "$loops"
 		exit;
 	else

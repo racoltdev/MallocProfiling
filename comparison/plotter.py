@@ -59,12 +59,13 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 
 		return low, high
 
-	def make_rows(df, func_metrics, event_num, type_name):
+	def make_rows(dfs, func_metrics, event_num, type_name):
 		for i, (metric, name) in enumerate(zip(func_metrics, func_names)):
 			new_row = [event_num, type_name, name, metric]
 			dfs[i].loc[len(dfs[i])] = new_row
+			#print(new_row)
 
-	def normalize(df):
+	def normalize(dfs):
 		pass
 
 	events = 0
@@ -72,23 +73,33 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 		for line in ccommon.read_line(sfrag_file, gz=True):
 			if pid in line.segment_metrics.keys():
 				pid_metrics = line.segment_metrics.get(pid)
+				#print(line.event_num)
+				#print(pid_metrics.func_metrics)
 
 				func_metrics = [metric for i, metric in enumerate(pid_metrics.func_metrics) if i in metrics]
 				make_rows(dfs, func_metrics, line.event_num, "tracked value")
-				new_row = [line.event_num, "tracked value", "mem size", math.log(pid_metrics.mem_bounds, 100)]
+				new_row = [line.event_num, "tracked value", "mem size", pid_metrics.mem_bounds]
 				dfs["mem_size"].loc[len(dfs["mem_size"])] = new_row
+				#print(new_row)
+				#input()
 
-				low, high = get_metric_bounds(line)
+				if bounded:
+					low, high = get_metric_bounds(line)
 
-				make_rows(dfs, low, line.event_num, "low")
-				make_rows(dfs, high, line.event_num, "high")
+					make_rows(dfs, low, line.event_num, "low")
+					make_rows(dfs, high, line.event_num, "high")
+
 				events += 1
-
-
 				if event_limit is not None and events > event_limit:
 					break
 
-	normalize(dfs)
+	for key, df in dfs.items():
+		#print(df.to_string())
+		#dfs[key]["metric"] = (df["metric"]-df["metric"].mean())/df["metric"].std()
+		df["metric"] = (df["metric"] - df["metric"].min()) / (df["metric"].max() - df["metric"].min())
+		#dfs[key]["metric"] = df["metric"].map(lambda x: math.log(x + 0.001))
+		dfs[key]["metric"] = df["metric"]
+		#print(dfs[key].to_string())
 	df = pandas.concat(dfs.values(), ignore_index=True)
 
 	ccommon.vprint(df)
