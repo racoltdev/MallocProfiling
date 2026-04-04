@@ -44,7 +44,7 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 
 	col_names = ["time", "type", "metric name", "metric"]
 
-	dfs = {i : pandas.DataFrame(columns=col_names) for i in metrics}
+	dfs = {i : pandas.DataFrame(columns=col_names) for i in func_names}
 	dfs = dict(sorted(dfs.items()))
 	dfs["mem_size"] = pandas.DataFrame(columns=col_names)
 
@@ -64,7 +64,7 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 	def make_rows(dfs, func_metrics, event_num, type_name):
 		for i, (metric, name) in enumerate(zip(func_metrics, func_names)):
 			new_row = [event_num, type_name, name, metric]
-			dfs[i].loc[len(dfs[i])] = new_row
+			dfs[name].loc[len(dfs[name])] = new_row
 
 	events = 0
 	for pid in pids:
@@ -73,15 +73,15 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 				pid_metrics = line.segment_metrics.get(pid)
 
 				func_metrics = [metric for i, metric in enumerate(pid_metrics.func_metrics) if i in metrics]
+				#print(func_metrics)
 				make_rows(dfs, func_metrics, line.event_num, "tracked value")
 				new_row = [line.event_num, "tracked value", "mem size", pid_metrics.mem_bounds]
 				dfs["mem_size"].loc[len(dfs["mem_size"])] = new_row
 
 				if bounded:
 					low, high = get_metric_bounds(line)
-
-					make_rows(dfs, low, line.event_num, "low")
-					make_rows(dfs, high, line.event_num, "high")
+					make_rows(dfs, low.values(), line.event_num, "low")
+					make_rows(dfs, high.values(), line.event_num, "high")
 
 				events += 1
 				if event_limit is not None and events > event_limit:
@@ -91,12 +91,17 @@ def sfrag_lifetime(sfrag_file, pids, metrics, event_limit, bounded):
 		# both of these outlier methods don't work all that well
 		#df["metric"] = df["metric"].map(lambda x: numpy.sqrt(x))
 		#winsorize(df["metric"], limits=[0.1, 0.25])
-		df["metric"] = (df["metric"] - df["metric"].min()) / (df["metric"].max() - df["metric"].min())
+
+		# TODO normalization doesn't work with bounded plotting
+		tracked = df[df["type"] == "tracked value"]
+		tracked = tracked["metric"]
+		df["metric"] = (df["metric"] - tracked.min()) / (tracked.max() - tracked.min())
 		#df["metric"] = df["metric"].map(lambda x: numpy.sqrt(x))
 		dfs[key]["metric"] = df["metric"]
 	df = pandas.concat(dfs.values(), ignore_index=True)
 
 	ccommon.vprint(df)
 	seaborn.lineplot(data=df, x="time", y="metric", style="type", hue="metric name")
+	plt.title(f"{sfrag_file} lifetime")
 	plt.show()
 
