@@ -45,7 +45,7 @@ Read the argument descriptions carefully and see the examples section to see how
 			an additional \"bounded\" argument is given, also plot the highest and lowest scoring pids for each \
 			metric at each timestep.")
 
-	ap.add_argument("--metrics", dest="metrics", action="extend", nargs="+", \
+	ap.add_argument("--metrics", nargs="+", \
 			default=ccommon._FUNC_NAMES, choices=ccommon._FUNC_NAMES, type=str)
 
 	ap.add_argument("--seed", help="A seed to use for all random numbers. Defaults to current system time")
@@ -101,8 +101,7 @@ def pid_init(args):
 def metrics_init(args):
 	indexed_metrics = []
 	for metric in args.metrics:
-		if metric in ccommon._FUNC_NAMES:
-			indexed_metrics.append(ccommon._FUNC_NAMES.index(metric))
+		indexed_metrics.append(ccommon._FUNC_NAMES.index(metric))
 
 	args.metrics = sorted(indexed_metrics)
 
