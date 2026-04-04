@@ -99,10 +99,10 @@ if __name__ == "__main__":
 			model.alloc_blocks = dict(sorted(model.alloc_blocks.items()))
 			low_outlier, high_outlier = get_outlier_indices(list(model.alloc_blocks.keys()))
 
-			# This is very slow. Finding a way to do this without a full deepcopy, or with something faster than
-			# z-score normalization would be great
-			culled_model = copy.deepcopy(model)
-			culled_model.alloc_blocks = {k : culled_model.alloc_blocks[k] for k in list(model.alloc_blocks)[low_outlier:high_outlier]}
+			# copy() instead of deepcopy() gets rid of almost all performance loss. If this becomes a point of slow
+			# down, replacing z-score outlier detection with a faster method would work
+			culled_model = copy.copy(model)
+			culled_model.alloc_blocks = {k : model.alloc_blocks[k] for k in list(model.alloc_blocks)[low_outlier:high_outlier]}
 
 			keys = list(culled_model.alloc_blocks.keys())
 			high_mem = keys[-1] + culled_model.alloc_blocks.get(keys[-1])
