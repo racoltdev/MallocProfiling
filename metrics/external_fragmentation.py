@@ -3,7 +3,7 @@ import lifetime_analysis
 import MemoryModel
 import metrics.free_stream_cache as cache
 
-def external_frag(snapshot):
+def efm(snapshot):
 	if cache.stream is None:
 		cache.stream, cache.length = common.snapshot_to_free_block_stream(snapshot)
 	# If nothing in stream, there is either no allocated mem, or no gaps in mem

@@ -5,7 +5,7 @@ import metrics.free_stream_cache as cache
 
 import math
 
-def esp_umm(snapshot):
+def ummfm(snapshot):
 	if cache.stream is None:
 		cache.stream, cache.length = common.snapshot_to_free_block_stream(snapshot)
 	quality, free_size = 0, 0

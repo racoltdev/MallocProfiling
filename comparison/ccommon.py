@@ -17,7 +17,7 @@ import sfrag
 sys.path.remove(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
 
 
-_FRAG_FUNCTIONS = (alternating_stream_entropy.alt_entropy, alternating_stream_entropy.norm_alt_entropy, ebfm.ebfm, esp_umm.esp_umm, external_fragmentation.external_frag, ssfm.ssfm)
+_FRAG_FUNCTIONS = (alternating_stream_entropy.aefm, alternating_stream_entropy.naefm, ebfm.ebfm, esp_umm.ummfm, external_fragmentation.efm, ssfm.ssfm)
 
 _FUNC_NAMES = [x.__name__ for x in _FRAG_FUNCTIONS]
 

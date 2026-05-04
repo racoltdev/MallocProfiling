@@ -36,7 +36,7 @@ def snapshot_to_alt_stream(memory_snapshot):
 		last_bound = start + length
 	return alternating_stream
 
-def alt_entropy(snapshot):
+def aefm(snapshot):
 	global stream
 	if stream is None:
 		stream = snapshot_to_alt_stream(snapshot)
@@ -46,7 +46,7 @@ def alt_entropy(snapshot):
 	#print(f"metric: {entropy_metric / len(stream)}")
 	return entropy_metric
 
-def norm_alt_entropy(snapshot):
+def naefm(snapshot):
 	global stream
 	if stream is None:
 		stream = snapshot_to_alt_stream(snapshot)
