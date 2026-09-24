@@ -6,6 +6,8 @@ import numpy
 
 import ccommon
 
+seaborn.set(font_scale=.99)
+
 def afrag_corr(afrag_file, pids, metrics, method="kendall"):
 	all_pids = True if pids == [] else False
 

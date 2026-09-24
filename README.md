@@ -1,11 +1,15 @@
-### alternating_stream_entropy.py:
-This file calculates a fragmentation metric related to information entropy, given a trace file. In reality, this metric diverges quite strongly from traditional entropy interpretations, and may better be understood as the assumed complexity of finding a suitable free space for allocating any size block by an allocator. An ideal entropy based fragmentation metric would attempt to measure the probability of the arrangment of allocated and free blocks - more precisely, how many ways there are to permute the allocated and free blocks within the available memory region. Calculating the permutations across realistic memory samples is prohibitively computationally expensive, so instead similar entropy based metrics perform some estimation of this value. [2], [7] substitutes the permutation based probability with a ratio of the size of each free block over the total number of blocks. My method is extremely similar, except it accounts for the size of all blocks (free or not), and the total number of all blocks. Additionally, some method of encoding this information must be used, since it is unreasonable to treat free and allocated blocks the same way when calculating fragmentation. Both are useful, but they do have fundamental differences in regards to the work an allocator will have to do to perform an allocation. The information is encoded as a stream of integers, the first always being positive. Following values will have the same sign as the previous value if they match the allocation state (allocated vs free) of the previous block. For example, a memory region with 3 alloocated blocks of size 1, followed by 2 free blocks of size 3 would be encoded into a stream as [1, -1,, 1, 3, -3]. <br>
+This project was used to complete a thesis in computer science https://doi.org/10.62791/20663. This repository is a mess, and it's probably gonna stay that way. <br>
+### alt_entropy.py:
+This file calculates a fragmentation metric related to information entropy, given a trace file. In reality, this metric diverges quite strongly from traditional entropy interpretations, and may better be understood as the assumed complexity of finding a suitable free space for allocating any size block by an allocator. An ideal entropy based fragmentation metric would attempt to measure the probability of the arrangment of allocated and free blocks - more precisely, how many ways there are to permute the allocated and free blocks within the available memory region. Calculating the permutations across realistic memory samples is prohibitively computationally expensive, so instead similar entropy based metrics perform some estimation of this value. [2], [7] substitutes the permutation based probability with a ratio of the size of each free block over the total number of blocks. My method is extremely similar, except it accounts for the size of all blocks (free or not), and the total number of all blocks. Additionally, some method of encoding this information must be used, since it is unreasonable to treat free and allocated blocks the same way when calculating fragmentation. Both are useful, but they do have fundamental differences in regards to the work an allocator will have to do to perform an allocation. The information is encoded as a stream of integers, the first always being positive. Following values will have the same sign as the previous value if they match the allocation state (allocated vs free) of the previous block. For example, a memory region with 3 alloocated blocks of size 1, followed by 2 free blocks of size 3 would be encoded into a stream as [1, -1, 1, 3, -3]. <br> <br>
 Note: <br>
-	p(b) = perm(mem_size, options) / perm(mem_size, mem_size / 2) <br>
+>	p(b) = perm(mem_size, options) / perm(mem_size, mem_size / 2) <br>
 	perm(a, b) can be approximated by a^b when a >> b (https://math.stackexchange.com/questions/4277833/approximation-of-permutation). This is still very large and hard to compute. <br>
 	a^b can be arbitrarily scaled by some non-linear factor to keep the numbers reasonable to represent while still being useful. <br>
 	log(a)^log(b) stays small. Will have to test whether this is even useful. <br>
 	See also: https://arxiv.org/html/2411.04718v2
+
+### norm_alt_entropy:
+This is similar to alt_entropy, however it divides by the total number of bytes in memory rather than the total number of blocks
 
 ### ebfm.py:
 Implements ebfm as shown in [2], [7]
@@ -25,7 +29,7 @@ Implemented as per [2]. Attempts to combine various existing metrics into someth
 1: Entropy-Based Algorithms for Best Basis Selection
 * Ronald R. Coifman and Mladen Victor Wickerhauser
 * https://ieeexplore.ieee.org/document/119732
-* Note: I'll keep this reference here even though I don't directly use it since it is referenced by [2] for ebfm. This does discuss entropy, but more as a way of deciding optimal allocations along frequency space, I think. I don't understand this paper at all and it only seems to be related in that both this and [2] consider entropy in the context of frequency allocations.
+* Note: I'll keep this reference here even though I don't directly use it since it is referenced by [2] for ebfm. This does discuss entropy, but more as a way of deciding optimal allocations along frequency space
 <!-- end list -->
 2: A novel fragmentation metric and fragmentation-aware adaptive routing and spectrum allocation algorithm in elastic optical network
 * Ruchi Srivastava, Yatindra Nath Singh
@@ -60,5 +64,5 @@ ESP UMM Arduino method
 * https://doi.org/10.1016/j.comnet.2022.109275
 * Note: this method depends on the request (or batch of requests) being made. Definitely interesting for real time applications
 <!-- end list -->
-data collected using mtrace_malloc (https://github.com/racoltdev/malloc/tree/master)
+data collected using mptrace (https://github.com/racoltdev/malloc/tree/master)
 
