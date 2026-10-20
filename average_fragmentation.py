@@ -57,10 +57,9 @@ def get_outlier_indices(data):
 # is taken once every n timesteps and fragmentation is calculated at that timestep
 # An average fragmentation rate for each metric is calculated between all timesteps and all processes
 if __name__ == "__main__":
-	trace_file, output_file, verify = common.arg_check_io()
+	trace_file, output_file, verify, step_size = common.arg_check_io()
 	sfrag_file = output_file + ".sfrag.gz"
 	afrag_file = output_file + ".afrag.pickle"
-	step_size = 10000
 
 	sfragf = gzip.open(sfrag_file, "xb")
 	if os.path.exists(afrag_file):

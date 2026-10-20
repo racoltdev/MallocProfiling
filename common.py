@@ -35,17 +35,27 @@ def arg_check():
 # TODO use argparse for input handling
 def arg_check_io():
 	args = len(sys.argv)
-	if args == 3:
-		return *sys.argv[1:], True
-	elif args == 4:
-		verify = sys.argv[-1].lower()
+
+	def clean_verify():
+		verify = sys.argv[3].lower()
 		if verify == "true":
-			return *sys.argv[1:-1], True
+			sys.argv[3] = True
 		elif verify == "false":
-			return *sys.argv[1:-1], False
+			sys.argv[3] = False
 		else:
 			print("Error: Invalid argument. Optional third argument 'verify' must be either True or False")
 			exit()
-	else:
-		print("Error: Incorrect number of arguments. Expected 2.\n\tInput mptrace file\n\tOutput file\n\tOptional: Perform verification bool. Defaults to True.")
-		exit()
+
+	if args == 3:
+		return *sys.argv[1:], True, 10_000
+	if args == 4:
+		clean_verify()
+		return *sys.argv[1:], 10_000
+	if args == 5:
+		clean_verify()
+		sys.argv[4] = int(sys.argv[4])
+		return sys.argv[1:]
+
+	# If incorrect number of args
+	print("Error: Incorrect number of arguments. Expected 2.\n\tInput mptrace file\n\tOutput file\n\tOptional: Perform verification bool. Defaults to True.\n\tOptional: step size. Defaults to 10,000")
+	exit()
